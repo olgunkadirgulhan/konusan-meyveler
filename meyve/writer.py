@@ -36,9 +36,12 @@ SHORT_TEMPLATES = {
 TOPICS = ['meyve mi sebze mi', 'yaşlanmak / kararmak', 'buzdolabında gece', 'pazarda seçilmemek', 'blender korkusu',
           'meyve salatası seçmeleri', 'kahvaltı sofrası', 'diyet yapan insan', 'pahalı olmak', 'ekşi olmak',
           'su oranı yarışması', 'yaz geldi', 'kış meyvesi olmak', 'reçel olmak', 'turşu tehlikesi', 'sosyal medya',
-          'okul beslenme çantası', 'manavda indirim', 'çekirdek / tohum', 'vitamin yarışı', 'bıçak geldi',
+          'ofiste öğle yemeği', 'manavda indirim', 'çekirdek / tohum', 'vitamin yarışı', 'bıçak geldi',
           'egzotik meyve kıskançlığı', 'ilk iş günü (pazar tezgâhı)', 'sağlıklı beslenme', 'smoothie', 'ağaçtan düşmek',
-          'sınav stresi', 'dedikodu', 'doğum günü pastası', 'piknik', 'tatil (plaj)', 'spor salonu']
+          'sınav stresi', 'dedikodu', 'doğum günü pastası', 'piknik', 'tatil (plaj)', 'spor salonu',
+          'patronla toplantı', 'kira zammı', 'maaş günü', 'ilk buluşma', 'ev arkadaşı', 'aile grup sohbeti',
+          'pazartesi sendromu', 'trafikte sıkışmak', 'kargo iadesi', 'diyetisyen randevusu', 'iş görüşmesi',
+          'bayram ziyareti', 'kayınvalide geliyor', 'yeni yıl kararları']
 BANNED = re.compile(r'\b(öl|öldür|kan|seks|içki|bira|şarap|uyuşturucu|aptal|salak|gerizekalı|lanet|siktir|kahretsin|'
                     r'kill|dead|blood|sex|drunk|beer|wine|drug)\b', re.I)
 
