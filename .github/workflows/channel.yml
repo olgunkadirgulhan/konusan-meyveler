@@ -1,0 +1,55 @@
+name: channel
+# Kanal görselleri ve kurulumu. apply=false: sadece görselleri çizer (artifact); apply=true: kanala uygular.
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Banner, açıklama, filigran ve listeleri kanala uygula
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends libcairo2-dev pkg-config
+      - run: pip install -r requirements.txt
+      - run: python branding.py
+      - uses: actions/upload-artifact@v5
+        with:
+          name: branding
+          path: branding/*.png
+          retention-days: 14
+      - name: Channel setup
+        if: inputs.apply
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+        run: python channel_setup.py
+      - name: Commit branding and playlists
+        if: inputs.apply
+        run: |
+          git config user.name "meyve-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add branding playlists.json
+          git diff --cached --quiet && exit 0
+          git commit -m "channel: branding ve oynatma listeleri"
+          git pull --rebase
+          git push
