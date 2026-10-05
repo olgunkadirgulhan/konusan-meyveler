@@ -1,0 +1,44 @@
+{
+  "id": "bank_001_domates_kimlik",
+  "format": "short",
+  "template": "kimlik_krizi",
+  "topic": "meyve mi sebze mi",
+  "title": "Domates meyve mi sebze mi? Kavga çıktı 😭🍅",
+  "hook": "Domatese sebze dediğinde:",
+  "description": "Domates kimlik krizinde, Salatalık fazla sakin. Bilim kimden yana?",
+  "tags": ["domates", "salatalık", "meyve mi sebze mi"],
+  "scenes": [
+    {
+      "bg": "kitchen",
+      "characters": [
+        {"id": "salatalik", "pos": "left", "pose": "standing", "emotion": "neutral"},
+        {"id": "domates", "pos": "right", "pose": "hips", "emotion": "neutral"}
+      ],
+      "lines": [
+        {"char": "salatalik", "text": "Sebze reyonuna hoş geldin kanka.", "emotion": "happy", "pose": "wave"},
+        {"char": "domates", "text": "SEBZE Mİ?! Ben meyveyim, meyve!", "emotion": "angry", "pose": "fist", "reactions": {"salatalik": "shock"}},
+        {"char": "domates", "text": "Çiçekten çıkıyorum, içimde tohum var. Bilim böyle diyor!", "emotion": "smug", "pose": "pointing",
+         "fact": "Domates botanik olarak meyvedir: çiçekten gelişir, tohum taşır."},
+        {"char": "salatalik", "text": "O zaman ben de meyveyim. Benim de tohumum var.", "emotion": "smug", "pose": "arms_crossed", "reactions": {"domates": "shock"}},
+        {"char": "domates", "text": "Ne?! Sen de mi?", "emotion": "shock", "pose": "shrug", "action": "dramatic_zoom"},
+        {"char": "salatalik", "text": "Biber de, patlıcan da. Hepimiz gizli meyveyiz.", "emotion": "happy", "pose": "shrug",
+         "fact": "Salatalık, biber ve patlıcan da botanik olarak meyvedir."},
+        {"char": "domates", "text": "O zaman neden beni kimse meyve tabağına koymuyor?", "emotion": "cry", "pose": "crying"},
+        {"char": "salatalik", "text": "Çünkü sen girince herkes salça yapmaya başlıyor.", "emotion": "neutral", "pose": "standing", "sfx": "rimshot"}
+      ]
+    },
+    {
+      "bg": "table",
+      "card": "Akşam yemeğinde...",
+      "characters": [
+        {"id": "domates", "pos": "left", "pose": "celebrate", "emotion": "excited"},
+        {"id": "sogan", "pos": "right", "pose": "standing", "emotion": "neutral"}
+      ],
+      "lines": [
+        {"char": "domates", "text": "Sonunda bir salataya girdim! Meyve salatası!", "emotion": "excited", "pose": "celebrate", "action": "jump"},
+        {"char": "sogan", "text": "Kanka bu çoban salatası. Ben de buradayım.", "emotion": "smug", "pose": "hips", "reactions": {"domates": "sad"}},
+        {"char": "domates", "text": "Ağlamayacağım... ağlamayacağım...", "emotion": "cry", "pose": "crying", "sfx": "sting"}
+      ]
+    }
+  ]
+}

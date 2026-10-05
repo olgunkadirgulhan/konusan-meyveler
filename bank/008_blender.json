@@ -1,0 +1,31 @@
+{
+  "id": "bank_008_blender",
+  "format": "short",
+  "template": "ters_kose",
+  "topic": "smoothie",
+  "title": "Çilek ve Muz blender'ı görünce 😱🥤",
+  "hook": "Blender çalıştığında meyveler:",
+  "description": "Smoothie günü geldi. Çilek bir plan yapıyor.",
+  "tags": ["blender", "çilek", "muz", "smoothie"],
+  "scenes": [
+    {
+      "bg": "blender",
+      "characters": [
+        {"id": "cilek", "pos": "left", "pose": "phone", "emotion": "happy"},
+        {"id": "muz", "pos": "right", "pose": "standing", "emotion": "neutral"}
+      ],
+      "lines": [
+        {"char": "cilek", "text": "Selam takipçilerim! Bugün smoothie günü!", "emotion": "excited", "pose": "phone"},
+        {"char": "muz", "text": "Kimin smoothie'si olacağını biliyor musun?", "emotion": "suspicious", "pose": "pointing"},
+        {"char": "cilek", "text": "Benim tabii! Ünlü olacağım!", "emotion": "happy", "pose": "celebrate"},
+        {"char": "muz", "text": "Smoothie'yi içiyorlar. Sen İÇİNDESİN.", "emotion": "neutral", "pose": "shrug", "reactions": {"cilek": "shock"}},
+        {"char": "cilek", "text": "Ne?! Bunu kimse söylemedi bana!", "emotion": "shock", "pose": "shrug", "action": "dramatic_zoom"},
+        {"char": "muz", "text": "Ben her sabah giriyorum. Alışıyorsun.", "emotion": "smug", "pose": "hips"},
+        {"char": "cilek", "text": "Sen nasıl hâlâ buradasın?!", "emotion": "confused", "pose": "pointing"},
+        {"char": "muz", "text": "Her seferinde kahverengi oluyorum, beni geri koyuyorlar.", "emotion": "happy", "pose": "shrug", "sfx": "blender"},
+        {"char": "cilek", "text": "O zaman ben de yaşlanacağım! Hemen!", "emotion": "nervous", "pose": "crying", "action": "run_away"},
+        {"char": "muz", "text": "Çilek yaşlanınca küflenir ama... Neyse, mutlu olsun.", "emotion": "smug", "pose": "standing", "sfx": "rimshot", "look_camera": true}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "format": "short",
+  "title": "Domates meyve mi sebze mi? Kavga çıktı 😭🍅",
+  "hook": "Domatese sebze dediğinde:",
+  "description": "YouTube açıklaması için tek cümlelik merak uyandıran özet.",
+  "tags": ["domates", "salatalık"],
+  "scenes": [
+    {
+      "bg": "kitchen",
+      "card": null,
+      "label": null,
+      "characters": [
+        {"id": "salatalik", "pos": "left", "pose": "standing", "emotion": "neutral"},
+        {"id": "domates", "pos": "right", "pose": "hips", "emotion": "angry"}
+      ],
+      "lines": [
+        {"char": "domates", "text": "SEBZE Mİ?! Ben meyveyim, meyve!", "emotion": "angry", "pose": "fist"},
+        {"char": "domates", "text": "Çiçekten çıkıyorum, içimde tohum var!", "emotion": "smug", "pose": "pointing",
+         "fact": "Domates botanik olarak meyvedir: çiçekten gelişir, tohum taşır.",
+         "reactions": {"salatalik": "shock"}},
+        {"char": "salatalik", "text": "Kanka sakin ol, salça olacaksın.", "emotion": "neutral", "action": "rimshot"}
+      ]
+    }
+  ]
+}

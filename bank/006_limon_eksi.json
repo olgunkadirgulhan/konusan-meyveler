@@ -1,0 +1,35 @@
+{
+  "id": "bank_006_limon_eksi",
+  "format": "short",
+  "template": "anlatiyor",
+  "topic": "ekşi olmak",
+  "title": "Limon ekşi denmesinden bıktı 🍋😤",
+  "hook": "Limona ekşi dediğinde:",
+  "description": "Limon kendini anlatıyor; Portakal fazla enerjik.",
+  "tags": ["limon", "portakal", "c vitamini"],
+  "scenes": [
+    {
+      "bg": "market",
+      "characters": [
+        {"id": "portakal", "pos": "left", "pose": "celebrate", "emotion": "excited"},
+        {"id": "limon", "pos": "right", "pose": "arms_crossed", "emotion": "suspicious"}
+      ],
+      "lines": [
+        {"char": "portakal", "text": "Günaydın ekşi surat! Bugün de suratın asık!", "emotion": "excited", "pose": "wave"},
+        {"char": "limon", "text": "Bir daha ekşi dersen seni marmelat yaparım.", "emotion": "angry", "pose": "fist"},
+        {"char": "portakal", "text": "Ama gerçekten ekşisin! Asidin pil gibi!", "emotion": "happy", "pose": "pointing",
+         "fact": "Limon suyunun pH değeri yaklaşık 2'dir; mide asidine yakın."},
+        {"char": "limon", "text": "Evet, ben bir pilim. Beni dört tane birleştir, saat çalıştırırım.", "emotion": "smug", "pose": "hips",
+         "fact": "Limona bakır ve çinko çubuk takınca küçük bir pil olur."},
+        {"char": "portakal", "text": "Vay be! Ben sadece ismimi Portekiz'den aldım.", "emotion": "shock", "pose": "shrug",
+         "fact": "Türkçedeki 'portakal' kelimesi Portekiz'in adından gelir."},
+        {"char": "limon", "text": "Yani sen bir turistsin.", "emotion": "smug", "pose": "pointing", "reactions": {"portakal": "sad"}},
+        {"char": "portakal", "text": "Ama C vitamini benim işim! Koşalım! Spor!", "emotion": "excited", "pose": "celebrate", "action": "jump"},
+        {"char": "limon", "text": "Tatlım, kendi kabuğunu bile soyamıyorsun.", "emotion": "smug", "pose": "arms_crossed", "reactions": {"portakal": "shock"}},
+        {"char": "portakal", "text": "Bu... bu çok kişisel oldu.", "emotion": "cry", "pose": "crying"},
+        {"char": "limon", "text": "Ağlama. Gel, sana limonata ısmarlayayım.", "emotion": "happy", "pose": "wave"},
+        {"char": "portakal", "text": "Ama limonata... sensin?!", "emotion": "shock", "pose": "shrug", "action": "dramatic_zoom"}
+      ]
+    }
+  ]
+}

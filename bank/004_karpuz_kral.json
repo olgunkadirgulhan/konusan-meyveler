@@ -1,0 +1,33 @@
+{
+  "id": "bank_004_karpuz_kral",
+  "format": "short",
+  "template": "kavga",
+  "topic": "yazın kralı",
+  "title": "Karpuz yazın kralı olduğunu iddia etti... 👑🍉",
+  "hook": "Yazın kralı kim?",
+  "description": "Karpuz tahtını savunuyor, Çilek ise takipçi sayısıyla geliyor.",
+  "tags": ["karpuz", "çilek", "yaz"],
+  "scenes": [
+    {
+      "bg": "garden",
+      "characters": [
+        {"id": "karpuz", "pos": "left", "pose": "hips", "emotion": "smug"},
+        {"id": "cilek", "pos": "right", "pose": "phone", "emotion": "neutral"}
+      ],
+      "lines": [
+        {"char": "karpuz", "text": "Yaz geldi. Kralınız geri döndü!", "emotion": "excited", "pose": "celebrate"},
+        {"char": "cilek", "text": "Kral mı? Benim iki milyon takipçim var tatlım.", "emotion": "smug", "pose": "phone", "reactions": {"karpuz": "shock"}},
+        {"char": "karpuz", "text": "Ben yüzde doksan iki suyum. Ben serinliğin ta kendisiyim!", "emotion": "smug", "pose": "pointing",
+         "fact": "Karpuzun yaklaşık yüzde 92'si sudur."},
+        {"char": "cilek", "text": "Yani sen dev bir su şişesisin.", "emotion": "suspicious", "pose": "arms_crossed"},
+        {"char": "karpuz", "text": "Sen de tohumlarını dışarıda taşıyorsun! Utanmaz!", "emotion": "angry", "pose": "fist",
+         "fact": "Çilek tohumlarını dışında taşıyan tek meyve gibi görünür: bir çilekte yaklaşık 200 tohum vardır."},
+        {"char": "cilek", "text": "Ona aksesuar denir, kıskanç.", "emotion": "smug", "pose": "hips"},
+        {"char": "karpuz", "text": "Benim kalbim kocaman ve kıpkırmızı!", "emotion": "happy", "pose": "celebrate"},
+        {"char": "cilek", "text": "Kalbin değil o, içini kesince herkes yiyor.", "emotion": "neutral", "pose": "shrug", "reactions": {"karpuz": "shock"}},
+        {"char": "karpuz", "text": "Bu... bu çok karanlık bir bilgi.", "emotion": "nervous", "pose": "standing", "action": "faint"},
+        {"char": "cilek", "text": "Neyse, ben gidip pastanın üstüne çıkayım. Kariyer!", "emotion": "excited", "pose": "wave", "action": "run_away"}
+      ]
+    }
+  ]
+}

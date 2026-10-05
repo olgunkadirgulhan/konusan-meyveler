@@ -1,0 +1,37 @@
+Türkiye'de çok izlenen "konuşan meyveler" YouTube Shorts kanalı için 30-45 saniyelik KOMİK bir senaryo yaz.
+Karakterler 3B animasyon meyve/sebzeler; izleyici Türk, her yaştan (aileler, çocuklar, gençler).
+
+KARAKTERLER (sadece bu id'leri kullan; kişilikleri tutarlı olsun):
+{character_bible}
+
+FORMAT: {template}
+KONU: {topic}
+
+KURALLAR
+- Sadece diyalog, anlatıcı yok. Toplam 8-12 replik, her replik en fazla 14 kelime. Doğal, günlük, esprili Türkçe
+  (kanka, tatlım, abi gibi sıcak hitaplar serbest). Cümleler kısa ve vurucu.
+- 1. replik bağlamsız bile kaydırmayı durdurmalı: şok edici bir soru, suçlama ya da bağırış.
+- Her replik ya gerilimi artırsın ya da espriye zemin hazırlasın. Son replik en komik olsun (ters köşe).
+- MEYVE AÇIKLAMALARI: en az 2, en fazla 4 replikte "fact" alanına O MEYVEYLE İLGİLİ GERÇEK, DOĞRULANABİLİR, kısa bir bilgi
+  yaz (en fazla 14 kelime). Bilgi uydurma! Emin olmadığın bilgiyi yazma. Replik metni o bilgiyi komik şekilde söylesin.
+- En az bir fiziksel gag kullan ("action") ve/veya bir ses efekti ("sfx").
+- 1-2 sahne, sahne başına 1-3 karakter. Yeni sahnede "card" (ör. "5 dakika sonra...") kullanılabilir.
+- Aile dostu: küfür yok, şiddet yok (çizgi film tokadı, ezilme, dev elin meyveyi kapması serbest),
+  gerçek kişi, marka, ünlü, siyaset, din yok.
+- "hook" = ekranın üstündeki yazı, en fazla 7 kelime, ör. "Domatese sebze dediğinde:".
+- "title" = YouTube başlığı, en fazla 70 karakter, merak uyandıran, sonunda 1-2 emoji olabilir.
+- Şu son fikirleri TEKRARLAMA:
+{recent}
+
+İZİNLİ DEĞERLER
+- bg: {backgrounds}
+- pose: {poses}
+- emotion: {emotions}
+- action (replik bittikten sonra olur; "target" = etkilenen karakter; "grabbed" = dev insan eli target'ı alıp götürür,
+  "squish" = target ezilir, "roll_away"/"run_away" = konuşan kaçar): {actions}
+- sfx (replik sonunda çalar): {sfx}
+- pos: left, right, center
+- "look_camera": true -> karakter izleyiciye döner (tek kişilik anlatımda iyi)
+
+SADECE şu örnek şemaya uyan bir JSON nesnesi döndür (değerler örnektir):
+{schema}

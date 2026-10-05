@@ -1,0 +1,31 @@
+{
+  "id": "bank_007_buzdolabi_avokado",
+  "format": "short",
+  "template": "buzdolabi",
+  "topic": "buzdolabı",
+  "title": "Buzdolabında gece yarısı olanlar 🥶🥑",
+  "hook": "Herkes uyurken buzdolabında:",
+  "description": "Buzdolabında soğuk bir gece ve beklenmedik bir misafir.",
+  "tags": ["buzdolabı", "avokado", "karpuz"],
+  "scenes": [
+    {
+      "bg": "fridge",
+      "characters": [
+        {"id": "avokado", "pos": "left", "pose": "arms_crossed", "emotion": "nervous"},
+        {"id": "karpuz", "pos": "right", "pose": "standing", "emotion": "neutral"}
+      ],
+      "lines": [
+        {"char": "avokado", "text": "Burası çok soğuk. Ben tropik bir meyveyim!", "emotion": "nervous", "pose": "arms_crossed", "action": "shiver"},
+        {"char": "karpuz", "text": "Sen olgunlaşmayasın diye buradasın kardeşim.", "emotion": "neutral", "pose": "shrug",
+         "fact": "Avokado ağaçta değil, koparıldıktan sonra olgunlaşır; soğuk bunu yavaşlatır."},
+        {"char": "avokado", "text": "Beni tam kıvamında yemek isteyen nerede?", "emotion": "sad", "pose": "standing"},
+        {"char": "karpuz", "text": "Tam kıvam beş dakika sürüyor. Kimse yakalayamıyor.", "emotion": "smug", "pose": "hips"},
+        {"char": "avokado", "text": "Ben de bu yüzden bu kadar pahalıyım. Nadirim!", "emotion": "smug", "pose": "hips", "reactions": {"karpuz": "suspicious"}},
+        {"char": "karpuz", "text": "Sus! Kapı açılıyor! Herkes normal davransın!", "emotion": "shock", "pose": "shrug", "sfx": "sting"},
+        {"char": "avokado", "text": "Beni seçecek! Beni seçecek! Kahvaltı!", "emotion": "excited", "pose": "celebrate", "action": "jump"},
+        {"char": "karpuz", "text": "Seni değil...", "emotion": "nervous", "pose": "standing", "action": "grabbed", "target": "karpuz"},
+        {"char": "avokado", "text": "Gece yarısı karpuz mu?! Bu evde kural kalmadı!", "emotion": "angry", "pose": "fist", "sfx": "rimshot"}
+      ]
+    }
+  ]
+}

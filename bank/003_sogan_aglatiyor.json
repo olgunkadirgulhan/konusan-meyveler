@@ -1,0 +1,43 @@
+{
+  "id": "bank_003_sogan_aglatiyor",
+  "format": "short",
+  "template": "anlatiyor",
+  "topic": "neden ağlatıyorum",
+  "title": "Soğan neden herkesi ağlatıyor? Kendisi anlattı 😭🧅",
+  "hook": "Soğan kendini savunuyor:",
+  "description": "Soğan dışlanmaktan bıktı ve gerçeği anlatıyor.",
+  "tags": ["soğan", "biber", "bilgi"],
+  "scenes": [
+    {
+      "bg": "cutting_board",
+      "characters": [
+        {"id": "sogan", "pos": "center", "pose": "hips", "emotion": "angry"}
+      ],
+      "lines": [
+        {"char": "sogan", "text": "Herkes soğan kötü diyor. Bir de beni dinleyin!", "emotion": "angry", "pose": "fist", "look_camera": true},
+        {"char": "sogan", "text": "Beni bıçakla kesiyorsunuz, ben de kendimi savunuyorum.", "emotion": "suspicious", "pose": "pointing"},
+        {"char": "sogan", "text": "Kesilince havaya gaz salıyorum. Gözünüze gelince yanıyor.", "emotion": "smug", "pose": "hips",
+         "fact": "Kesilen soğan, gözü yakan uçucu bir kükürt bileşiği salar."},
+        {"char": "sogan", "text": "Bu bir savunma mekanizması. Kendimi koruyorum!", "emotion": "angry", "pose": "fist"},
+        {"char": "sogan", "text": "İpucu: beni buzdolabında soğutursanız daha az ağlarsınız.", "emotion": "happy", "pose": "wave",
+         "fact": "Soğuk soğan daha az gaz salar; kesmeden önce soğutmak işe yarar."},
+        {"char": "sogan", "text": "Ama kimse benimle arkadaş olmuyor. Herkes ağlıyor.", "emotion": "sad", "pose": "standing"},
+        {"char": "sogan", "text": "Ben de katman katman duygusalım aslında...", "emotion": "cry", "pose": "crying", "sfx": "sting"}
+      ]
+    },
+    {
+      "bg": "cutting_board",
+      "card": "Bu sırada...",
+      "characters": [
+        {"id": "biber", "pos": "left", "pose": "arms_crossed", "emotion": "smug"},
+        {"id": "sogan", "pos": "right", "pose": "crying", "emotion": "cry"}
+      ],
+      "lines": [
+        {"char": "biber", "text": "Ağlatmak buysa, gel bir de beni ısır.", "emotion": "smug", "pose": "pointing", "reactions": {"sogan": "shock"}},
+        {"char": "sogan", "text": "Abi sen de ağlatıyorsun ama dil yanıyor!", "emotion": "shock", "pose": "shrug"},
+        {"char": "biber", "text": "Kimse bana süt getirmesin yeter.", "emotion": "nervous", "pose": "standing", "action": "shiver",
+         "fact": "Sütteki kazein proteini, acı biberdeki kapsaisini söndürür."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+name: videos
+on:
+  schedule:
+    # Shorts 3/gün: slotlar 09:00, 14:00, 17:30 UTC (TR 12:00, 17:00, 20:30).
+    # GitHub cron'u geciktiriyor/düşürüyor: saatlik tetiklenir, .github/slot_guard.py sadece
+    # zamanı gelmiş ve yüklenmemiş slot varsa video yapar. cron-job.org ile saatlik tetik önerilir.
+    - cron: "17 8-22 * * *"
+  workflow_dispatch:
+    inputs:
+      no_upload:
+        description: Sadece render, yükleme yapma
+        type: boolean
+        default: false
+      auto:
+        description: Harici zamanlayıcı çağrısı - slot planına uy
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    if: github.event_name == 'schedule' || inputs.auto
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.g.outputs.go }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: g
+        env:
+          LOG_FILE: published.csv
+          SLOTS: "09:00,14:00,17:30"
+          HAS_YT: ${{ secrets.YT_REFRESH_TOKEN != '' }}
+        run: |
+          if [ "$HAS_YT" != "true" ]; then echo "YouTube bağlı değil (auth_setup.py), atlanıyor"; echo "go=0" >> $GITHUB_OUTPUT; exit 0; fi
+          python3 .github/slot_guard.py
+
+  make:
+    needs: guard
+    if: always() && ((github.event_name != 'schedule' && !inputs.auto) || needs.guard.outputs.go == '1')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg libcairo2-dev pkg-config
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/meyve
+          key: meyve-tts-${{ github.run_id }}
+          restore-keys: meyve-tts-
+      - name: Run pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ vars.AZURE_SPEECH_REGION }}
+          TTS_ENGINE: ${{ vars.TTS_ENGINE }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          YT_PRIVACY: ${{ vars.YT_PRIVACY }}
+          MAX_PER_DAY: ${{ vars.MAX_PER_DAY }}
+          SCRIPT_SOURCE: ${{ vars.SCRIPT_SOURCE }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python run.py ${{ inputs.no_upload && '--no-upload' || '' }}
+      - name: Keep video for review
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: video-${{ github.run_id }}
+          path: |
+            output/*/video.mp4
+            output/*/script.json
+            output/*/meta.json
+            output/*/thumb.png
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Commit log
+        if: always()
+        run: |
+          git config user.name "meyve-bot"
+          git config user.email "bot@users.noreply.github.com"
+          for p in history.json published.csv queue; do [ -e "$p" ] && git add "$p" || true; done
+          git diff --cached --quiet && exit 0
+          git commit -m "video: $(date -u +%F-%H%M)"
+          git pull --rebase
+          git push

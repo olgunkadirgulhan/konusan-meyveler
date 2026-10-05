@@ -1,0 +1,33 @@
+{
+  "id": "bank_005_ananas_pizza",
+  "format": "short",
+  "template": "kavga",
+  "topic": "pizzada ananas",
+  "title": "Ananas pizzaya konulunca olanlar 🍍🍕",
+  "hook": "Pizzada ananas olur mu?",
+  "description": "Ananas haklarını savunuyor. Domates ikna olmadı.",
+  "tags": ["ananas", "pizza", "domates"],
+  "scenes": [
+    {
+      "bg": "kitchen",
+      "characters": [
+        {"id": "ananas", "pos": "left", "pose": "hips", "emotion": "smug"},
+        {"id": "domates", "pos": "right", "pose": "arms_crossed", "emotion": "suspicious"}
+      ],
+      "lines": [
+        {"char": "domates", "text": "Pizza benim bölgem. Senin burada ne işin var?", "emotion": "suspicious", "pose": "pointing"},
+        {"char": "ananas", "text": "Bizim adada pizza ananassız olmaz, mon ami.", "emotion": "smug", "pose": "hips"},
+        {"char": "domates", "text": "Senin ada dediğin yer manavın arka rafı.", "emotion": "angry", "pose": "fist"},
+        {"char": "ananas", "text": "Ben iki yılda büyüdüm! Sen üç ayda!", "emotion": "angry", "pose": "pointing",
+         "fact": "Bir ananasın yetişip olgunlaşması yaklaşık 18-24 ay sürer."},
+        {"char": "domates", "text": "Uzun büyümek seni tatlı yapmaz.", "emotion": "smug", "pose": "arms_crossed"},
+        {"char": "ananas", "text": "Beni yiyen beni unutamaz. Ben de onu yerim çünkü.", "emotion": "smug", "pose": "shrug", "reactions": {"domates": "shock"},
+         "fact": "Ananastaki bromelain enzimi proteinleri parçalar; dilin karıncalanması bundandır."},
+        {"char": "domates", "text": "Bu tehdit mi?!", "emotion": "shock", "pose": "shrug", "action": "dramatic_zoom"},
+        {"char": "ananas", "text": "Hayır, bu bilim.", "emotion": "happy", "pose": "wave"},
+        {"char": "domates", "text": "Tamam tamam, pizzaya gel. Ama kenarda dur.", "emotion": "nervous", "pose": "standing"},
+        {"char": "ananas", "text": "Merci! Ben de seni ketçap yapmam o zaman.", "emotion": "excited", "pose": "celebrate", "reactions": {"domates": "shock"}, "sfx": "rimshot"}
+      ]
+    }
+  ]
+}

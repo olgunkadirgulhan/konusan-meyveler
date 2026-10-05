@@ -1,0 +1,34 @@
+{
+  "id": "bank_002_muz_yaslaniyor",
+  "format": "short",
+  "template": "panik",
+  "topic": "yaşlanmak",
+  "title": "Muz ilk kahverengi lekesini görünce... 😱🍌",
+  "hook": "Muz ilk lekesini fark ettiğinde:",
+  "description": "Muz yaşlandığını düşünüyor. Avokado ise fazla dürüst.",
+  "tags": ["muz", "avokado", "komik"],
+  "scenes": [
+    {
+      "bg": "kitchen",
+      "characters": [
+        {"id": "muz", "pos": "left", "pose": "phone", "emotion": "neutral"},
+        {"id": "avokado", "pos": "right", "pose": "arms_crossed", "emotion": "smug"}
+      ],
+      "lines": [
+        {"char": "muz", "text": "Bir dakika... bu kahverengi leke de ne?!", "emotion": "shock", "pose": "phone", "sfx": "sting"},
+        {"char": "avokado", "text": "Tebrikler canım. Yaşlanıyorsun.", "emotion": "smug", "pose": "arms_crossed"},
+        {"char": "muz", "text": "Daha dün yeşildim! Gençliğim nereye gitti?!", "emotion": "cry", "pose": "crying"},
+        {"char": "avokado", "text": "Seni yanımdaki elmalar yaşlandırdı. Etilen gazı salıyorlar.", "emotion": "suspicious", "pose": "pointing",
+         "fact": "Elma etilen gazı salar; yanındaki muzu daha hızlı olgunlaştırır."},
+        {"char": "muz", "text": "Yani beni elmalar mı yaşlandırdı? Dedikoducu elmalar!", "emotion": "angry", "pose": "fist"},
+        {"char": "avokado", "text": "Bak bana. Ben hiç yaşlanmam. Hep mükemmelim.", "emotion": "smug", "pose": "hips"},
+        {"char": "muz", "text": "Sen dün taş gibiydin, bugün lapa oldun.", "emotion": "suspicious", "pose": "pointing", "reactions": {"avokado": "shock"}},
+        {"char": "avokado", "text": "O benim... tasarım tercihim.", "emotion": "nervous", "pose": "shrug"},
+        {"char": "muz", "text": "Neyse. Hâlâ hafif radyoaktifim, havam yeter.", "emotion": "smug", "pose": "hips",
+         "fact": "Muz, potasyum-40 yüzünden çok çok hafif radyoaktiftir (zararsız)."},
+        {"char": "avokado", "text": "Kanka, şu an kek oluyorsun.", "emotion": "neutral", "pose": "standing", "reactions": {"muz": "shock"}},
+        {"char": "muz", "text": "Muzlu kek mi?! Gençliğim gitti, şimdi kariyerim başlıyor!", "emotion": "excited", "pose": "celebrate", "action": "jump"}
+      ]
+    }
+  ]
+}
