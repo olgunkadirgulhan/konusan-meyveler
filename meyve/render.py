@@ -25,9 +25,13 @@ FONT = str(ROOT / 'fonts' / 'LuckiestGuy-Regular.ttf')
 CTA_SECONDS = 2.8   # videonun son kaç saniyesinde 'abone ol & beğen' görünür
 
 FORMATS = {
-    'short': dict(W=1080, H=1920, ground=1420, s=7.6, sub_y=1640, font=80,
+    'short': dict(W=1080, H=1920, ground=1420, s=7.6, sub_y=1640, font=80, top=140,
                   xs={1: [0.5], 2: [0.26, 0.74], 3: [0.18, 0.5, 0.82]}),
+    # haftalık uzun bölüm (yatay)
+    'long': dict(W=1920, H=1080, ground=905, s=6.0, sub_y=985, font=60, top=60,
+                 xs={1: [0.5], 2: [0.33, 0.67], 3: [0.24, 0.5, 0.76]}),
 }
+LIMITS = {'short': 58.5, 'long': 600.0}   # saniye; Shorts 60 sn altında kalmalı
 
 # aksiyon: (süre, [(t, sfx)], darbe anı)
 ACTIONS = {
@@ -203,21 +207,22 @@ class Actor:
 
 class Renderer:
     def __init__(self, sc, scenes, total, seed):
-        self.sc, self.F, self.scenes, self.total = sc, FORMATS['short'], scenes, total
+        self.sc, self.F, self.scenes, self.total = sc, FORMATS[sc.get('format', 'short')], scenes, total
         self.W, self.H = self.F['W'], self.F['H']
         self.rng = random.Random(seed)
         self.bg_cache, self.sub_cache = {}, {}
         self.surf = cairo.ImageSurface(cairo.FORMAT_ARGB32, self.W, self.H)
         self.ctx = cairo.Context(self.surf)
         self.hook = None
-        if sc.get('hook'):
+        if sc.get('hook') and sc.get('format', 'short') == 'short':   # uzun bölümde sabit üst yazı yok
             self.hook = pil_to_surface(text_block(tr_upper(sc['hook']).split(), 70, self.W * 0.82, color=(20, 20, 24),
                                                   stroke_w=0, bg=(255, 255, 255, 245), pad=22))
         # kapanış çağrısı: son saniyelerde üstteki başlık kutusunun yerine geçer (espriyi ve altyazıyı kapatmaz)
-        self.cta = pil_to_surface(text_block(tr_upper('Abone ol & beğen!').split(), 74, self.W * 0.84,
+        fs = self.F['font']
+        self.cta = pil_to_surface(text_block(tr_upper('Abone ol & beğen!').split(), int(fs * 0.92), self.W * 0.84,
                                              color=(255, 255, 255), stroke_w=0, bg=(230, 33, 39, 255), pad=26))
-        self.cta_sub = pil_to_surface(text_block(tr_upper('Yarın yeni meyve kavgası!').split(), 50, self.W * 0.84,
-                                                 color=(255, 236, 120)))
+        self.cta_sub = pil_to_surface(text_block(tr_upper('Yarın yeni meyve kavgası!').split(), int(fs * 0.62),
+                                                 self.W * 0.84, color=(255, 236, 120)))
         self.cta_start = max(0.0, total - CTA_SECONDS)
         for si, S in enumerate(scenes):
             chars = S['characters']
@@ -508,7 +513,7 @@ class Renderer:
         ctx.restore()
 
         # ekran-uzayı katmanları
-        y_top = 140
+        y_top = self.F['top']
         if t >= self.cta_start:
             self.draw_cta(t - self.cta_start, y_top)
             y_top += self.cta.get_height() + self.cta_sub.get_height() + 40
@@ -689,9 +694,10 @@ def card(ctx, W, H, text, k, size, t):
 def render(sc, out_dir, preview_png=None):
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    F = FORMATS['short']
+    fmt = sc.get('format', 'short')
+    F = FORMATS[fmt]
     scenes, total, wav = build_timeline(sc, out_dir)
-    limit = 58.5
+    limit = LIMITS[fmt]
     if total > limit:
         k = min(1.3, total / (limit - 1.5))
         log(f'{total:.1f}s too long, re-voicing at x{k:.2f}')

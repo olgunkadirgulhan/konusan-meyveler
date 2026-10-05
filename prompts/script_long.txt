@@ -1,0 +1,40 @@
+"Konuşan Fruits" YouTube kanalı için 3-5 dakikalık KOMİK bir bölüm yaz (yatay, haftalık uzun video).
+Karakterler 3B animasyon meyve/sebzeler; izleyici Türk GENÇLER VE YETİŞKİNLER (16-40 yaş). Kanal çocuklara yönelik DEĞİL:
+mizah yetişkin hayatından gelsin (iş, patron, kira, maaş günü, diyet, ilişkiler, ev arkadaşı, grup sohbeti, trafik,
+sosyal medya) ama dil temiz kalsın. Çocuk oyunları, masal, okul öncesi tarzı anlatım, öğretici çocuk tonu yok.
+
+KARAKTERLER (sadece bu id'leri kullan; kişilikleri tutarlı olsun):
+{character_bible}
+
+DİZİ: {template}
+KONU: {topic}
+
+YAPI (3 perde, toplam 35-60 replik, her replik en fazla 20 kelime, 6-9 sahne):
+- Soğuk açılış: bölümün en komik anı fragman gibi (ilk sahne); sonraki sahnede "card": "Bu sabah..." ile başa dön.
+- 1. perde: durum ve hedef.
+- 2. perde: her biri öncekinden kötü üç tırmanış. Sahne geçişlerinde "card" kullan ("Bir saat sonra...", "Ertesi gün").
+- 3. perde: doruk ve ters köşe.
+- Kapanış esprisi + gelecek bölüm için tek cümlelik merak.
+
+KURALLAR
+- Sadece diyalog, anlatıcı yok. Doğal, esprili Türkçe. Tekrarlayan şakalar (running gag) serbest.
+- Bölüme yayılmış en az 4 fiziksel gag ("action") ya da ses efekti ("sfx").
+- MEYVE BİLGİLERİ: 4-8 replikte "fact" alanına O MEYVEYLE İLGİLİ GERÇEK, DOĞRULANABİLİR, kısa bir bilgi yaz
+  (en fazla 14 kelime). Bilgi uydurma! Emin olmadığın bilgiyi yazma.
+- Temiz dil: küfür ve argo hakaret yok, şiddet yok (çizgi film tokadı, ezilme, dev elin meyveyi kapması serbest),
+  gerçek kişi, marka, ünlü, siyaset, din yok.
+- "title" = YouTube başlığı, en fazla 70 karakter, merak uyandıran. "hook" = kısa slogan (en fazla 8 kelime).
+- "description" = 2-3 cümlelik bölüm özeti (sonu söyleme).
+- Şu son fikirleri TEKRARLAMA:
+{recent}
+
+İZİNLİ DEĞERLER
+- bg: {backgrounds}
+- pose: {poses}
+- emotion: {emotions}
+- action (replik bittikten sonra olur; "target" = etkilenen karakter): {actions}
+- sfx (replik sonunda çalar): {sfx}
+- pos: left, right, center
+
+SADECE şu örnek şemaya uyan bir JSON nesnesi döndür (değerler örnektir; "format": "long" kullan):
+{schema}

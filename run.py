@@ -1,9 +1,10 @@
-"""Konuşan Meyveler pipeline (Dex and Friends'ten uyarlandı). Bir çalıştırma = bir Shorts.
+"""Konuşan Meyveler pipeline (Dex and Friends'ten uyarlandı). Bir çalıştırma = bir Shorts ya da bir uzun bölüm.
 
     senaryo (Gemini yazar + hakem, yoksa bank/) -> ses + animasyon render -> YouTube'a yükle -> kaydet -> Telegram
 
 Kullanım
   python run.py                    # 1 Shorts
+  python run.py --format long      # 1 haftalık uzun bölüm (yatay, 3-5 dk, Gemini gerekir)
   python run.py --no-upload        # sadece render (output/<id>/video.mp4)
   python run.py --script bank/001_domates_kimlik.json --no-upload
 
@@ -87,14 +88,17 @@ def metadata(sc):
     facts = [L['fact'] for S in sc['scenes'] for L in S['lines'] if L.get('fact')]
     by_template = {'anlatiyor': '#bilgi', 'kavga': '#kavga', 'kimlik_krizi': '#bunubiliyormuydunuz',
                    'buzdolabi': '#buzdolabı', 'ters_kose': '#terskose', 'tipler': '#tipler'}
-    hashtags = f"#shorts #konuşanmeyveler #meyveler #komik #animasyon {by_template.get(sc.get('template'), '#mizah')}"
+    short = sc.get('format', 'short') == 'short'
+    hashtags = ('#shorts ' if short else '') + \
+        f"#konuşanmeyveler #meyveler #komik #animasyon {by_template.get(sc.get('template'), '#mizah')}"
     desc = sc.get('description', '')
     if facts:
         desc += '\n\n🍓 Bu videodaki gerçek bilgiler:\n' + '\n'.join(f'• {f}' for f in facts)
     desc += (f"\n\nOyuncular: {', '.join(names)}\n"
-             'Her gün yeni konuşan meyve videosu! Abone ol, sıradaki kim kızacak kaçırma 🍋\n\n' + hashtags)
+             + ('Her gün yeni konuşan meyve videosu! Abone ol, sıradaki kim kızacak kaçırma 🍋\n\n' if short else
+                'Her hafta yeni bölüm, her gün yeni Shorts! Abone ol, bildirimleri aç 🔔🍋\n\n') + hashtags)
     seen, uniq = set(), []
-    for t in tags:
+    for t in tags if short else [t for t in tags if t != 'shorts']:
         if t.lower() not in seen and sum(len(x) for x in uniq) + len(t) < 450:
             seen.add(t.lower()); uniq.append(t)
     return sc['title'][:100], desc, uniq
@@ -124,7 +128,7 @@ def enqueue(sc, error, qpath=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--format', choices=['short'], default='short')
+    ap.add_argument('--format', choices=['short', 'long'], default='short')
     ap.add_argument('--no-upload', action='store_true')
     ap.add_argument('--script', help='belirli bir senaryo JSON dosyası')
     args = ap.parse_args()
@@ -185,7 +189,12 @@ def main():
     record(sc, vid, mode)
     if qpath:
         qpath.unlink(missing_ok=True)
-    url = f'https://youtube.com/shorts/{vid}'
+    url = f'https://youtube.com/shorts/{vid}' if fmt == 'short' else f'https://youtu.be/{vid}'
+    if fmt == 'long' and (out / 'thumb.png').exists():   # uzun videoda kapak görseli tıklanmada belirleyici
+        try:
+            upload.set_thumbnail(vid, out / 'thumb.png'); log('thumbnail set')
+        except Exception as e:
+            log(f'thumbnail skipped (kanal telefonla doğrulanmamış olabilir): {str(e)[:160]}')
     log(f'uploaded {url} ({mode})')
     pls = json.loads((HERE / 'playlists.json').read_text(encoding='utf-8')) if (HERE / 'playlists.json').exists() else {}
     if sc.get('template') in pls:

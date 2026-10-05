@@ -33,6 +33,15 @@ SHORT_TEMPLATES = {
     'tipler': 'Tipler: "Mutfaktaki X tipleri" -> 3-4 hızlı sahne, her sahne bir tip (sahne "label" ile, ör. "Gösterişçi"), '
               'sonuncusu en absürt.',
 }
+# Haftalık uzun bölüm dizileri (yatay, 3-5 dk)
+LONG_SERIES = {
+    'mutfak_mahkemesi': 'Mutfak Mahkemesi: bir meyve diğerini mahkemeye verir; hâkim, avukatlar, tanıklar ve '
+                        'delil olarak gerçek meyve bilgileri; karar ters köşe.',
+    'tezgah_ofisi': 'Tezgâh Ofisi: meyveler bir ofiste çalışıyormuş gibi; patron, toplantı, terfi kavgası, '
+                    'iş yeri dedikodusu; yetişkin iş hayatı parodisi.',
+    'buzdolabi_apartmani': 'Buzdolabı Apartmanı: her raf bir daire; komşu kavgaları, aidat, yönetici seçimi, '
+                           'kapı açılınca herkes donup kalır.',
+}
 TOPICS = ['meyve mi sebze mi', 'yaşlanmak / kararmak', 'buzdolabında gece', 'pazarda seçilmemek', 'blender korkusu',
           'meyve salatası seçmeleri', 'kahvaltı sofrası', 'diyet yapan insan', 'pahalı olmak', 'ekşi olmak',
           'su oranı yarışması', 'yaz geldi', 'kış meyvesi olmak', 'reçel olmak', 'turşu tehlikesi', 'sosyal medya',
@@ -93,7 +102,7 @@ def parse_json(text):
 def normalize(sc, fmt):
     """Bilinmeyen değerleri güvenli varsayılana çek; ciddi sorunları liste olarak döndür."""
     problems = []
-    max_words = 15
+    max_words = 15 if fmt == 'short' else 22
     sc['format'] = fmt
     if not sc.get('scenes'):
         return ['no scenes']
@@ -143,13 +152,15 @@ def normalize(sc, fmt):
         if not S['characters']:
             problems.append('scene without characters')
     sc['scenes'] = [S for S in sc['scenes'] if S['lines']]
-    lo, hi = 7, 14
+    lo, hi = (7, 14) if fmt == 'short' else (32, 65)
     if not lo <= n_lines <= hi:
         problems.append(f'{n_lines} spoken lines (want {lo}-{hi})')
     if sc.get('template') in ('anlatiyor', 'kavga', 'kimlik_krizi') and n_facts < 1:
         problems.append('no "fact" (real fruit info) in any line')
     if not has_gag:
         problems.append('no physical gag / sound effect')
+    if fmt == 'long' and n_facts < 3:
+        problems.append(f'only {n_facts} "fact" lines (want 4-8)')
     for k in ('title', 'hook'):
         if not sc.get(k):
             problems.append(f'missing {k}')
@@ -164,8 +175,12 @@ def load_hist(path):
 
 def pick(hist, fmt, rnd):
     recent = [r for r in hist['recent'] if r.get('format', 'short') == fmt]
-    last = [r['template'] for r in recent[-2:]]
-    template = rnd.choice([k for k in SHORT_TEMPLATES if k not in last])
+    if fmt == 'long':                                   # diziler sırayla döner
+        order = list(LONG_SERIES)
+        template = order[len(recent) % len(order)]
+    else:
+        last = [r['template'] for r in recent[-2:]]
+        template = rnd.choice([k for k in SHORT_TEMPLATES if k not in last])
     used = {r.get('topic') for r in hist['recent'][-14:]}
     topic = rnd.choice([t for t in TOPICS if t not in used] or TOPICS)
     return template, topic
@@ -176,11 +191,11 @@ def schema_text():
 
 
 def write_with_gemini(fmt, template, topic, hist):
-    base = (PROMPTS / 'script_short.txt').read_text(encoding='utf-8')
+    base = (PROMPTS / ('script_short.txt' if fmt == 'short' else 'script_long.txt')).read_text(encoding='utf-8')
     recent_titles = '\n'.join('- ' + r.get('title', '') for r in hist['recent'][-15:])
     prompt = base.format(
         character_bible=bible(),
-        template=SHORT_TEMPLATES[template],
+        template=(SHORT_TEMPLATES if fmt == 'short' else LONG_SERIES)[template],
         topic=topic,
         schema=schema_text(),
         backgrounds=', '.join(backgrounds.NAMES),
@@ -190,18 +205,19 @@ def write_with_gemini(fmt, template, topic, hist):
     ex = sorted(BANK.glob('*.json'))
     random.shuffle(ex)
     shots = []
-    for p in ex[:2]:
+    for p in ex[:2 if fmt == 'short' else 0]:      # bank'ta sadece Shorts var; uzun bölüme örnek verilmez
         e = json.loads(p.read_text(encoding='utf-8'))
         shots.append('\n'.join(f"{L['char']}: {L['text']}" + (f"  [fact: {L['fact']}]" if L.get('fact') else '')
                                + (f"  [action: {L['action']}]" if L.get('action') else '')
                                for S in e['scenes'] for L in S['lines']))
-    prompt += ('\n\nİstediğimiz tempo, uzunluk ve espri yoğunluğuna ÖRNEKLER. Her replik ya espri ya hazırlık; '
-               'son replik her şeyi ters çevirir. Bu esprileri ve konuları KOPYALAMA:\n\n' + '\n\n---\n\n'.join(shots))
+    if shots:
+        prompt += ('\n\nİstediğimiz tempo, uzunluk ve espri yoğunluğuna ÖRNEKLER. Her replik ya espri ya hazırlık; '
+                   'son replik her şeyi ters çevirir. Bu esprileri ve konuları KOPYALAMA:\n\n' + '\n\n---\n\n'.join(shots))
     judge_tpl = (PROMPTS / 'judge.txt').read_text(encoding='utf-8')
     best, best_score, feedback = None, -1, ''
     for attempt in range(4):
         try:
-            sc = parse_json(gemini(prompt + feedback))
+            sc = parse_json(gemini(prompt + feedback, timeout=120 if fmt == 'short' else 300))
         except Exception as e:
             log(f'write attempt {attempt + 1} failed: {str(e)[:200]}'); continue
         problems = normalize(sc, fmt)

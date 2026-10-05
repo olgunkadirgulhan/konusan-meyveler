@@ -11,6 +11,11 @@ on:
         description: Sadece render, yükleme yapma
         type: boolean
         default: false
+      format:
+        description: short = Shorts, long = haftalık uzun bölüm (yatay)
+        type: choice
+        options: [short, long]
+        default: short
       auto:
         description: Harici zamanlayıcı çağrısı - slot planına uy
         type: boolean
@@ -29,12 +34,15 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       go: ${{ steps.g.outputs.go }}
+      mode: ${{ steps.g.outputs.mode }}
     steps:
       - uses: actions/checkout@v5
       - id: g
         env:
           LOG_FILE: published.csv
           SLOTS: "09:00,14:00,17:30"
+          # haftalık uzun bölüm: Cumartesi 16:00 UTC (TR 19:00)
+          LONG: "sat 16:00 long"
           HAS_YT: ${{ secrets.YT_REFRESH_TOKEN != '' }}
         run: |
           if [ "$HAS_YT" != "true" ]; then echo "YouTube bağlı değil (auth_setup.py), atlanıyor"; echo "go=0" >> $GITHUB_OUTPUT; exit 0; fi
@@ -44,7 +52,7 @@ jobs:
     needs: guard
     if: always() && ((github.event_name != 'schedule' && !inputs.auto) || needs.guard.outputs.go == '1')
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     env:
       PYTHONUTF8: "1"
     steps:
@@ -75,7 +83,7 @@ jobs:
           SCRIPT_SOURCE: ${{ vars.SCRIPT_SOURCE }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python run.py ${{ inputs.no_upload && '--no-upload' || '' }}
+        run: python run.py --format ${{ needs.guard.outputs.mode || inputs.format || 'short' }} ${{ inputs.no_upload && '--no-upload' || '' }}
       - name: Keep video for review
         if: always()
         uses: actions/upload-artifact@v5

@@ -51,6 +51,9 @@ PLAYLISTS = {
     'buzdolabi': ('Buzdolabı Dramaları 🧊', 'Kapı kapanınca buzdolabında neler oluyor?'),
     'ters_kose': ('Ters Köşe 💀', 'Normal bir sohbet... son 3 saniyeye kadar.'),
     'tipler': ('Mutfaktaki Tipler', 'Her mutfakta bu tipler var.'),
+    'mutfak_mahkemesi': ('Mutfak Mahkemesi ⚖️', 'Uzun bölümler: meyveler mahkemede, deliller gerçek bilgiler.'),
+    'tezgah_ofisi': ('Tezgâh Ofisi 💼', 'Uzun bölümler: patron, toplantı, terfi kavgası... meyve versiyonu.'),
+    'buzdolabi_apartmani': ('Buzdolabı Apartmanı 🏢', 'Uzun bölümler: her raf bir daire, her kat bir dram.'),
 }
 SECTIONS = ['kavga', 'ters_kose', 'kimlik_krizi', 'buzdolabi', 'anlatiyor', 'tipler']
 
