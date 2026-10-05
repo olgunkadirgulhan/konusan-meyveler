@@ -22,6 +22,7 @@ from .render_util import rrect
 FPS = 30
 ROOT = Path(__file__).resolve().parent.parent
 FONT = str(ROOT / 'fonts' / 'LuckiestGuy-Regular.ttf')
+CTA_SECONDS = 2.8   # videonun son kaç saniyesinde 'abone ol & beğen' görünür
 
 FORMATS = {
     'short': dict(W=1080, H=1920, ground=1420, s=7.6, sub_y=1640, font=80,
@@ -212,6 +213,12 @@ class Renderer:
         if sc.get('hook'):
             self.hook = pil_to_surface(text_block(tr_upper(sc['hook']).split(), 70, self.W * 0.82, color=(20, 20, 24),
                                                   stroke_w=0, bg=(255, 255, 255, 245), pad=22))
+        # kapanış çağrısı: son saniyelerde üstteki başlık kutusunun yerine geçer (espriyi ve altyazıyı kapatmaz)
+        self.cta = pil_to_surface(text_block(tr_upper('Abone ol & beğen!').split(), 74, self.W * 0.84,
+                                             color=(255, 255, 255), stroke_w=0, bg=(230, 33, 39, 255), pad=26))
+        self.cta_sub = pil_to_surface(text_block(tr_upper('Yarın yeni meyve kavgası!').split(), 50, self.W * 0.84,
+                                                 color=(255, 236, 120)))
+        self.cta_start = max(0.0, total - CTA_SECONDS)
         for si, S in enumerate(scenes):
             chars = S['characters']
             xs = self.F['xs'][min(3, len(chars))]
@@ -502,7 +509,10 @@ class Renderer:
 
         # ekran-uzayı katmanları
         y_top = 140
-        if self.hook is not None:
+        if t >= self.cta_start:
+            self.draw_cta(t - self.cta_start, y_top)
+            y_top += self.cta.get_height() + self.cta_sub.get_height() + 40
+        elif self.hook is not None:
             ctx.set_source_surface(self.hook, (W - self.hook.get_width()) / 2, y_top)
             ctx.paint()
             y_top += self.hook.get_height() + 24
@@ -537,6 +547,19 @@ class Renderer:
             ctx.paint()
         self.surf.flush()
         return L
+
+    def draw_cta(self, k, y):
+        ctx, W = self.ctx, self.W
+        pop = 0.6 + 0.4 * ease(k / 0.3) + 0.04 * math.sin(k * 9)      # zıplayarak gelir, hafif nabız atar
+        ctx.save()
+        ctx.translate(W / 2, y + self.cta.get_height() / 2)
+        ctx.rotate(-0.02)
+        ctx.scale(pop, pop)
+        ctx.set_source_surface(self.cta, -self.cta.get_width() / 2, -self.cta.get_height() / 2)
+        ctx.paint_with_alpha(min(1.0, k / 0.15))
+        ctx.restore()
+        ctx.set_source_surface(self.cta_sub, (W - self.cta_sub.get_width()) / 2, y + self.cta.get_height() + 22)
+        ctx.paint_with_alpha(min(1.0, max(0.0, (k - 0.3) / 0.3)))
 
     def fact_card(self, L, t, y):
         key = ('fact', id(L))
