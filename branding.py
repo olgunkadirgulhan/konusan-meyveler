@@ -56,8 +56,9 @@ def banner():
             ('avokado', 2370, -1, 'shock', 'shrug', 'o')]
     for cid, x, f, emo, pose, mouth in cast:
         character(ctx, cid, x, ground, s, f, emo, pose, mouth)
-    paste_text(ctx, 'Konuşan Fruits', 190, W / 2, 630, 1300, color=(255, 236, 80))
-    paste_text(ctx, 'Her gün yeni meyve kavgası', 62, W / 2, 805, 1300)
+    # masaüstü kırpması ~y 508-931; başlık tek satır, alt yazı ayrı
+    paste_text(ctx, 'Konuşan Fruits', 165, W / 2, 640, 2000, color=(255, 236, 80))
+    paste_text(ctx, 'Her gün yeni meyve kavgası', 60, W / 2, 790, 1300)
     surf.write_to_png(str(OUT / 'banner.png'))
 
 
@@ -65,9 +66,9 @@ def head_shot(cid, size, bg1, bg2, emotion='happy', ring=True):
     surf = cairo.ImageSurface(cairo.FORMAT_ARGB32, size, size)
     ctx = cairo.Context(surf)
     rays(ctx, size, size, size / 2, size / 2, bg1, bg2, 16)
-    s = size / 78
+    s = size / 100
     face_y, _ = fruit.body_top(cid, 0, s)            # yüzün zemine göre yüksekliği (negatif)
-    character(ctx, cid, size / 2, size * 0.52 - face_y, s, 1, emotion, 'standing', 'ai', look=(0.2, 0))
+    character(ctx, cid, size / 2, size * 0.5 - face_y, s, 1, emotion, 'standing', 'ai', look=(0.2, 0))
     if ring:
         ctx.arc(size / 2, size / 2, size / 2 - size * 0.02, 0, 2 * math.pi)
         ctx.set_source_rgb(0.12, 0.1, 0.08); ctx.set_line_width(size * 0.035); ctx.stroke()
