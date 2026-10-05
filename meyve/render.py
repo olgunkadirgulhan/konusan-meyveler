@@ -221,7 +221,8 @@ class Renderer:
         fs = self.F['font']
         self.cta = pil_to_surface(text_block(tr_upper('Abone ol & beğen!').split(), int(fs * 0.92), self.W * 0.84,
                                              color=(255, 255, 255), stroke_w=0, bg=(230, 33, 39, 255), pad=26))
-        self.cta_sub = pil_to_surface(text_block(tr_upper('Yarın yeni meyve kavgası!').split(), int(fs * 0.62),
+        sub = 'Yarın yeni meyve kavgası!' if sc.get('format', 'short') == 'short' else 'Her hafta yeni bölüm!'
+        self.cta_sub = pil_to_surface(text_block(tr_upper(sub).split(), int(fs * 0.62),
                                                  self.W * 0.84, color=(255, 236, 120)))
         self.cta_start = max(0.0, total - CTA_SECONDS)
         for si, S in enumerate(scenes):
