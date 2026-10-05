@@ -15,7 +15,7 @@ import numpy as np
 import soundfile as sf
 from PIL import Image, ImageDraw, ImageFont
 
-from . import audio, backgrounds, fruit, voice
+from . import audio, backgrounds, fruit, lang, voice
 from .cast import CAST, SFX
 from .render_util import rrect
 
@@ -55,7 +55,7 @@ def log(m):
 
 
 def tr_upper(s):
-    return s.replace('i', 'İ').replace('ı', 'I').upper()
+    return lang.upper(s)
 
 
 # ------------------------------------------------------------------ yazı yardımcıları
@@ -219,9 +219,9 @@ class Renderer:
                                                   stroke_w=0, bg=(255, 255, 255, 245), pad=22))
         # kapanış çağrısı: son saniyelerde üstteki başlık kutusunun yerine geçer (espriyi ve altyazıyı kapatmaz)
         fs = self.F['font']
-        self.cta = pil_to_surface(text_block(tr_upper('Abone ol & beğen!').split(), int(fs * 0.92), self.W * 0.84,
+        self.cta = pil_to_surface(text_block(tr_upper(lang.S['cta']).split(), int(fs * 0.92), self.W * 0.84,
                                              color=(255, 255, 255), stroke_w=0, bg=(230, 33, 39, 255), pad=26))
-        sub = 'Yarın yeni meyve kavgası!' if sc.get('format', 'short') == 'short' else 'Her hafta yeni bölüm!'
+        sub = lang.S['cta_short'] if sc.get('format', 'short') == 'short' else lang.S['cta_long']
         self.cta_sub = pil_to_surface(text_block(tr_upper(sub).split(), int(fs * 0.62),
                                                  self.W * 0.84, color=(255, 236, 120)))
         self.cta_start = max(0.0, total - CTA_SECONDS)
@@ -570,7 +570,7 @@ class Renderer:
     def fact_card(self, L, t, y):
         key = ('fact', id(L))
         if key not in self.sub_cache:
-            img = text_block(['BİLGİ:'] + tr_upper(L['fact']).split(), 46, self.W * 0.74, hi=0,
+            img = text_block([lang.S['fact_label']] + tr_upper(L['fact']).split(), 46, self.W * 0.74, hi=0,
                              hi_color=(230, 60, 40), color=(30, 30, 35), stroke_w=0, bg=(255, 236, 120, 250), pad=18)
             self.sub_cache[key] = pil_to_surface(img)
         surf = self.sub_cache[key]

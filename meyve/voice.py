@@ -17,6 +17,7 @@ import numpy as np
 import soundfile as sf
 
 from .cast import CAST
+from .lang import S as LS
 
 SR = 48000
 CACHE = Path(os.environ.get('MEYVE_CACHE', Path.home() / '.cache' / 'meyve'))
@@ -34,7 +35,7 @@ def log(m):
 
 def spoken(text):
     t = re.sub(r'[\U00010000-\U0010ffff☀-⟿]', '', text)   # emoji
-    t = t.replace('&', ' ve ').replace('%', ' yüzde ')
+    t = t.replace('&', LS['amp']).replace('%', LS['pct'])
     t = re.sub(r'\*+', '', t)
     return re.sub(r'\s+', ' ', t).strip()
 
@@ -62,8 +63,8 @@ def _azure(cid, text, rate, pitch, raw):
     esc = text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
     body = f"<prosody rate='{rate}' pitch='{pitch}'>{esc}</prosody>"
     if 'Multilingual' in voice:
-        body = f"<lang xml:lang='tr-TR'>{body}</lang>"
-    ssml = (f"<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='tr-TR'>"
+        body = f"<lang xml:lang='{LS['tts_lang']}'>{body}</lang>"
+    ssml = (f"<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='{LS['tts_lang']}'>"
             f"<voice name='{voice}'>{body}</voice></speak>")
     r = requests.post(f'https://{region}.tts.speech.microsoft.com/cognitiveservices/v1', data=ssml.encode('utf-8'),
                       timeout=30, headers={'Ocp-Apim-Subscription-Key': os.environ['AZURE_SPEECH_KEY'],

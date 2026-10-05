@@ -88,6 +88,49 @@ CAST = {
     },
 }
 
+# ABD kanalı (CONTENT_LANG=en): isim, ses ve kişilik İngilizce; görünüş aynı.
+# Sesler en-US (ananas Avustralya, avokado İngiliz aksanı); perde Türkçe kanaldan daha az yukarıda (yetişkin kitle).
+CAST_EN = {
+    'limon': dict(name='Lemon', voice='en-US-AriaNeural', pitch='+18Hz', rate='+6%', piper=('en_US-amy-medium', 1.1),
+                  bible='Lemon (yellow, sour face): queen of shade and sarcasm, roasts everyone, secretly very '
+                        'emotional; hates being called "sour".'),
+    'domates': dict(name='Tomato', voice='en-US-GuyNeural', pitch='+14Hz', rate='+6%', piper=('en_US-ryan-medium', 1.05),
+                    bible='Tomato (red, green leaf on top): permanent identity crisis, technically a fruit and will '
+                          'tell you every five seconds; dramatic, loves a speech.'),
+    'muz': dict(name='Banana', voice='en-US-DavisNeural', pitch='+6Hz', rate='-4%', piper=('en_US-ryan-medium', 0.97),
+                bible='Banana (yellow, curved): ultra laid-back, zero urgency about anything, brings up '
+                      'potassium constantly, panics about getting brown spots (aging).'),
+    'karpuz': dict(name='Watermelon', voice='en-US-TonyNeural', pitch='+0Hz', rate='-6%', piper=('en_US-ryan-medium', 0.88),
+                   bible='Watermelon (big, striped): summer king, gym-bro confidence, insists he is 92% water and '
+                         '100% vibes; big ego, bigger heart.'),
+    'cilek': dict(name='Strawberry', voice='en-US-JennyNeural', pitch='+22Hz', rate='+8%', piper=('en_US-amy-medium', 1.15),
+                  bible='Strawberry (red, seeds outside): influencer energy, everything is "aesthetic", obsessed with '
+                        'her image; seeds on the outside and she will not stop talking about it.'),
+    'sogan': dict(name='Onion', voice='en-US-ChristopherNeural', pitch='+4Hz', rate='+0%', piper=('en_US-ryan-medium', 0.95),
+                  bible='Onion (brown, layered): therapist energy, "I have layers", makes everyone cry and apologizes '
+                        'for it; deep, over-shares.'),
+    'ananas': dict(name='Pineapple', voice='en-AU-WilliamNeural', pitch='+6Hz', rate='+4%', piper=('en_US-ryan-medium', 1.0),
+                   bible='Pineapple (spiky crown, Australian accent): beach-bum surfer, everything is "no worries, '
+                         'mate", takes forever to ripen and is proud of it; hates pizza debates.'),
+    'avokado': dict(name='Avocado', voice='en-GB-RyanNeural', pitch='+4Hz', rate='+2%', piper=('en_US-ryan-medium', 0.98),
+                    bible='Avocado (green, posh British accent): bougie, reminds everyone how expensive he is, '
+                          'brunch snob, terrified of turning brown too fast.'),
+    'portakal': dict(name='Orange', voice='en-US-JasonNeural', pitch='+12Hz', rate='+8%', piper=('en_US-ryan-medium', 1.04),
+                     bible='Orange (round, orange): hype man and fitness coach, all caps energy, thinks he is the '
+                           'vitamin C champion (he is not).'),
+    'biber': dict(name='Chili', voice='en-US-AndrewNeural', pitch='+16Hz', rate='+12%', piper=('en_US-ryan-medium', 1.08),
+                  bible='Chili Pepper (small, red): short fuse, spicy comebacks, starts fights, actually has more '
+                        'vitamin C than Orange and never lets him forget it.'),
+    'salatalik': dict(name='Cucumber', voice='en-US-BrianNeural', pitch='+4Hz', rate='-6%', piper=('en_US-ryan-medium', 0.96),
+                      bible='Cucumber (long, green, bumpy): "cool as a cucumber" and makes it his whole personality, '
+                            'about 95% water, hates being put on eyes at the spa.'),
+}
+
+from .lang import TR as _TR  # noqa: E402
+if not _TR:
+    for _k, _v in CAST_EN.items():
+        CAST[_k].update(_v)
+
 EMOTIONS = ['neutral', 'happy', 'angry', 'shock', 'cry', 'nervous', 'sad', 'smug', 'confused', 'excited', 'suspicious']
 POSES = ['standing', 'hips', 'arms_crossed', 'pointing', 'shrug', 'celebrate', 'facepalm', 'thinking', 'phone', 'fist',
          'crying', 'wave']

@@ -12,10 +12,11 @@ import requests
 
 from . import backgrounds
 from .cast import ACTIONS, CAST, EMOTIONS, POSES, SFX, bible
+from .lang import LANG, TR
 
 ROOT = Path(__file__).resolve().parent.parent
-PROMPTS = ROOT / 'prompts'
-BANK = ROOT / 'bank'
+PROMPTS = ROOT / 'prompts' if TR else ROOT / 'prompts' / LANG
+BANK = ROOT / 'bank' if TR else ROOT / 'bank' / LANG     # hazır senaryolar dile özel (en: henüz yok)
 # flash modelleri aynı kapasite havuzunda, çoğu zaman birlikte 503 veriyor; lite ve gemma genelde yanıt verir
 MODELS = ('gemini-3.8-flash,gemini-3.5-flash,gemini-flash-latest,gemini-3.7-flash,gemini-3-flash-preview,'
           'gemini-flash-lite-latest,gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemma-4-26b-a4b-it,gemma-4-31b-it')
@@ -53,6 +54,53 @@ TOPICS = ['meyve mi sebze mi', 'yaşlanmak / kararmak', 'buzdolabında gece', 'p
           'bayram ziyareti', 'kayınvalide geliyor', 'yeni yıl kararları']
 BANNED = re.compile(r'\b(öl|öldür|kan|seks|içki|bira|şarap|uyuşturucu|aptal|salak|gerizekalı|lanet|siktir|kahretsin|'
                     r'kill|dead|blood|sex|drunk|beer|wine|drug)\b', re.I)
+
+# ---------------------------------------------------------------- ABD kanalı (CONTENT_LANG=en)
+# Türkçe kanalın çevirisi DEĞİL: Amerikan izleyiciye özel şablon, konu ve diziler (özgün içerik).
+SHORT_TEMPLATES_EN = {
+    'pov': 'POV: the hook starts with "POV:" and drops the viewer into a relatable American everyday moment; the '
+           'fruits react to "you" and it escalates every line; last line flips it.',
+    'types_of': 'Types of...: "Types of fruit at the X" -> 3-4 fast scenes, each a type (scene "label", e.g. '
+                '"The Influencer"), the last one the most absurd.',
+    'roast': 'Roast battle: two fruits roast each other with REAL facts about themselves (fact), the burns get '
+             'harder, the last line is a twist burn from a third fruit.',
+    'confessional': 'Reality-show confessional: fruits talk to the camera (look_camera) about drama in the fruit '
+                    'bowl, cutting between them like a reality TV show; the last confessional reveals the twist.',
+    'fridge_after_dark': 'Fridge after dark: what the fruits do when the fridge door closes; when the human opens '
+                         'it everyone freezes; at the end a giant hand ("grabbed") takes the least expected one.',
+    'plot_twist': 'Plot twist: a totally normal conversation that ends in the last 3 seconds with a twist '
+                  '(smoothie, blender, fruit salad, giant hand).',
+}
+TOPICS_EN = ['Monday morning meeting', 'rent is due', 'group chat drama', 'the office potluck', 'meal prep Sunday',
+             'gym bros', 'brunch with the girls', 'first date', 'roommate rules', 'the self-checkout machine',
+             'tipping screens', 'road trip', 'Thanksgiving dinner with family', 'Fourth of July barbecue',
+             'Halloween costume party', 'pumpkin spice season', 'Black Friday shopping', 'New Year resolutions',
+             'smoothie bowl influencers', 'keto diet', 'farmers market', 'job interview', 'performance review',
+             'working from home', 'the HOA meeting', 'a wedding toast', 'college dorm life', 'tax season',
+             'the dentist appointment', 'the weather app lying', 'airport security', 'the neighbor who borrows things',
+             'the fruit bowl seating chart', 'organic vs regular price tag', 'picnic in the park', 'the big game party']
+LONG_SERIES_EN = {
+    'fruit_court': 'Fruit Court: a daytime-TV-style courtroom show; one fruit sues another, judge, lawyers, '
+                   'witnesses, real fruit facts as evidence; the verdict is a twist.',
+    'fridge_office': 'The Fridge Office: a mockumentary about a small office inside a fridge; boss, meetings, '
+                     'promotion rivalry and talking-head confessionals to the camera.',
+    'fruit_villa': 'Fruit Villa: a reality dating show parody in a summer villa; couples, challenges, '
+                   'dramatic recouplings, a host who loves a dramatic pause; keep it clean.',
+}
+BANNED_EN = re.compile(r'\b(kill|dead|die|blood|sex|sexy|drunk|beer|wine|vodka|drugs?|weed|damn|hell|stupid|idiot|'
+                       r'shut up|crap|wtf)\b', re.I)
+if not TR:
+    SHORT_TEMPLATES, TOPICS, LONG_SERIES, BANNED = SHORT_TEMPLATES_EN, TOPICS_EN, LONG_SERIES_EN, BANNED_EN
+FACT_TEMPLATES = ('anlatiyor', 'kavga', 'kimlik_krizi', 'roast')
+MSG = {'tr': dict(examples='\n\nİstediğimiz tempo, uzunluk ve espri yoğunluğuna ÖRNEKLER. Her replik ya espri ya hazırlık; '
+                           'son replik her şeyi ters çevirir. Bu esprileri ve konuları KOPYALAMA:\n\n',
+                  rejected='\n\nÖnceki senaryon şu sebeplerle reddedildi: {p}. Bunları düzelt.',
+                  judged="\n\nBir komedi editörü son senaryona {score}/10 verdi. En zayıf kısım: {weak}. "
+                         "Düzeltme: {fix}. YENİ ve daha komik bir senaryo yaz."),
+       'en': dict(examples='\n\nEXAMPLES of the pacing and joke density we want. Do NOT copy these jokes or topics:\n\n',
+                  rejected='\n\nYour previous script was rejected for: {p}. Fix these.',
+                  judged="\n\nA comedy editor rated your last script {score}/10. Weakest part: {weak}. "
+                         "Fix: {fix}. Write a NEW, funnier script.")}[LANG]
 
 
 def log(m):
@@ -155,7 +203,7 @@ def normalize(sc, fmt):
     lo, hi = (7, 14) if fmt == 'short' else (32, 65)
     if not lo <= n_lines <= hi:
         problems.append(f'{n_lines} spoken lines (want {lo}-{hi})')
-    if sc.get('template') in ('anlatiyor', 'kavga', 'kimlik_krizi') and n_facts < 1:
+    if sc.get('template') in FACT_TEMPLATES and n_facts < 1:
         problems.append('no "fact" (real fruit info) in any line')
     if not has_gag:
         problems.append('no physical gag / sound effect')
@@ -211,8 +259,7 @@ def write_with_gemini(fmt, template, topic, hist):
                                + (f"  [action: {L['action']}]" if L.get('action') else '')
                                for S in e['scenes'] for L in S['lines']))
     if shots:
-        prompt += ('\n\nİstediğimiz tempo, uzunluk ve espri yoğunluğuna ÖRNEKLER. Her replik ya espri ya hazırlık; '
-                   'son replik her şeyi ters çevirir. Bu esprileri ve konuları KOPYALAMA:\n\n' + '\n\n---\n\n'.join(shots))
+        prompt += MSG['examples'] + '\n\n---\n\n'.join(shots)
     judge_tpl = (PROMPTS / 'judge.txt').read_text(encoding='utf-8')
     best, best_score, feedback = None, -1, ''
     for attempt in range(4):
@@ -223,7 +270,7 @@ def write_with_gemini(fmt, template, topic, hist):
         problems = normalize(sc, fmt)
         if problems:
             log(f'attempt {attempt + 1} rejected: {problems[:3]}')
-            feedback = '\n\nÖnceki senaryon şu sebeplerle reddedildi: ' + '; '.join(problems[:5]) + '. Bunları düzelt.'
+            feedback = MSG['rejected'].format(p='; '.join(problems[:5]))
             continue
         try:
             j = parse_json(gemini(judge_tpl + '\n\nSCRIPT:\n' + json.dumps(sc, ensure_ascii=False), temperature=0.2))
@@ -235,8 +282,7 @@ def write_with_gemini(fmt, template, topic, hist):
             best, best_score = sc, score
         if score >= 7:
             break
-        feedback = (f"\n\nBir komedi editörü son senaryona {score}/10 verdi. En zayıf kısım: {j.get('weakest_part')}. "
-                    f"Düzeltme: {j.get('fix')}. YENİ ve daha komik bir senaryo yaz.")
+        feedback = MSG['judged'].format(score=score, weak=j.get('weakest_part'), fix=j.get('fix'))
     if best is None:
         raise RuntimeError('Gemini produced no valid script')
     best['judge_score'] = best_score

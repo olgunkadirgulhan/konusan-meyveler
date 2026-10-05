@@ -15,9 +15,10 @@ from googleapiclient.http import MediaFileUpload
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import upload  # noqa: E402
+from meyve import lang  # noqa: E402
 
-BRAND = HERE / 'branding'
-PLAYLISTS_FILE = HERE / 'playlists.json'
+BRAND = lang.data('branding')
+PLAYLISTS_FILE = lang.data('playlists.json')
 
 DESCRIPTION = """Mutfakta işler karıştı! 🍋🍅🍉
 
@@ -57,6 +58,48 @@ PLAYLISTS = {
 }
 SECTIONS = ['kavga', 'ters_kose', 'kimlik_krizi', 'buzdolabi', 'anlatiyor', 'tipler']
 
+# ---------------------------------------------------------------- ABD kanalı
+DESCRIPTION_EN = """The fruit bowl has drama. A lot of drama. 🍋🍅🍉
+
+Welcome to Fruit Drama Club: short animated comedy about what really happens on the kitchen counter, in the fridge
+and at the farmers market. Sassy lemons, a tomato in a permanent identity crisis, a posh avocado who reminds you
+how expensive he is...
+
+Every video hides a REAL fruit fact: look for the yellow FUN FACT card on screen and in the description.
+
+The crew:
+🍋 Lemon: queen of shade
+🍅 Tomato: technically a fruit, and he will tell you
+🍉 Watermelon: summer king, gym-bro energy
+🍊 Orange: hype man, thinks he's the vitamin C champ
+🌶️ Chili: short fuse, spicy comebacks
+🥑 Avocado: posh, pricey, brunch snob
+🍍 Pineapple: no worries, mate
+🍓 Strawberry, 🍌 Banana, 🧅 Onion, 🥒 Cucumber
+
+New Shorts every day, a new episode every week. Subscribe and tell us in the comments which fruit should snap next 👇
+
+#FruitDramaClub #talkingfruit #comedy"""
+KEYWORDS_EN = ('"Fruit Drama Club" "talking fruit" "fruit drama" "funny fruit" "animated comedy" "funny shorts" '
+               '"fruit facts" "fun facts" "relatable comedy" "cartoon comedy" "comedy shorts" "kitchen comedy"')
+PLAYLISTS_EN = {
+    'pov': ('POV 👀', 'You, the fruit bowl and a very bad day.'),
+    'types_of': ('Types of Fruit', 'Every party, office and gym has these fruits.'),
+    'roast': ('Fruit Roasts 🔥', 'Two fruits, real facts, zero mercy.'),
+    'confessional': ('Fruit Bowl Confessionals 🎥', 'Reality-TV drama from the fruit bowl.'),
+    'fridge_after_dark': ('Fridge After Dark 🧊', 'What happens when the fridge door closes.'),
+    'plot_twist': ('Plot Twists 💀', 'Totally normal conversation... until the last 3 seconds.'),
+    'fruit_court': ('Fruit Court ⚖️', 'Full episodes: fruits sue fruits. The evidence is real fruit facts.'),
+    'fridge_office': ('The Fridge Office 💼', 'Full episodes: a mockumentary about the office inside the fridge.'),
+    'fruit_villa': ('Fruit Villa 🌴', 'Full episodes: the summer villa where fruits look for love.'),
+}
+SECTIONS_EN = ['roast', 'pov', 'plot_twist', 'confessional', 'fridge_after_dark', 'types_of']
+if not lang.TR:
+    DESCRIPTION, KEYWORDS, PLAYLISTS, SECTIONS = DESCRIPTION_EN, KEYWORDS_EN, PLAYLISTS_EN, SECTIONS_EN
+COUNTRY, LANGUAGE = ('TR', 'tr') if lang.TR else ('US', 'en')
+PL_FOOTER = '\n\nHer gün yeni Konuşan Fruits videosu. #KonuşanFruits' if lang.TR else \
+    '\n\nNew Fruit Drama Club video every day. #FruitDramaClub'
+
 
 def step(name, fn):
     try:
@@ -75,8 +118,8 @@ def main():
     def branding():
         banner = yt.channelBanners().insert(
             media_body=MediaFileUpload(str(BRAND / 'banner.png'), mimetype='image/png')).execute()
-        channel = {'title': title, 'description': DESCRIPTION, 'keywords': KEYWORDS, 'country': 'TR',
-                   'defaultLanguage': 'tr'}
+        channel = {'title': title, 'description': DESCRIPTION, 'keywords': KEYWORDS, 'country': COUNTRY,
+                   'defaultLanguage': LANGUAGE}
         yt.channels().update(part='brandingSettings', body={'id': cid, 'brandingSettings': {
             'channel': channel, 'image': {'bannerExternalUrl': banner['url']}}}).execute()
     step('açıklama, anahtar kelimeler, ülke/dil, banner', branding)
@@ -112,8 +155,7 @@ def main():
         if ptitle in existing:
             ids[key] = existing[ptitle]; continue
         p = yt.playlists().insert(part='snippet,status', body={
-            'snippet': {'title': ptitle, 'description': pdesc + '\n\nHer gün yeni Konuşan Fruits videosu. #KonuşanFruits',
-                        'defaultLanguage': 'tr'},
+            'snippet': {'title': ptitle, 'description': pdesc + PL_FOOTER, 'defaultLanguage': LANGUAGE},
             'status': {'privacyStatus': 'public'}}).execute()
         ids[key] = p['id']; print(f'✓ oynatma listesi: {ptitle}')
     PLAYLISTS_FILE.write_text(json.dumps(ids, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')

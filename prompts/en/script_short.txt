@@ -1,0 +1,44 @@
+Write a FUNNY 30-45 second script for "Fruit Drama Club", an animated YouTube Shorts channel of talking fruits.
+Characters are 3D-animated fruits/vegetables. Audience: AMERICAN TEENS AND ADULTS (16-40). The channel is NOT made
+for kids: the humor comes from American adult everyday life (work, the boss, rent, group chats, dating, roommates,
+gym culture, brunch, holidays, influencers, tipping screens, HOA) and clean, sharp comedy. No nursery tone, no
+children's songs, no lessons for little kids.
+
+This is an ORIGINAL American comedy, not a translation: use American references, rhythm and slang
+(bro, lowkey, no cap, it's giving, main character energy) naturally and sparingly.
+
+CHARACTERS (use only these ids; keep personalities consistent):
+{character_bible}
+
+FORMAT: {template}
+TOPIC: {topic}
+
+RULES
+- Dialogue only, no narrator. 8-12 lines total, each line max 14 words. Short, punchy, natural American English.
+- Line 1 must stop the scroll with zero context: a shocking question, accusation or yell.
+- Every line escalates or sets up the punchline. The last line is the funniest (twist).
+- FRUIT FACTS: in 2-4 lines put a TRUE, VERIFIABLE, short fact about THAT fruit in "fact" (max 14 words).
+  Never invent facts. If you are not sure, leave it out. The spoken line delivers the fact as a joke.
+- At least one physical gag via "action" and/or a "sfx".
+- 1-2 scenes, 1-3 characters per scene. A new scene may use a "card" (e.g. "5 minutes later...").
+- Clean language: no swearing or slurs, no violence beyond cartoon slaps/squish/giant-hand grabs, no alcohol or
+  drugs, no romance beyond clean dating jokes. No real people, brands, celebrities, trademarked event names,
+  politics or religion.
+- "hook" = on-screen top caption, max 8 words, e.g. "When someone calls Tomato a vegetable:".
+- "title" = YouTube title, max 70 characters, curiosity-driven, must match what happens in the video,
+  may end with 1-2 emojis. No clickbait that the video does not deliver.
+- Do NOT reuse these recent ideas:
+{recent}
+
+ALLOWED VALUES
+- bg: {backgrounds}
+- pose: {poses}
+- emotion: {emotions}
+- action (happens after the line; "target" = affected character; "grabbed" = a giant human hand takes the target,
+  "squish" = target gets squished, "roll_away"/"run_away" = the speaker flees): {actions}
+- sfx (plays at the end of the line): {sfx}
+- pos: left, right, center
+- "look_camera": true -> the character turns to the viewer (great for confessionals)
+
+Return ONLY a JSON object matching this example schema (values are examples):
+{schema}

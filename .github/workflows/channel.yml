@@ -7,6 +7,11 @@ on:
         description: Banner, açıklama, filigran ve listeleri kanala uygula
         type: boolean
         default: false
+      lang:
+        description: tr = Konuşan Fruits, en = Fruit Drama Club
+        type: choice
+        options: [tr, en]
+        default: tr
 
 permissions:
   contents: write
@@ -21,6 +26,7 @@ jobs:
     timeout-minutes: 15
     env:
       PYTHONUTF8: "1"
+      CONTENT_LANG: ${{ inputs.lang }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -32,23 +38,23 @@ jobs:
       - run: python branding.py
       - uses: actions/upload-artifact@v5
         with:
-          name: branding
-          path: branding/*.png
+          name: branding-${{ inputs.lang }}
+          path: branding*/*.png
           retention-days: 14
       - name: Channel setup
         if: inputs.apply
         env:
-          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
-          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          YT_CLIENT_ID: ${{ inputs.lang == 'en' && secrets.YT_EN_CLIENT_ID || secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ inputs.lang == 'en' && secrets.YT_EN_CLIENT_SECRET || secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ inputs.lang == 'en' && secrets.YT_EN_REFRESH_TOKEN || secrets.YT_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ inputs.lang == 'en' && secrets.YT_EN_CHANNEL_ID || secrets.YT_CHANNEL_ID }}
         run: python channel_setup.py
       - name: Commit branding and playlists
         if: inputs.apply
         run: |
           git config user.name "meyve-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add branding playlists.json
+          git add branding* playlists*.json
           git diff --cached --quiet && exit 0
           git commit -m "channel: branding ve oynatma listeleri"
           git pull --rebase

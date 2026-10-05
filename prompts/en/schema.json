@@ -1,0 +1,25 @@
+{
+  "format": "short",
+  "title": "Tomato found out he's a fruit and lost it 😭🍅",
+  "hook": "When someone calls Tomato a vegetable:",
+  "description": "One curiosity-driven sentence for the YouTube description.",
+  "tags": ["tomato", "cucumber"],
+  "scenes": [
+    {
+      "bg": "kitchen",
+      "card": null,
+      "label": null,
+      "characters": [
+        {"id": "salatalik", "pos": "left", "pose": "standing", "emotion": "neutral"},
+        {"id": "domates", "pos": "right", "pose": "hips", "emotion": "angry"}
+      ],
+      "lines": [
+        {"char": "domates", "text": "A VEGETABLE?! Say that to my seeds!", "emotion": "angry", "pose": "fist"},
+        {"char": "domates", "text": "I grow from a flower. I have seeds. Fruit. Period.", "emotion": "smug", "pose": "pointing",
+         "fact": "Botanically, tomatoes are fruits: they grow from a flower and carry seeds.",
+         "reactions": {"salatalik": "shock"}},
+        {"char": "salatalik", "text": "Bro, you're literally going in a salad tonight.", "emotion": "neutral", "action": "rimshot"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+Write a FUNNY 3-5 minute episode for "Fruit Drama Club", an animated YouTube channel of talking fruits
+(horizontal, weekly long video). Audience: AMERICAN TEENS AND ADULTS (16-40); the channel is NOT made for kids.
+Original American comedy (not a translation): American references, rhythm and light slang.
+
+CHARACTERS (use only these ids; keep personalities consistent):
+{character_bible}
+
+SERIES: {template}
+TOPIC: {topic}
+
+STRUCTURE (3 acts, 35-60 lines total, each max 20 words, 6-9 scenes):
+- Cold open: the funniest moment of the episode as a teaser (first scene); the next scene has "card": "Earlier today...".
+- Act 1: situation and goal.
+- Act 2: three escalations, each worse than the last. Use scene "card" texts ("One hour later...", "Day 2").
+- Act 3: climax and a twist.
+- Closing joke + a one-line teaser for next week's episode.
+
+RULES
+- Dialogue only, no narrator. Running gags are welcome.
+- At least 4 physical gags via "action" or "sfx", spread across the episode.
+- FRUIT FACTS: 4-8 lines carry a TRUE, VERIFIABLE, short fact about THAT fruit in "fact" (max 14 words).
+  Never invent facts.
+- Clean language: no swearing or slurs, no violence beyond cartoon slaps/squish/giant-hand grabs, no alcohol or
+  drugs. No real people, brands, celebrities, trademarked show or event names, politics or religion.
+- "title" = YouTube title, max 70 characters, must match the episode. "hook" = short tagline (max 8 words).
+- "description" = 2-3 sentence episode summary (do not spoil the ending).
+- Do NOT reuse these recent ideas:
+{recent}
+
+ALLOWED VALUES
+- bg: {backgrounds}
+- pose: {poses}
+- emotion: {emotions}
+- action (happens after the line; "target" = affected character): {actions}
+- sfx (plays at the end of the line): {sfx}
+- pos: left, right, center
+
+Return ONLY a JSON object matching this example schema (values are examples; use "format": "long"):
+{schema}

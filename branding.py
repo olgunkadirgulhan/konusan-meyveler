@@ -12,9 +12,11 @@ from PIL import Image
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from meyve import fruit  # noqa: E402
+from meyve import lang  # noqa: E402
 from meyve.render import pil_to_surface, text_block, tr_upper  # noqa: E402
 
-OUT = HERE / 'branding'
+OUT = lang.data('branding')
+TAGLINE = 'Her gün yeni meyve kavgası' if lang.TR else 'New fruit drama every day'
 
 
 def rays(ctx, W, H, cx, cy, c1, c2, n=18):
@@ -44,7 +46,8 @@ def banner():
     W, H = 2560, 1440
     surf = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
     ctx = cairo.Context(surf)
-    rays(ctx, W, H, W / 2, H / 2, (1.0, 0.55, 0.1), (1.0, 0.64, 0.2), 22)
+    c1, c2 = ((1.0, 0.55, 0.1), (1.0, 0.64, 0.2)) if lang.TR else ((0.45, 0.22, 0.85), (0.55, 0.32, 0.95))
+    rays(ctx, W, H, W / 2, H / 2, c1, c2, 22)
     # tezgâh (güvenli alanın altı)
     ground = 925
     ctx.rectangle(0, ground - 8, W, H - ground + 8); ctx.set_source_rgb(0.96, 0.93, 0.86); ctx.fill()
@@ -57,8 +60,8 @@ def banner():
     for cid, x, f, emo, pose, mouth in cast:
         character(ctx, cid, x, ground, s, f, emo, pose, mouth)
     # masaüstü kırpması ~y 508-931; başlık tek satır, alt yazı ayrı
-    paste_text(ctx, 'Konuşan Fruits', 165, W / 2, 640, 2000, color=(255, 236, 80))
-    paste_text(ctx, 'Her gün yeni meyve kavgası', 60, W / 2, 790, 1300)
+    paste_text(ctx, lang.S['channel'], 165, W / 2, 640, 2000, color=(255, 236, 80))
+    paste_text(ctx, TAGLINE, 60, W / 2, 790, 1300)
     surf.write_to_png(str(OUT / 'banner.png'))
 
 
@@ -78,8 +81,10 @@ def head_shot(cid, size, bg1, bg2, emotion='happy', ring=True):
 def main():
     OUT.mkdir(exist_ok=True)
     banner()
-    head_shot('limon', 800, (0.18, 0.62, 0.32), (0.26, 0.72, 0.4), emotion='excited').write_to_png(str(OUT / 'profile.png'))
-    wm = head_shot('limon', 300, (0.9, 0.12, 0.15), (0.97, 0.25, 0.25), emotion='excited')
+    star, bg1, bg2 = ('limon', (0.18, 0.62, 0.32), (0.26, 0.72, 0.4)) if lang.TR else \
+        ('domates', (0.2, 0.55, 0.95), (0.3, 0.65, 1.0))
+    head_shot(star, 800, bg1, bg2, emotion='excited').write_to_png(str(OUT / 'profile.png'))
+    wm = head_shot(star, 300, (0.9, 0.12, 0.15), (0.97, 0.25, 0.25), emotion='excited')
     wm.write_to_png(str(OUT / 'watermark.png'))
     Image.open(OUT / 'watermark.png').resize((150, 150), Image.LANCZOS).save(OUT / 'watermark.png')
     for p in sorted(OUT.glob('*.png')):

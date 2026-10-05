@@ -28,16 +28,27 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from meyve import notify, render, writer  # noqa: E402
+from meyve import lang, notify, render, writer  # noqa: E402
 from meyve.cast import CAST  # noqa: E402
 
-HIST = HERE / 'history.json'
-PUBLISHED = HERE / 'published.csv'
-QUEUE = HERE / 'queue'
+# kayıtlar dile göre ayrı: published.csv (tr) / published_en.csv (en) ...
+HIST = lang.data('history.json')
+PUBLISHED = lang.data('published.csv')
+QUEUE = lang.data('queue')
+PLAYLISTS = lang.data('playlists.json')
 OUT = HERE / 'output'
 FIELDS = ['id', 'date_utc', 'format', 'video_id', 'privacy', 'template', 'source', 'score', 'title']
-BASE_TAGS = ['konuşan meyveler', 'meyveler', 'komik', 'animasyon', 'çizgi film', 'komik videolar', 'shorts',
+BASE_TAGS_TR = ['konuşan meyveler', 'meyveler', 'komik', 'animasyon', 'çizgi film', 'komik videolar', 'shorts',
              'meyve', 'sebze', 'eğlenceli bilgiler', 'bilgi', 'mizah']
+BASE_TAGS_EN = ['talking fruit', 'fruit drama', 'funny fruit', 'comedy', 'animation', 'cartoon comedy', 'shorts',
+                'funny shorts', 'fruit facts', 'fun facts', 'relatable comedy', 'animated comedy']
+T = {'tr': dict(facts='\n\n🍓 Bu videodaki gerçek bilgiler:\n', cast='Oyuncular',
+                daily='Her gün yeni konuşan meyve videosu! Abone ol, sıradaki kim kızacak kaçırma 🍋\n\n',
+                weekly='Her hafta yeni bölüm, her gün yeni Shorts! Abone ol, bildirimleri aç 🔔🍋\n\n'),
+     'en': dict(facts='\n\n🍓 Real fruit facts in this video:\n', cast='Cast',
+                daily='New fruit drama every day! Subscribe so you never miss who snaps next 🍋\n\n',
+                weekly='New episode every week, new Shorts every day! Subscribe and turn on notifications 🔔🍋\n\n'),
+     }[lang.LANG]
 
 
 def log(msg):
@@ -84,19 +95,19 @@ def remember(hist, sc):
 
 def metadata(sc):
     names = sorted({CAST[c['id']]['name'] for S in sc['scenes'] for c in S['characters']})
-    tags = BASE_TAGS + [t for t in sc.get('tags', []) if isinstance(t, str)] + [n.lower() for n in names]
+    tags = (BASE_TAGS_TR if lang.TR else BASE_TAGS_EN) + [t for t in sc.get('tags', []) if isinstance(t, str)] + [n.lower() for n in names]
     facts = [L['fact'] for S in sc['scenes'] for L in S['lines'] if L.get('fact')]
-    by_template = {'anlatiyor': '#bilgi', 'kavga': '#kavga', 'kimlik_krizi': '#bunubiliyormuydunuz',
+    by_template = {'pov': '#pov', 'types_of': '#typesof', 'roast': '#roast', 'confessional': '#realitytv',
+                   'fridge_after_dark': '#fridge', 'plot_twist': '#plottwist','anlatiyor': '#bilgi', 'kavga': '#kavga', 'kimlik_krizi': '#bunubiliyormuydunuz',
                    'buzdolabi': '#buzdolabı', 'ters_kose': '#terskose', 'tipler': '#tipler'}
     short = sc.get('format', 'short') == 'short'
+    base = '#konuşanmeyveler #meyveler #komik #animasyon' if lang.TR else '#fruitdramaclub #talkingfruit #comedy #animation'
     hashtags = ('#shorts ' if short else '') + \
-        f"#konuşanmeyveler #meyveler #komik #animasyon {by_template.get(sc.get('template'), '#mizah')}"
+        f"{base} {by_template.get(sc.get('template'), '#mizah' if lang.TR else '#funny')}"
     desc = sc.get('description', '')
     if facts:
-        desc += '\n\n🍓 Bu videodaki gerçek bilgiler:\n' + '\n'.join(f'• {f}' for f in facts)
-    desc += (f"\n\nOyuncular: {', '.join(names)}\n"
-             + ('Her gün yeni konuşan meyve videosu! Abone ol, sıradaki kim kızacak kaçırma 🍋\n\n' if short else
-                'Her hafta yeni bölüm, her gün yeni Shorts! Abone ol, bildirimleri aç 🔔🍋\n\n') + hashtags)
+        desc += T['facts'] + '\n'.join(f'• {f}' for f in facts)
+    desc += (f"\n\n{T['cast']}: {', '.join(names)}\n" + (T['daily'] if short else T['weekly']) + hashtags)
     seen, uniq = set(), []
     for t in tags if short else [t for t in tags if t != 'shorts']:
         if t.lower() not in seen and sum(len(x) for x in uniq) + len(t) < 450:
@@ -169,7 +180,7 @@ def main():
         mp4, dur = render.render(sc, out, preview_png=out / 'thumb.png')
     except Exception as e:
         traceback.print_exc(); gh_annotation('error', f'render failed: {e}')
-        notify.message(f'🍋 Konuşan Meyveler: render başarısız — {str(e)[:300]}'); raise SystemExit(1)
+        notify.message(f"🍋 {lang.S['channel']}: render failed — {str(e)[:300]}"); raise SystemExit(1)
     title, desc, tags = metadata(sc)
     (out / 'meta.json').write_text(json.dumps({'title': title, 'description': desc, 'tags': tags, 'duration': dur},
                                               indent=2, ensure_ascii=False), encoding='utf-8')
@@ -183,7 +194,7 @@ def main():
         vid = upload.upload(mp4, title, desc, tags, mode)
     except upload.QuotaError as e:
         enqueue(sc, e, qpath); gh_annotation('warning', 'YouTube quota reached, video queued for the next run.')
-        notify.message('🍋 YouTube kotası doldu, video sonraki çalıştırmaya kaldı.'); return
+        notify.message(f"🍋 {lang.S['channel']}: YouTube quota reached, video queued."); return
     except Exception as e:
         traceback.print_exc(); enqueue(sc, e, qpath); gh_annotation('error', f'upload failed: {e}'); raise SystemExit(1)
     record(sc, vid, mode)
@@ -196,15 +207,16 @@ def main():
         except Exception as e:
             log(f'thumbnail skipped (kanal telefonla doğrulanmamış olabilir): {str(e)[:160]}')
     log(f'uploaded {url} ({mode})')
-    pls = json.loads((HERE / 'playlists.json').read_text(encoding='utf-8')) if (HERE / 'playlists.json').exists() else {}
+    pls = json.loads(PLAYLISTS.read_text(encoding='utf-8')) if PLAYLISTS.exists() else {}
     if sc.get('template') in pls:
         try:
             upload.add_to_playlist(pls[sc['template']], vid); log(f"added to playlist {sc['template']}")
         except Exception as e:
             log(f'playlist add skipped: {str(e)[:160]}')
     notify.video(mp4, f'🍓 {title}\n{url}')
-    notify.copyable('TikTok / Instagram açıklaması:', f"{title}\n\n{desc.split(chr(10) + chr(10) + 'Oyuncular')[0]}\n\n"
-                    '#konuşanmeyveler #meyveler #komik #animasyon #keşfet #fyp')
+    notify.copyable('TikTok / Instagram:', f"{title}\n\n{desc.split(chr(10) + chr(10) + T['cast'])[0]}\n\n"
+                    + ('#konuşanmeyveler #meyveler #komik #animasyon #keşfet #fyp' if lang.TR else
+                       '#fruitdramaclub #talkingfruit #comedy #fyp'))
 
 
 if __name__ == '__main__':
