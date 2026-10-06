@@ -14,6 +14,8 @@ FORMAT: {template}
 TOPIC: {topic}
 
 RULES
+- Audience: teens and adults (13+), NOT young children. Humor from grown-up/teen life (work, money, roommates,
+  dating, adulting). Avoid elementary-school settings and kid-show tone.
 - Dialogue only, no narrator. 8-12 lines total, each line max 14 words. Short, punchy, natural American English.
 - Line 1 must stop the scroll with zero context: a shocking question, accusation or yell.
 - Every line escalates or sets up the punchline. The last line is the funniest (twist).

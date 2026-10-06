@@ -16,6 +16,8 @@ STRUCTURE (3 acts, 35-60 lines total, each max 20 words, 6-9 scenes):
 - Closing joke + a one-line teaser for next week's episode.
 
 RULES
+- Audience: teens and adults (13+), NOT young children. Humor from grown-up/teen life (work, money, roommates,
+  dating, adulting). Avoid elementary-school settings and kid-show tone.
 - Dialogue only, no narrator. Running gags are welcome.
 - At least 4 physical gags via "action" or "sfx", spread across the episode.
 - FRUIT FACTS: 4-8 lines carry a TRUE, VERIFIABLE, short fact about THAT fruit in "fact" (max 14 words).

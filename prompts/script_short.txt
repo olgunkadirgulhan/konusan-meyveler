@@ -10,6 +10,8 @@ FORMAT: {template}
 KONU: {topic}
 
 KURALLAR
+- Kitle: gençler ve yetişkinler (13+), küçük çocuklar DEĞİL. Mizah iş, para, ev arkadaşı, flört, aile hayatı gibi
+  yetişkin/genç dünyasından gelsin; okul bahçesi ve çocuk programı tonu yok.
 - Sadece diyalog, anlatıcı yok. Toplam 8-12 replik, her replik en fazla 14 kelime. Doğal, günlük, esprili Türkçe
   (kanka, tatlım, abi gibi sıcak hitaplar serbest). Cümleler kısa ve vurucu.
 - 1. replik bağlamsız bile kaydırmayı durdurmalı: şok edici bir soru, suçlama ya da bağırış.

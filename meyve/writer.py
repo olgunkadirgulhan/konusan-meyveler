@@ -268,7 +268,7 @@ def write_with_gemini(fmt, template, topic, hist):
         prompt += MSG['examples'] + '\n\n---\n\n'.join(shots)
     judge_tpl = (PROMPTS / 'judge.txt').read_text(encoding='utf-8')
     best, best_score, feedback = None, -1, ''
-    for attempt in range(4):
+    for attempt in range(7):   # 7/10 kalite çıtasını yakalamak için daha çok deneme
         try:
             sc = parse_json(gemini(prompt + feedback, timeout=120 if fmt == 'short' else 300))
         except Exception as e:
@@ -282,7 +282,7 @@ def write_with_gemini(fmt, template, topic, hist):
             j = parse_json(gemini(judge_tpl + '\n\nSCRIPT:\n' + json.dumps(sc, ensure_ascii=False), temperature=0.2))
             score = float(j.get('score', 0))
         except Exception as e:
-            log(f'judge failed ({str(e)[:120]}), accepting script'); score, j = 7.0, {}
+            log(f'judge failed ({str(e)[:120]})'); score, j = 6.0, {}
         log(f'attempt {attempt + 1}: score {score} | {sc.get("title")}')
         if score > best_score:
             best, best_score = sc, score
@@ -315,9 +315,10 @@ def make_script(fmt, hist, seed=None):
         try:
             sc = write_with_gemini(fmt, template, topic, hist)
             sc.update(id=f'{fmt}_{stamp}', template=template, topic=topic, source='gemini')
-            if sc.get('judge_score', 0) >= 5 or from_bank(fmt, hist) is None:
+            # kalite çıtası: 6'nın altı yüklenmez (bank varsa onu kullan) — düşük kalite seri üretim sinyali verir
+            if sc.get('judge_score', 0) >= 6 or from_bank(fmt, hist) is None:
                 return sc
-            log(f"best Gemini score {sc['judge_score']} < 5, using a bank script instead")
+            log(f"best Gemini score {sc['judge_score']} < 6, using a bank script instead")
         except Exception as e:
             log(f'Gemini failed, falling back to bank: {str(e)[:200]}')
     sc = from_bank(fmt, hist)

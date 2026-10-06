@@ -17,6 +17,8 @@ YAPI (3 perde, toplam 35-60 replik, her replik en fazla 20 kelime, 6-9 sahne):
 - Kapanış esprisi + gelecek bölüm için tek cümlelik merak.
 
 KURALLAR
+- Kitle: gençler ve yetişkinler (13+), küçük çocuklar DEĞİL. Mizah iş, para, ev arkadaşı, flört, aile hayatı gibi
+  yetişkin/genç dünyasından gelsin; okul bahçesi ve çocuk programı tonu yok.
 - Sadece diyalog, anlatıcı yok. Doğal, esprili Türkçe. Tekrarlayan şakalar (running gag) serbest.
 - Bölüme yayılmış en az 4 fiziksel gag ("action") ya da ses efekti ("sfx").
 - MEYVE BİLGİLERİ: 4-8 replikte "fact" alanına O MEYVEYLE İLGİLİ GERÇEK, DOĞRULANABİLİR, kısa bir bilgi yaz
