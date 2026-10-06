@@ -22,7 +22,8 @@ KURALLAR
 - MEYVE BİLGİLERİ: 4-8 replikte "fact" alanına O MEYVEYLE İLGİLİ GERÇEK, DOĞRULANABİLİR, kısa bir bilgi yaz
   (en fazla 14 kelime). Bilgi uydurma! Emin olmadığın bilgiyi yazma.
 - Temiz dil: küfür ve argo hakaret yok, şiddet yok (çizgi film tokadı, ezilme, dev elin meyveyi kapması serbest),
-  gerçek kişi, marka, ünlü, siyaset, din yok.
+  gerçek kişi, marka, ünlü, siyaset, din yok. Başlık ve kanca korku/gerilim/şok üzerine kurulmaz
+  (bıçak, dehşet, gerilim yok); merak komediden gelsin.
 - "title" = YouTube başlığı, en fazla 70 karakter, merak uyandıran. "hook" = kısa slogan (en fazla 8 kelime).
 - "description" = 2-3 cümlelik bölüm özeti (sonu söyleme).
 - Şu son fikirleri TEKRARLAMA:

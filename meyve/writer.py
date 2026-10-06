@@ -43,10 +43,10 @@ LONG_SERIES = {
     'buzdolabi_apartmani': 'Buzdolabı Apartmanı: her raf bir daire; komşu kavgaları, aidat, yönetici seçimi, '
                            'kapı açılınca herkes donup kalır.',
 }
-TOPICS = ['meyve mi sebze mi', 'yaşlanmak / kararmak', 'buzdolabında gece', 'pazarda seçilmemek', 'blender korkusu',
+TOPICS = ['meyve mi sebze mi', 'yaşlanmak / kararmak', 'buzdolabında gece', 'pazarda seçilmemek', 'smoothie seçmeleri',
           'meyve salatası seçmeleri', 'kahvaltı sofrası', 'diyet yapan insan', 'pahalı olmak', 'ekşi olmak',
           'su oranı yarışması', 'yaz geldi', 'kış meyvesi olmak', 'reçel olmak', 'turşu tehlikesi', 'sosyal medya',
-          'ofiste öğle yemeği', 'manavda indirim', 'çekirdek / tohum', 'vitamin yarışı', 'bıçak geldi',
+          'ofiste öğle yemeği', 'manavda indirim', 'çekirdek / tohum', 'vitamin yarışı', 'tartıya çıkmak',
           'egzotik meyve kıskançlığı', 'ilk iş günü (pazar tezgâhı)', 'sağlıklı beslenme', 'smoothie', 'ağaçtan düşmek',
           'sınav stresi', 'dedikodu', 'doğum günü pastası', 'piknik', 'tatil (plaj)', 'spor salonu',
           'patronla toplantı', 'kira zammı', 'maaş günü', 'ilk buluşma', 'ev arkadaşı', 'aile grup sohbeti',
@@ -54,6 +54,10 @@ TOPICS = ['meyve mi sebze mi', 'yaşlanmak / kararmak', 'buzdolabında gece', 'p
           'bayram ziyareti', 'kayınvalide geliyor', 'yeni yıl kararları']
 BANNED = re.compile(r'\b(öl|öldür|kan|seks|içki|bira|şarap|uyuşturucu|aptal|salak|gerizekalı|lanet|siktir|kahretsin|'
                     r'kill|dead|blood|sex|drunk|beer|wine|drug)\b', re.I)
+
+# Başlık/kanca korku-gerilim-şok üzerine kurulmasın (komedi kanalı); çizgi film gag'leri sahnede serbest
+SHOCK = re.compile(r'(bıçak|gerilim|dehşet|korku|kâbus|kabus|vahşet|katliam|🔪|knife|terror|horror|nightmare|'
+                   r'scary|creepy|massacre|brutal|disturbing)', re.I)
 
 # ---------------------------------------------------------------- ABD kanalı (CONTENT_LANG=en)
 # Türkçe kanalın çevirisi DEĞİL: Amerikan izleyiciye özel şablon, konu ve diziler (özgün içerik).
@@ -212,6 +216,8 @@ def normalize(sc, fmt):
     for k in ('title', 'hook'):
         if not sc.get(k):
             problems.append(f'missing {k}')
+        elif SHOCK.search(sc[k]):  # YouTube (Tem 2026): şok/korku için tasarlanmış başlıklar para kazanamaz
+            problems.append(f'{k} leans on fear/shock, make it comedic instead: {sc[k]}')
     return problems
 
 

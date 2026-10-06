@@ -23,7 +23,8 @@ RULES
 - 1-2 scenes, 1-3 characters per scene. A new scene may use a "card" (e.g. "5 minutes later...").
 - Clean language: no swearing or slurs, no violence beyond cartoon slaps/squish/giant-hand grabs, no alcohol or
   drugs, no romance beyond clean dating jokes. No real people, brands, celebrities, trademarked event names,
-  politics or religion.
+  politics or religion. Title and hook never lean on fear/shock (no knives, horror, "terrifying");
+  curiosity comes from the joke.
 - "hook" = on-screen top caption, max 8 words, e.g. "When someone calls Tomato a vegetable:".
 - "title" = YouTube title, max 70 characters, curiosity-driven, must match what happens in the video,
   may end with 1-2 emojis. No clickbait that the video does not deliver.

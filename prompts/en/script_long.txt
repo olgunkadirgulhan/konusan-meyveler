@@ -22,6 +22,7 @@ RULES
   Never invent facts.
 - Clean language: no swearing or slurs, no violence beyond cartoon slaps/squish/giant-hand grabs, no alcohol or
   drugs. No real people, brands, celebrities, trademarked show or event names, politics or religion.
+  Title and hook never lean on fear/shock (no knives, horror, "terrifying"); curiosity comes from the joke.
 - "title" = YouTube title, max 70 characters, must match the episode. "hook" = short tagline (max 8 words).
 - "description" = 2-3 sentence episode summary (do not spoil the ending).
 - Do NOT reuse these recent ideas:
