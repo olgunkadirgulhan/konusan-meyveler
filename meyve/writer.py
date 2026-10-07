@@ -12,6 +12,7 @@ import requests
 
 from . import backgrounds
 from .cast import ACTIONS, CAST, EMOTIONS, POSES, SFX, bible
+from . import lang
 from .lang import LANG, TR
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -227,6 +228,34 @@ def load_hist(path):
     return json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'recent': [], 'bank_used': []}
 
 
+def template_performance():
+    """Bu kanalın Shorts şablonlarının ortalama izlenmesi (en az 20 saatlik videolar; YouTube'a erişilemezse boş)."""
+    import csv
+    from datetime import datetime, timezone
+    path = lang.data('published.csv')
+    if not path.exists() or not os.environ.get('YT_REFRESH_TOKEN'):
+        return {}
+    now = datetime.now(timezone.utc)
+    rows = [r for r in csv.DictReader(open(path, encoding='utf-8'))
+            if r.get('format', 'short') == 'short' and r.get('video_id') and r.get('template') in SHORT_TEMPLATES
+            and (now - datetime.strptime(r['date_utc'], '%Y-%m-%d %H:%M').replace(tzinfo=timezone.utc)).total_seconds() > 20 * 3600]
+    rows = rows[-40:]
+    if not rows:
+        return {}
+    try:
+        import upload
+        items = upload.client().videos().list(part='statistics', id=','.join(r['video_id'] for r in rows)).execute()['items']
+    except Exception as e:
+        print(f'[writer] performans okunamadı: {str(e)[:150]}', flush=True)
+        return {}
+    views = {i['id']: int(i['statistics'].get('viewCount', 0)) for i in items}
+    out = {}
+    for r in rows:
+        if r['video_id'] in views:
+            out.setdefault(r['template'], []).append(views[r['video_id']])
+    return {k: sum(v) / len(v) for k, v in out.items()}
+
+
 def pick(hist, fmt, rnd):
     recent = [r for r in hist['recent'] if r.get('format', 'short') == fmt]
     if fmt == 'long':                                   # diziler sırayla döner
@@ -234,7 +263,14 @@ def pick(hist, fmt, rnd):
         template = order[len(recent) % len(order)]
     else:
         last = [r['template'] for r in recent[-2:]]
-        template = rnd.choice([k for k in SHORT_TEMPLATES if k not in last])
+        keys = [k for k in SHORT_TEMPLATES if k not in last]
+        perf = template_performance()
+        top = max(perf.values(), default=0)
+        # keşif + sömürü: iyi giden şablon en fazla 6 kat sık; hiç/az izlenen de taban şansını korur
+        w = [1.0 + 5.0 * perf[k] / top if top and k in perf else 1.0 for k in keys]
+        if perf:
+            print('[writer] şablon ortalama izlenme:', {k: round(v) for k, v in perf.items()}, flush=True)
+        template = rnd.choices(keys, weights=w)[0]
     used = {r.get('topic') for r in hist['recent'][-14:]}
     topic = rnd.choice([t for t in TOPICS if t not in used] or TOPICS)
     return template, topic
