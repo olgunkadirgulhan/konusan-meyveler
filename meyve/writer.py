@@ -32,6 +32,8 @@ SHORT_TEMPLATES = {
                  'normal davranır; sonda dev el ("grabbed") beklenmedik birini alır.',
     'ters_kose': 'Ters köşe: sıradan bir sohbet, son 3 saniyede tamamen beklenmedik bir sonla biter '
                  '(blender, salata, reçel, dev el vb.).',
+    'normal_psikopat': 'Normal vs Psikopat: aynı mutfak durumu iki kez: sahne etiketi "Normal meyve" (sakin, mantıklı), '
+                       'sonra "Psikopat meyve" (abartılı, absürt, çizgi film gibi; gerçek şiddet yok); son replik en komik.',
     'tipler': 'Tipler: "Mutfaktaki X tipleri" -> 3-4 hızlı sahne, her sahne bir tip (sahne "label" ile, ör. "Gösterişçi"), '
               'sonuncusu en absürt.',
 }
@@ -73,6 +75,9 @@ SHORT_TEMPLATES_EN = {
                     'bowl, cutting between them like a reality TV show; the last confessional reveals the twist.',
     'fridge_after_dark': 'Fridge after dark: what the fruits do when the fridge door closes; when the human opens '
                          'it everyone freezes; at the end a giant hand ("grabbed") takes the least expected one.',
+    'normal_vs_psycho': 'Normal vs Psycho: the same kitchen situation twice - scene label "Normal fruit" (calm, sensible), '
+                        'then scene label "Psycho fruit" (unhinged, absurd, cartoonish; no real violence); the last line is '
+                        'the funniest.',
     'plot_twist': 'Plot twist: a totally normal conversation that ends in the last 3 seconds with a twist '
                   '(smoothie, blender, fruit salad, giant hand).',
 }
