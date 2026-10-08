@@ -1,0 +1,57 @@
+name: comments
+# Yeni videolara videoya özel ilk yorum + yorumlara kişisel cevap (tools/auto_reply.py), saatte bir
+on:
+  schedule:
+    - cron: "37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: comments
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -q google-api-python-client google-auth requests
+      - name: Konuşan Fruits
+        continue-on-error: true
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          CHANNEL_NAME: "Konuşan Fruits"
+          CHANNEL_ABOUT: "Mutfakta komik meyve dramaları, gerçek meyve bilgileriyle."
+          CHANNEL_KIND: general
+          CHANNEL_LANG: tr
+          STATE_FILE: comment_replies.json
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python tools/auto_reply.py
+      - name: Fruit Drama Club
+        continue-on-error: true
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_EN_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_EN_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_EN_REFRESH_TOKEN }}
+          CHANNEL_NAME: "Fruit Drama Club"
+          CHANNEL_ABOUT: "Funny talking-fruit drama with real fruit facts."
+          CHANNEL_KIND: general
+          CHANNEL_LANG: en
+          STATE_FILE: comment_replies_en.json
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python tools/auto_reply.py
+      - run: |
+          git config user.name "comment-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add comment_replies*.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "comments: $(date -u +%F-%H%M)"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done
