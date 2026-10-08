@@ -4,7 +4,7 @@ on:
   schedule:
     # Shorts 3/gün, ABD Doğu saatiyle 11:00, 15:00, 19:00 (UTC 15:00, 19:00, 23:00).
     # Saatlik tetiklenir; .github/slot_guard.py sadece zamanı gelmiş slot varsa üretir. cron-job.org da tetikler.
-    - cron: "17 14-23 * * *"
+    - cron: "17 13-23 * * *"
   workflow_dispatch:
     inputs:
       no_upload:
@@ -41,7 +41,7 @@ jobs:
       - id: g
         env:
           LOG_FILE: published_en.csv
-          SLOTS: "15:00,19:00,23:00"
+          SLOTS: "13:00,19:00,23:00"  # ilk video TR 18:00 sosyal gönderimine yetişsin
           # haftalık uzun bölüm: Cumartesi 17:00 UTC (ABD Doğu 13:00)
           LONG: "sat 17:00 long"
           HAS_YT: ${{ secrets.YT_EN_REFRESH_TOKEN != '' }}
@@ -86,6 +86,14 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python run.py --format ${{ needs.guard.outputs.mode || inputs.format || 'short' }} ${{ inputs.no_upload && '--no-upload' || '' }}
+      - name: Günün videosu (Telegram sosyal medya)
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: social-${{ github.run_id }}
+          path: social/
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Keep video for review
         if: always()
         uses: actions/upload-artifact@v5

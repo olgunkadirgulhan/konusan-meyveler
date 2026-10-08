@@ -137,6 +137,26 @@ def enqueue(sc, error, qpath=None):
     log(f"queued {sc['id']} for retry")
 
 
+
+def social_once(mp4, title, url, sc):
+    """Günün ilk İngilizce Short'u → social/ (artifact 'social-<run>'): fenek-shorts telegram-relay her gün
+    TR 18:00'de diğer kanallarla birlikte TikTok/Instagram için Telegram'a yollar."""
+    import shutil
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    rows = list(csv.DictReader(PUBLISHED.open(encoding='utf-8'))) if PUBLISHED.exists() else []
+    if sum(1 for r in rows if r.get('date_utc', '').startswith(today)) > 1:  # bu video zaten kaydedildi → 1 = ilk
+        return
+    soc = HERE / 'social'
+    soc.mkdir(exist_ok=True)
+    shutil.copy(mp4, soc / 'video.mp4')
+    tiktok = f"{title}\n\nWhich fruit are you? 👇\n\n#fruitdramaclub #talkingfruit #funny #animation #comedy #fyp"
+    insta = (f"{title}\n\nFollow for daily fruit drama 🍋🍉\n\n"
+             "#funny #animation #comedy #relatable #fruit")  # Instagram: en fazla 5 etiket
+    (soc / 'post.json').write_text(json.dumps({'channel': 'Fruit Drama Club', 'title': title, 'url': url,
+                                               'tiktok': tiktok, 'instagram': insta}, ensure_ascii=False, indent=1),
+                                   encoding='utf-8')
+    log('social: günün videosu hazır (Telegram relay)')
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--format', choices=['short', 'long'], default='short')
@@ -207,6 +227,8 @@ def main():
         except Exception as e:
             log(f'thumbnail skipped (kanal telefonla doğrulanmamış olabilir): {str(e)[:160]}')
     log(f'uploaded {url} ({mode})')
+    if not lang.TR and fmt == 'short' and mode == 'public':
+        social_once(mp4, title, url, sc)
     pls = json.loads(PLAYLISTS.read_text(encoding='utf-8')) if PLAYLISTS.exists() else {}
     if sc.get('template') in pls:
         try:
