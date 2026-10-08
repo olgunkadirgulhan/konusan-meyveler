@@ -23,6 +23,7 @@ on:
 
 permissions:
   contents: write
+  actions: write  # yükleme sonrası comments.yml'yi tetiklemek için
 
 concurrency:
   group: repo-writes
@@ -106,3 +107,8 @@ jobs:
           git commit -m "video: $(date -u +%F-%H%M)"
           git pull --rebase
           git push
+      - name: İlk yorum (hemen)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run comments.yml -R ${{ github.repository }} || true
