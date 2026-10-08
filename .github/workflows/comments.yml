@@ -33,6 +33,7 @@ jobs:
           CHANNEL_KIND: general
           CHANNEL_LANG: tr
           STATE_FILE: comment_replies.json
+          REQUESTS_FILE: viewer_requests.json
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python tools/auto_reply.py
       - name: Fruit Drama Club
@@ -46,12 +47,13 @@ jobs:
           CHANNEL_KIND: general
           CHANNEL_LANG: en
           STATE_FILE: comment_replies_en.json
+          REQUESTS_FILE: viewer_requests_en.json
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python tools/auto_reply.py
       - run: |
           git config user.name "comment-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add comment_replies*.json 2>/dev/null || true
+          git add comment_replies*.json viewer_requests*.json 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -m "comments: $(date -u +%F-%H%M)"
           for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done

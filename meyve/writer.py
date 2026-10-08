@@ -256,6 +256,20 @@ def template_performance():
     return {k: sum(v) / len(v) for k, v in out.items()}
 
 
+
+def viewer_request(path, rnd, chance=0.5):
+    """Yorumlardan gelen izleyici isteği (tools/auto_reply.py yazar): varsa yarı olasılıkla sıradaki konu olur."""
+    if not path.exists() or rnd.random() > chance:
+        return None
+    reqs = json.loads(path.read_text(encoding='utf-8'))
+    for r in reqs:
+        if not r.get('used'):
+            r['used'] = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+            path.write_text(json.dumps(reqs, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
+            print(f"[writer] izleyici isteği konu oldu: {r['topic']}", flush=True)
+            return r['topic']
+    return None
+
 def pick(hist, fmt, rnd):
     recent = [r for r in hist['recent'] if r.get('format', 'short') == fmt]
     if fmt == 'long':                                   # diziler sırayla döner
@@ -273,6 +287,8 @@ def pick(hist, fmt, rnd):
         template = rnd.choices(keys, weights=w)[0]
     used = {r.get('topic') for r in hist['recent'][-14:]}
     topic = rnd.choice([t for t in TOPICS if t not in used] or TOPICS)
+    if fmt == 'short':
+        topic = viewer_request(Path(__file__).resolve().parent.parent / ('viewer_requests.json' if TR else 'viewer_requests_en.json'), rnd) or topic
     return template, topic
 
 
