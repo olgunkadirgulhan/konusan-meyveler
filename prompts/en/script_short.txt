@@ -29,6 +29,7 @@ RULES
   curiosity comes from the joke.
 - "hook" = on-screen top caption, max 8 words, e.g. "When someone calls Tomato a vegetable:".
 - "title" = YouTube title, max 70 characters, curiosity-driven, must match what happens in the video,
+  The title must describe what actually happens in this video (its characters, situation and punchline). Never put a word, trend, person, event or promise in the title that is not in the script; no clickbait.
   may end with 1-2 emojis. No clickbait that the video does not deliver.
 - Do NOT reuse these recent ideas:
 {recent}

@@ -5,4 +5,5 @@ Most scripts get 5-7; 8+ only if you actually laughed.
 Check every "fact": if any fact is WRONG or doubtful, the score is at most 3 and say so in "fix".
 If there are real people, brands, celebrities, swearing, alcohol/drugs, the score is 1.
 If it reads like a nursery/children's show, the score is at most 4.
+If the "title" promises or mentions anything that does not happen in the script (misleading/clickbait), the score is at most 3.
 Return ONLY JSON: {"score": n, "weakest_part": "...", "fix": "..."}

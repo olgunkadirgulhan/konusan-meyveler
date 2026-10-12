@@ -27,6 +27,7 @@ KURALLAR
   gerçek kişi, marka, ünlü, siyaset, din yok. Başlık ve kanca korku/gerilim/şok üzerine kurulmaz
   (bıçak, dehşet, gerilim yok); merak komediden gelsin.
 - "title" = YouTube başlığı, en fazla 70 karakter, merak uyandıran. "hook" = kısa slogan (en fazla 8 kelime).
+  Başlık videoda gerçekten olanı anlatmalı (karakterler, durum, espri). Senaryoda olmayan kelime, trend, kişi, olay ya da vaat başlığa yazılmaz; tık tuzağı yok.
 - "description" = 2-3 cümlelik bölüm özeti (sonu söyleme).
 - Şu son fikirleri TEKRARLAMA:
 {recent}

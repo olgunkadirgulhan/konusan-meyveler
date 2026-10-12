@@ -25,6 +25,7 @@ KURALLAR
   (bıçak, dehşet, gerilim yok); merak komediden gelsin.
 - "hook" = ekranın üstündeki yazı, en fazla 7 kelime, ör. "Domatese sebze dediğinde:".
 - "title" = YouTube başlığı, en fazla 70 karakter, merak uyandıran, sonunda 1-2 emoji olabilir.
+  Başlık videoda gerçekten olanı anlatmalı (karakterler, durum, espri). Senaryoda olmayan kelime, trend, kişi, olay ya da vaat başlığa yazılmaz; tık tuzağı yok.
 - Şu son fikirleri TEKRARLAMA:
 {recent}
 
