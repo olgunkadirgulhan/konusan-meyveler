@@ -29,6 +29,18 @@ VOWELS = set('aeıioöuüâîûAEIİOÖUÜ')
 _piper = {}
 
 
+def piper_fetch(name, d):
+    """Piper sesi indir: Hugging Face 'main' dalında dosyalar kaldırıldı (2026-10), sabit v1.0.0 etiketinden çek."""
+    import urllib.request
+    lang, voice, quality = name.split('-', 2)
+    base = f'https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/{lang.split("_")[0]}/{lang}/{voice}/{quality}/{name}'
+    for ext in ('.onnx', '.onnx.json'):
+        out = os.path.join(str(d), name + ext)
+        if not os.path.exists(out):
+            urllib.request.urlretrieve(base + ext + '?download=true', out + '.part')
+            os.replace(out + '.part', out)
+
+
 def log(m):
     print(f'[tts] {m}', flush=True)
 
@@ -109,7 +121,7 @@ def _piper_voice(name):
         d = CACHE / 'piper'
         d.mkdir(parents=True, exist_ok=True)
         if not (d / f'{name}.onnx').exists():
-            subprocess.run(['python', '-m', 'piper.download_voices', '--data-dir', str(d), name], check=True)
+            piper_fetch(name, d)
         _piper[name] = PiperVoice.load(str(d / f'{name}.onnx'))
     return _piper[name]
 
