@@ -99,7 +99,9 @@ def metadata(sc):
     facts = [L['fact'] for S in sc['scenes'] for L in S['lines'] if L.get('fact')]
     by_template = {'pov': '#pov', 'types_of': '#typesof', 'roast': '#roast', 'confessional': '#realitytv',
                    'fridge_after_dark': '#fridge', 'plot_twist': '#plottwist','anlatiyor': '#bilgi', 'kavga': '#kavga', 'kimlik_krizi': '#bunubiliyormuydunuz',
-                   'buzdolabi': '#buzdolabı', 'ters_kose': '#terskose', 'tipler': '#tipler'}
+                   'buzdolabi': '#buzdolabı', 'ters_kose': '#terskose', 'tipler': '#tipler', 'pazar_tezgahi': '#pazar',
+                   'meyve_mahkemesi': '#mahkeme', 'tarif_krizi': '#mutfak', 'grocery_aisle': '#grocery', 'fruit_court_short': '#court',
+                   'expiration_date': '#fruitdrama'}
     short = sc.get('format', 'short') == 'short'
     base = '#konuşanmeyveler #meyveler #komik #animasyon' if lang.TR else '#fruitdramaclub #talkingfruit #comedy #animation'
     hashtags = ('#shorts ' if short else '') + \

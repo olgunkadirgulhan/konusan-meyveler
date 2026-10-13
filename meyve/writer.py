@@ -30,12 +30,12 @@ SHORT_TEMPLATES = {
     'kimlik_krizi': 'Kimlik krizi: bir meyve/sebze kendisi hakkında şaşırtıcı bir gerçeği öğrenir ve dramatik tepki verir.',
     'buzdolabi': 'Buzdolabı draması: buzdolabında/mutfakta meyveler kendi aralarında konuşur; insan gelince herkes '
                  'normal davranır; sonda dev el ("grabbed") beklenmedik birini alır.',
-    'ters_kose': 'Ters köşe: sıradan bir sohbet, son 3 saniyede tamamen beklenmedik bir sonla biter '
-                 '(blender, salata, reçel, dev el vb.).',
-    'normal_psikopat': 'Normal vs Psikopat: aynı mutfak durumu iki kez: sahne etiketi "Normal meyve" (sakin, mantıklı), '
-                       'sonra "Psikopat meyve" (abartılı, absürt, çizgi film gibi; gerçek şiddet yok); son replik en komik.',
-    'tipler': 'Tipler: "Mutfaktaki X tipleri" -> 3-4 hızlı sahne, her sahne bir tip (sahne "label" ile, ör. "Gösterişçi"), '
-              'sonuncusu en absürt.',
+    'pazar_tezgahi': 'Pazar tezgâhı: pazarda tezgâhtaki meyveler müşteri gelince kendini satmaya çalışır (bağıra bağıra '
+                     'reklam, rekabet, indirim kavgası); sonunda müşteri en beklenmedik meyveyi seçer.',
+    'meyve_mahkemesi': 'Meyve mahkemesi (kısa): bir meyve diğerini saçma bir sebeple mahkemeye verir; hâkim Limon, tanık '
+                       'Muz; 3 hızlı ifade, son replikte absürt bir karar.',
+    'tarif_krizi': 'Tarif krizi: mutfakta yemek tarifi yüksek sesle okunur; malzemeler adlarının geçtiğini duyunca panikler, '
+                   'pazarlık eder, saklanır; son replikte tarifin bambaşka bir şey olduğu ortaya çıkar.',
 }
 # Haftalık uzun bölüm dizileri (yatay, 3-5 dk)
 LONG_SERIES = {
@@ -67,19 +67,18 @@ SHOCK = re.compile(r'(bıçak|gerilim|dehşet|korku|kâbus|kabus|vahşet|katliam
 SHORT_TEMPLATES_EN = {
     'pov': 'POV: the hook starts with "POV:" and drops the viewer into a relatable American everyday moment; the '
            'fruits react to "you" and it escalates every line; last line flips it.',
-    'types_of': 'Types of...: "Types of fruit at the X" -> 3-4 fast scenes, each a type (scene "label", e.g. '
-                '"The Influencer"), the last one the most absurd.',
     'roast': 'Roast battle: two fruits roast each other with REAL facts about themselves (fact), the burns get '
              'harder, the last line is a twist burn from a third fruit.',
     'confessional': 'Reality-show confessional: fruits talk to the camera (look_camera) about drama in the fruit '
                     'bowl, cutting between them like a reality TV show; the last confessional reveals the twist.',
     'fridge_after_dark': 'Fridge after dark: what the fruits do when the fridge door closes; when the human opens '
                          'it everyone freezes; at the end a giant hand ("grabbed") takes the least expected one.',
-    'normal_vs_psycho': 'Normal vs Psycho: the same kitchen situation twice - scene label "Normal fruit" (calm, sensible), '
-                        'then scene label "Psycho fruit" (unhinged, absurd, cartoonish; no real violence); the last line is '
-                        'the funniest.',
-    'plot_twist': 'Plot twist: a totally normal conversation that ends in the last 3 seconds with a twist '
-                  '(smoothie, blender, fruit salad, giant hand).',
+    'grocery_aisle': 'Grocery aisle drama: fruits on a supermarket shelf compete to be picked by the shopper (loud ads, '
+                     'rivalry, a fake discount sticker); the least expected one gets picked.',
+    'fruit_court_short': 'Fruit court (short): one fruit sues another over something petty; Judge Lemon, witness Banana; '
+                         'three quick testimonies, an absurd verdict in the last line.',
+    'expiration_date': 'Expiration date panic: a fruit notices its first brown spot and goes through the five stages of '
+                       'grief in 30 seconds; the last line is a twist.',
 }
 TOPICS_EN = ['Monday morning meeting', 'rent is due', 'group chat drama', 'the office potluck', 'meal prep Sunday',
              'gym bros', 'brunch with the girls', 'first date', 'roommate rules', 'the self-checkout machine',
