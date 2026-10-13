@@ -41,7 +41,7 @@ jobs:
       - id: g
         env:
           LOG_FILE: published_en.csv
-          SLOTS: "13:00,19:00,23:00"  # ilk video TR 18:00 sosyal gönderimine yetişsin
+          SLOTS: "13:00,17:30,20:30"  # ilk video TR 18:00 sosyal gönderimine yetişsin; 2026-10-13: 23:00 en zayıf saatti
           # haftalık uzun bölüm: Cumartesi 17:00 UTC (ABD Doğu 13:00)
           LONG: "sat 17:00 long"
           HAS_YT: ${{ secrets.YT_EN_REFRESH_TOKEN != '' }}
