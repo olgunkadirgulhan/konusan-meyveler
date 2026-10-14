@@ -85,6 +85,14 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python run.py --format ${{ needs.guard.outputs.mode || inputs.format || 'short' }} ${{ inputs.no_upload && '--no-upload' || '' }}
+      - name: Günün videosu (sosyal medya için)
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: social-${{ github.run_id }}
+          path: social/
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Keep video for review
         if: always()
         uses: actions/upload-artifact@v5

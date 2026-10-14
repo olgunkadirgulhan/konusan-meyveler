@@ -151,10 +151,15 @@ def social_once(mp4, title, url, sc):
     soc = HERE / 'social'
     soc.mkdir(exist_ok=True)
     shutil.copy(mp4, soc / 'video.mp4')
-    tiktok = f"{title}\n\nWhich fruit are you? 👇\n\n#fruitdramaclub #talkingfruit #funny #animation #comedy #fyp"
-    insta = (f"{title}\n\nFollow for daily fruit drama 🍋🍉\n\n"
-             "#funny #animation #comedy #relatable #fruit")  # Instagram: en fazla 5 etiket
-    (soc / 'post.json').write_text(json.dumps({'channel': 'Fruit Drama Club', 'title': title, 'url': url,
+    if lang.TR:
+        tiktok = f"{title}\n\nSen hangi meyvesin? 👇\n\n#konuşanmeyveler #komik #animasyon #keşfet #fyp"
+        insta = (f"{title}\n\nHer gün yeni meyve dramı için takip et 🍋🍉\n\n"
+                 "#komik #animasyon #mizah #keşfet #meyve")  # Instagram: en fazla 5 etiket
+    else:
+        tiktok = f"{title}\n\nWhich fruit are you? 👇\n\n#fruitdramaclub #talkingfruit #funny #animation #comedy #fyp"
+        insta = (f"{title}\n\nFollow for daily fruit drama 🍋🍉\n\n"
+                 "#funny #animation #comedy #relatable #fruit")  # Instagram: en fazla 5 etiket
+    (soc / 'post.json').write_text(json.dumps({'channel': lang.S['channel'], 'title': title, 'url': url,
                                                'tiktok': tiktok, 'instagram': insta}, ensure_ascii=False, indent=1),
                                    encoding='utf-8')
     log('social: günün videosu hazır (Telegram relay)')
@@ -229,7 +234,7 @@ def main():
         except Exception as e:
             log(f'thumbnail skipped (kanal telefonla doğrulanmamış olabilir): {str(e)[:160]}')
     log(f'uploaded {url} ({mode})')
-    if not lang.TR and fmt == 'short' and mode == 'public':
+    if fmt == 'short' and mode == 'public':
         social_once(mp4, title, url, sc)
     pls = json.loads(PLAYLISTS.read_text(encoding='utf-8')) if PLAYLISTS.exists() else {}
     if sc.get('template') in pls:
