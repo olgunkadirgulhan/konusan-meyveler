@@ -223,6 +223,14 @@
       "topic": "the HOA meeting",
       "title": "Fruits try to handle HOA fines in the fridge 🍋🏡",
       "date": "2026-10-13 20:50"
+    },
+    {
+      "id": "short_20261014-134828",
+      "format": "short",
+      "template": "pov",
+      "topic": "rent is due",
+      "title": "Fruits panic about rent when the landlord knocks 🍋🍌💸",
+      "date": "2026-10-14 13:53"
     }
   ],
   "bank_used": []
