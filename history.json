@@ -263,7 +263,17 @@
       "topic": "maaş günü",
       "title": "Maaş Günü Gelen Gurme Tarif Meyveleri Birbirine Kattı! 🥑🧅",
       "date": "2026-10-15 14:50"
+    },
+    {
+      "id": "short_20261015-181934",
+      "format": "short",
+      "template": "kimlik_krizi",
+      "topic": "meyve mi sebze mi",
+      "title": "Domates meyve mi sebze mi? Kavga çıktı 😭🍅",
+      "date": "2026-10-15 18:29"
     }
   ],
-  "bank_used": []
+  "bank_used": [
+    "bank_001_domates_kimlik"
+  ]
 }
