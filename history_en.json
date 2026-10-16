@@ -287,6 +287,14 @@
       "topic": "picnic in the park",
       "title": "Avocado and Strawberry Meltdown at a Park Picnic 🍓🥑",
       "date": "2026-10-16 17:54"
+    },
+    {
+      "id": "short_20261016-204811",
+      "format": "short",
+      "template": "grocery_aisle",
+      "topic": "a haunted house",
+      "title": "Fruits Audition for a Haunted House in the Aisle 👻🧅",
+      "date": "2026-10-16 20:54"
     }
   ],
   "bank_used": []
