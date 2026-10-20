@@ -42,8 +42,8 @@ jobs:
         env:
           LOG_FILE: published.csv
           SLOTS: "09:00,14:00,17:30"
-          # haftalık uzun bölüm: Cumartesi 16:00 UTC (TR 19:00)
-          LONG: "sat 16:00 long"
+          # 2026-10-20: TR uzun bölüm 1 izlenme aldı → cumartesi yerine ek Short (kullanıcı onayı)
+          LONG: "sat 16:00 short"
           HAS_YT: ${{ secrets.YT_REFRESH_TOKEN != '' }}
         run: |
           if [ "$HAS_YT" != "true" ]; then echo "YouTube bağlı değil (auth_setup.py), atlanıyor"; echo "go=0" >> $GITHUB_OUTPUT; exit 0; fi

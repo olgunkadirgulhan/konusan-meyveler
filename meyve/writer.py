@@ -290,6 +290,8 @@ def pick(hist, fmt, rnd):
     else:
         last = [r['template'] for r in recent[-2:]]
         keys = [k for k in SHORT_TEMPLATES if k not in last]
+        if TR:   # 2026-10-20: TR'de kavga şablonu 0-4 izlenme; gündelik dramlar 1.200-2.700 → kavga çıkarıldı (kullanıcı onayı)
+            keys = [k for k in keys if k != 'kavga']
         perf = template_performance()
         top = max(perf.values(), default=0)
         # keşif + sömürü: iyi giden şablon en fazla 6 kat sık; hiç/az izlenen de taban şansını korur

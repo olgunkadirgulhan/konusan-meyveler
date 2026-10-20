@@ -10,6 +10,7 @@ env:
   LOG_FILE     published.csv (date_utc, format) or history.json (videos[].date, .kind)
   SLOTS        short slots, UTC "HH:MM,HH:MM"
   PER_SLOT     videos one run makes (default 1)
+  DAILY_MAX    optional cap on shorts per day (match config.yaml daily_videos)
   SHORT_KINDS  log kinds that count as shorts (default "short")
   SHORT_MODE   mode printed for a short run (default "short")
   LONG         optional weekly long videos, "tue 17:00 long,fri 15:00 school"
@@ -57,8 +58,12 @@ def main():
             print(f'last upload {gap:.0f} min ago')
             return output(False)
 
+    extra = 0
     for item in filter(None, (s.strip() for s in os.environ.get('LONG', '').split(','))):
         day, at, mode = item.split()
+        if mode == os.environ.get('SHORT_MODE', 'short'):   # haftalık ek Short slotu (ör. "fri 19:00 shorts")
+            extra += day == weekday and hhmm >= at
+            continue
         if day == weekday and hhmm >= at and not any(k == mode for _, k in done):
             print(f'long "{mode}" due since {at}, not uploaded today')
             return output(True, mode)
@@ -66,6 +71,10 @@ def main():
     kinds = set(os.environ.get('SHORT_KINDS', 'short').split(','))
     slots = [s.strip() for s in os.environ['SLOTS'].split(',') if s.strip()]
     due = int(os.environ.get('PER_SLOT') or 1) * sum(1 for s in slots if s <= hhmm)
+    if os.environ.get('DAILY_MAX'):
+        # run.py'nin günlük tavanını aşan slotlar için boşuna video işi başlatma
+        due = min(due, int(os.environ['DAILY_MAX']))
+    due += extra
     made = sum(1 for _, k in done if k in kinds)
     print(f'{hhmm} UTC: shorts due {due}, uploaded today {made}')
     output(made < due, os.environ.get('SHORT_MODE', 'short'))
