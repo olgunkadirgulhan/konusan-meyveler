@@ -487,6 +487,14 @@
       "topic": "the HOA meeting",
       "title": "The Fruit Villa HOA Meeting Goes Totally South 🥑🔥",
       "date": "2026-10-24 18:00"
+    },
+    {
+      "id": "short_20261024-184814",
+      "format": "short",
+      "template": "expiration_date",
+      "topic": "the big game party",
+      "title": "Banana spots a brown dot before kickoff 🍌🏈",
+      "date": "2026-10-24 18:50"
     }
   ],
   "bank_used": []
