@@ -679,6 +679,14 @@
       "topic": "a haunted house",
       "title": "Banana has a total meltdown in a haunted pantry 🍌👻",
       "date": "2026-10-31 20:53"
+    },
+    {
+      "id": "short_20261101-134805",
+      "format": "short",
+      "template": "grocery_aisle",
+      "topic": "the big game party",
+      "title": "Banana tricks shoppers into buying him for Game Day 🏈🍌",
+      "date": "2026-11-01 13:52"
     }
   ],
   "bank_used": []
