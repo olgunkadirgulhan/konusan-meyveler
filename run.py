@@ -110,6 +110,8 @@ def metadata(sc):
     if facts:
         desc += T['facts'] + '\n'.join(f'• {f}' for f in facts)
     desc += (f"\n\n{T['cast']}: {', '.join(names)}\n" + (T['daily'] if short else T['weekly']) + hashtags)
+    if lang.TR:   # 2026-11-02: kendi dil sitemiz (sadece TR kanal; açıkça bizim sitemiz olarak, tek satır)
+        desc = desc[:-len(hashtags)] + 'Yabancı dil öğrenmek ister misin? Kendi dilinde, ücretsiz: https://getfenek.com (bizim sitemiz)\n\n' + hashtags
     seen, uniq = set(), []
     for t in tags if short else [t for t in tags if t != 'shorts']:
         if t.lower() not in seen and sum(len(x) for x in uniq) + len(t) < 450:
