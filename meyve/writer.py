@@ -167,7 +167,10 @@ def parse_json(text):
 def normalize(sc, fmt):
     """Bilinmeyen değerleri güvenli varsayılana çek; ciddi sorunları liste olarak döndür."""
     problems = []
-    max_words = 15 if fmt == 'short' else 22
+    from . import lang as _lang
+    # 2026-11-02 EN veri: 25-38 sn Shorts ~900 izlenme, 47+ sn 30-250 → EN kısa: 6-9 satır, satır ≤12 kelime (~25-35 sn)
+    en_short = fmt == 'short' and not _lang.TR
+    max_words = 12 if en_short else (15 if fmt == 'short' else 22)
     sc['format'] = fmt
     if not sc.get('scenes'):
         return ['no scenes']
@@ -217,7 +220,7 @@ def normalize(sc, fmt):
         if not S['characters']:
             problems.append('scene without characters')
     sc['scenes'] = [S for S in sc['scenes'] if S['lines']]
-    lo, hi = (7, 14) if fmt == 'short' else (32, 65)
+    lo, hi = (6, 9) if en_short else ((7, 14) if fmt == 'short' else (32, 65))
     if not lo <= n_lines <= hi:
         problems.append(f'{n_lines} spoken lines (want {lo}-{hi})')
     if sc.get('template') in FACT_TEMPLATES and n_facts < 1:

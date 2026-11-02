@@ -1,4 +1,4 @@
-Write a FUNNY 30-45 second script for "Fruit Drama Club", an animated YouTube Shorts channel of talking fruits.
+Write a FUNNY 25-35 second script for "Fruit Drama Club", an animated YouTube Shorts channel of talking fruits.
 Characters are 3D-animated fruits/vegetables. Audience: AMERICAN TEENS AND ADULTS (16-40). The channel is NOT made
 for kids: the humor comes from American adult everyday life (work, the boss, rent, group chats, dating, roommates,
 gym culture, brunch, holidays, influencers, tipping screens, HOA) and clean, sharp comedy. No nursery tone, no
@@ -16,7 +16,7 @@ TOPIC: {topic}
 RULES
 - Audience: teens and adults (13+), NOT young children. Humor from grown-up/teen life (work, money, roommates,
   dating, adulting). Avoid elementary-school settings and kid-show tone.
-- Dialogue only, no narrator. 8-12 lines total, each line max 14 words. Short, punchy, natural American English.
+- Dialogue only, no narrator. 6-9 lines total, each line max 12 words. Short, punchy, natural American English.
 - Line 1 must stop the scroll with zero context: a shocking question, accusation or yell.
 - Every line escalates or sets up the punchline. The last line is the funniest (twist).
 - FRUIT FACTS: in 2-4 lines put a TRUE, VERIFIABLE, short fact about THAT fruit in "fact" (max 14 words).
