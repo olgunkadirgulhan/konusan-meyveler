@@ -65,6 +65,12 @@ SHOCK = re.compile(r'(bıçak|gerilim|dehşet|korku|kâbus|kabus|vahşet|katliam
 # ---------------------------------------------------------------- ABD kanalı (CONTENT_LANG=en)
 # Türkçe kanalın çevirisi DEĞİL: Amerikan izleyiciye özel şablon, konu ve diziler (özgün içerik).
 SHORT_TEMPLATES_EN = {
+    # 2026-11-07: Türkçe kanalın en iyi iki şablonu (kimlik_krizi medyan 1.001, tarif_krizi 863) İngilizceye uyarlandı
+    'identity_crisis': 'Identity crisis: a fruit or vegetable learns a SURPRISING but TRUE fact about itself (fact) '
+                       '(e.g. a tomato is botanically a fruit, a banana is a berry, a strawberry is not a berry) and '
+                       'reacts with huge drama; the others pile on; the last line is a twist.',
+    'recipe_crisis': 'Recipe crisis: a recipe is read out loud in the kitchen; each ingredient panics when it hears '
+                     'its name, bargains and hides; the last line reveals the recipe was something totally different.',
     'pov': 'POV: the hook starts with "POV:" and drops the viewer into a relatable American everyday moment; the '
            'fruits react to "you" and it escalates every line; last line flips it.',
     'roast': 'Roast battle: two fruits roast each other with REAL facts about themselves (fact), the burns get '
@@ -100,7 +106,7 @@ BANNED_EN = re.compile(r'\b(kill|dead|die|blood|sex|sexy|drunk|beer|wine|vodka|d
                        r'shut up|crap|wtf)\b', re.I)
 if not TR:
     SHORT_TEMPLATES, TOPICS, LONG_SERIES, BANNED = SHORT_TEMPLATES_EN, TOPICS_EN, LONG_SERIES_EN, BANNED_EN
-FACT_TEMPLATES = ('anlatiyor', 'kavga', 'kimlik_krizi', 'roast')
+FACT_TEMPLATES = ('anlatiyor', 'kavga', 'kimlik_krizi', 'roast', 'identity_crisis')
 MSG = {'tr': dict(examples='\n\nİstediğimiz tempo, uzunluk ve espri yoğunluğuna ÖRNEKLER. Her replik ya espri ya hazırlık; '
                            'son replik her şeyi ters çevirir. Bu esprileri ve konuları KOPYALAMA:\n\n',
                   rejected='\n\nÖnceki senaryon şu sebeplerle reddedildi: {p}. Bunları düzelt.',
@@ -298,7 +304,7 @@ def pick(hist, fmt, rnd):
         perf = template_performance()
         top = max(perf.values(), default=0)
         # keşif + sömürü: iyi giden şablon en fazla 6 kat sık; hiç/az izlenen de taban şansını korur
-        w = [1.0 + 5.0 * perf[k] / top if top and k in perf else 1.0 for k in keys]
+        w = [1.0 + 5.0 * perf[k] / top if top and k in perf else (3.0 if top else 1.0) for k in keys]   # denenmemiş şablon: keşif (2026-11-07)
         if perf:
             print('[writer] şablon ortalama izlenme:', {k: round(v) for k, v in perf.items()}, flush=True)
         template = rnd.choices(keys, weights=w)[0]
