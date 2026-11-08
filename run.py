@@ -244,6 +244,9 @@ def main():
             upload.add_to_playlist(pls[sc['template']], vid); log(f"added to playlist {sc['template']}")
         except Exception as e:
             log(f'playlist add skipped: {str(e)[:160]}')
+    # 2026-11-08: kullanıcı Telegram'a sadece Almanca (Fenek) kanalının videolarını istiyor → TG_VIDEOS=1 olmadıkça gönderme
+    if os.environ.get('TG_VIDEOS') != '1':
+        return
     notify.video(mp4, f'🍓 {title}\n{url}')
     notify.copyable('TikTok / Instagram:', f"{title}\n\n{desc.split(chr(10) + chr(10) + T['cast'])[0]}\n\n"
                     + ('#konuşanmeyveler #meyveler #komik #animasyon #keşfet #fyp' if lang.TR else
