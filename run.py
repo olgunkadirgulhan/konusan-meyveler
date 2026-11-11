@@ -247,7 +247,7 @@ def main():
     # 2026-11-08: kullanıcı Telegram'a sadece Almanca (Fenek) kanalının videolarını istiyor → TG_VIDEOS=1 olmadıkça gönderme
     if os.environ.get('TG_VIDEOS') != '1':
         return
-    notify.video(mp4, f'🍓 {title}\n{url}')
+    notify.video(mp4, f'✅ Konuşan Meyveler YouTube\'da paylaşıldı\n{title}\n{url}')
     notify.copyable('TikTok / Instagram:', f"{title}\n\n{desc.split(chr(10) + chr(10) + T['cast'])[0]}\n\n"
                     + ('#konuşanmeyveler #meyveler #komik #animasyon #keşfet #fyp' if lang.TR else
                        '#fruitdramaclub #talkingfruit #comedy #fyp'))
