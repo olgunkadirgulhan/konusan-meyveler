@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261005-154818",
-      "format": "short",
-      "template": "roast",
-      "topic": "picnic in the park",
-      "title": "Watermelon tried to flex at the picnic and it went wrong 🍉",
-      "date": "2026-10-05 15:50"
-    },
-    {
       "id": "short_20261005-212959",
       "format": "short",
       "template": "confessional",
@@ -959,6 +951,14 @@
       "topic": "road trip",
       "title": "The fruit road trip took a turn for the worst 🚗⚡",
       "date": "2026-11-12 13:49"
+    },
+    {
+      "id": "short_20261112-175640",
+      "format": "short",
+      "template": "recipe_crisis",
+      "topic": "pumpkin spice season",
+      "title": "Why Pumpkin Spice is a lie 🎃☕",
+      "date": "2026-11-12 17:59"
     }
   ],
   "bank_used": []
