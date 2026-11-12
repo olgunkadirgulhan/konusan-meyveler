@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261005-212959",
-      "format": "short",
-      "template": "confessional",
-      "topic": "college dorm life",
-      "title": "When your college roommate is literally toxic 🍌🥑",
-      "date": "2026-10-05 21:32"
-    },
-    {
       "id": "short_20261005-234816",
       "format": "short",
       "template": "plot_twist",
@@ -959,6 +951,14 @@
       "topic": "pumpkin spice season",
       "title": "Why Pumpkin Spice is a lie 🎃☕",
       "date": "2026-11-12 17:59"
+    },
+    {
+      "id": "short_20261112-204923",
+      "format": "short",
+      "template": "fridge_after_dark",
+      "topic": "Types of fruits at a sleepover",
+      "title": "The fruit sleepover drama is out of control 🍓🍋",
+      "date": "2026-11-12 20:50"
     }
   ],
   "bank_used": []
