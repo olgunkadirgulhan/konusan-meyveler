@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261005-110411",
-      "format": "short",
-      "template": "tipler",
-      "topic": "meyve salatası seçmeleri",
-      "title": "Meyve Salatası Seçmelerinde Skandal! Sen Kimsin? 🍓🍋🥒",
-      "date": "2026-10-05 11:07"
-    },
-    {
       "id": "short_20261005-144826",
       "format": "short",
       "template": "anlatiyor",
@@ -959,6 +951,14 @@
       "topic": "Meyvelerin cuma akşamı hafta sonu heyecanı",
       "title": "Avokado'nun Brunch hayali suya düştü! 🥑🍋",
       "date": "2026-11-13 09:55"
+    },
+    {
+      "id": "short_20261113-144901",
+      "format": "short",
+      "template": "kimlik_krizi",
+      "topic": "ekşi olmak",
+      "title": "Limon'un Temizlik Malzemesi Olduğunu Öğrendiği An! 🍋🧼",
+      "date": "2026-11-13 14:56"
     }
   ],
   "bank_used": [
