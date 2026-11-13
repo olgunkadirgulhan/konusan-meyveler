@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261005-234816",
-      "format": "short",
-      "template": "plot_twist",
-      "topic": "road trip",
-      "title": "Road trip goes wrong when the GPS is possessed 🚗🍉",
-      "date": "2026-10-05 23:54"
-    },
-    {
       "id": "short_20261006-155908",
       "format": "short",
       "template": "fridge_after_dark",
@@ -959,6 +951,14 @@
       "topic": "Types of fruits at a sleepover",
       "title": "The fruit sleepover drama is out of control 🍓🍋",
       "date": "2026-11-12 20:50"
+    },
+    {
+      "id": "short_20261113-134812",
+      "format": "short",
+      "template": "expiration_date",
+      "topic": "the big game party",
+      "title": "Banana had a 30-second midlife crisis at the Big Game party 🏈🍌",
+      "date": "2026-11-13 13:51"
     }
   ],
   "bank_used": []
