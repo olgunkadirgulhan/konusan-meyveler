@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261005-144826",
-      "format": "short",
-      "template": "anlatiyor",
-      "topic": "kış meyvesi olmak",
-      "title": "Kış meyvelerinin zorlu hayatı 🥶🍊",
-      "date": "2026-10-05 14:55"
-    },
-    {
       "id": "short_20261005-174824",
       "format": "short",
       "template": "ters_kose",
@@ -959,6 +951,14 @@
       "topic": "ekşi olmak",
       "title": "Limon'un Temizlik Malzemesi Olduğunu Öğrendiği An! 🍋🧼",
       "date": "2026-11-13 14:56"
+    },
+    {
+      "id": "short_20261113-174859",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "Meyvelerin yarınki hava durumunu takip etmesi",
+      "title": "Hava Durumunu Yemek Tarifi Sanan Meyvelerin Paniği ☀️🍅",
+      "date": "2026-11-13 17:57"
     }
   ],
   "bank_used": [
