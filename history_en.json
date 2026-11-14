@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261007-154826",
-      "format": "short",
-      "template": "fridge_after_dark",
-      "topic": "smoothie bowl influencers",
-      "title": "Smoothie bowl influencers are ruining the fridge 😭🍓",
-      "date": "2026-10-07 15:57"
-    },
-    {
       "id": "short_20261007-194808",
       "format": "short",
       "template": "types_of",
@@ -959,6 +951,14 @@
       "topic": "brunch with the girls",
       "title": "Strawberry sued Avocado over a $200 brunch bill split 💸🍓",
       "date": "2026-11-14 14:02"
+    },
+    {
+      "id": "long_20261114-174843",
+      "format": "long",
+      "template": "fruit_villa",
+      "topic": "job interview",
+      "title": "Fruit Villa job interviews go wrong when Tomato loses his mind 🍅💼",
+      "date": "2026-11-14 18:02"
     }
   ],
   "bank_used": []
