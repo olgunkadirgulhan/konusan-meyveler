@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261006-094810",
-      "format": "short",
-      "template": "kavga",
-      "topic": "sınav stresi",
-      "title": "Sınav stresi mi yoksa fit smoothie terörü mü? 😭🍊🥒",
-      "date": "2026-10-06 09:51"
-    },
-    {
       "id": "short_20261006-144839",
       "format": "short",
       "template": "kimlik_krizi",
@@ -959,6 +951,14 @@
       "topic": "Meyvelerin evde meyveli yoğurt yapılma telaşı",
       "title": "Pazarda meyveli yoğurt savaşı! Müşteri kimi seçti? 🥑🍓",
       "date": "2026-11-14 09:57"
+    },
+    {
+      "id": "short_20261114-144825",
+      "format": "short",
+      "template": "meyve_mahkemesi",
+      "topic": "iş görüşmesi",
+      "title": "İş Görüşmesinde Yalan Söyleyen Avokado Mahkemelik Oldu! 🥑⚖️",
+      "date": "2026-11-14 14:55"
     }
   ],
   "bank_used": [
