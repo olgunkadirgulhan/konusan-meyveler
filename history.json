@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261006-144839",
-      "format": "short",
-      "template": "kimlik_krizi",
-      "topic": "yaşlanmak / kararmak",
-      "title": "Muzun yaşlanma krizi başladı 🍌😭",
-      "date": "2026-10-06 14:51"
-    },
-    {
       "id": "short_20261006-174808",
       "format": "short",
       "template": "anlatiyor",
@@ -959,6 +951,14 @@
       "topic": "iş görüşmesi",
       "title": "İş Görüşmesinde Yalan Söyleyen Avokado Mahkemelik Oldu! 🥑⚖️",
       "date": "2026-11-14 14:55"
+    },
+    {
+      "id": "short_20261114-164844",
+      "format": "short",
+      "template": "kimlik_krizi",
+      "topic": "doğum günü pastası",
+      "title": "Domates meyve çıkınca ortalık karıştı! 🎂🍅",
+      "date": "2026-11-14 16:54"
     }
   ],
   "bank_used": [
