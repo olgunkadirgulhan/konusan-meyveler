@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261007-194808",
-      "format": "short",
-      "template": "types_of",
-      "topic": "Black Friday shopping",
-      "title": "Black Friday shopping with a dramatic fruit squad 🛒🍋",
-      "date": "2026-10-07 19:53"
-    },
-    {
       "id": "short_20261007-234943",
       "format": "short",
       "template": "pov",
@@ -959,6 +951,14 @@
       "topic": "job interview",
       "title": "Fruit Villa job interviews go wrong when Tomato loses his mind 🍅💼",
       "date": "2026-11-14 18:02"
+    },
+    {
+      "id": "short_20261114-184815",
+      "format": "short",
+      "template": "expiration_date",
+      "topic": "tax season",
+      "title": "Banana thinks tax season is literally killing him 🍌📉",
+      "date": "2026-11-14 18:53"
     }
   ],
   "bank_used": []
