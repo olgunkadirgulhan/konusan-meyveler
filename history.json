@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261005-174824",
-      "format": "short",
-      "template": "ters_kose",
-      "topic": "bıçak geldi",
-      "title": "Mutfakta gerilim dolu anlar! 🔪🍅🌶️",
-      "date": "2026-10-05 17:51"
-    },
-    {
       "id": "short_20261006-094810",
       "format": "short",
       "template": "kavga",
@@ -959,6 +951,14 @@
       "topic": "Meyvelerin yarınki hava durumunu takip etmesi",
       "title": "Hava Durumunu Yemek Tarifi Sanan Meyvelerin Paniği ☀️🍅",
       "date": "2026-11-13 17:57"
+    },
+    {
+      "id": "short_20261114-095034",
+      "format": "short",
+      "template": "pazar_tezgahi",
+      "topic": "Meyvelerin evde meyveli yoğurt yapılma telaşı",
+      "title": "Pazarda meyveli yoğurt savaşı! Müşteri kimi seçti? 🥑🍓",
+      "date": "2026-11-14 09:57"
     }
   ],
   "bank_used": [
