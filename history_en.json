@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261007-234943",
-      "format": "short",
-      "template": "pov",
-      "topic": "working from home",
-      "title": "When your fruit coworker forgets to mute on Zoom 🥑💻",
-      "date": "2026-10-07 23:54"
-    },
-    {
       "id": "short_20261008-154826",
       "format": "short",
       "template": "roast",
@@ -959,6 +951,14 @@
       "topic": "tax season",
       "title": "Banana thinks tax season is literally killing him 🍌📉",
       "date": "2026-11-14 18:53"
+    },
+    {
+      "id": "short_20261114-204820",
+      "format": "short",
+      "template": "grocery_aisle",
+      "topic": "Panic of running late for school",
+      "title": "Banana has a breakdown over morning school run 🍌🎒",
+      "date": "2026-11-14 21:00"
     }
   ],
   "bank_used": []
