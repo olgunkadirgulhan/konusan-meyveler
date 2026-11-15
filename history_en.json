@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261008-154826",
-      "format": "short",
-      "template": "roast",
-      "topic": "roommate rules",
-      "title": "When your roommate is a high-maintenance avocado 🥑",
-      "date": "2026-10-08 15:53"
-    },
-    {
       "id": "short_20261008-214815",
       "format": "short",
       "template": "fridge_after_dark",
@@ -959,6 +951,14 @@
       "topic": "Panic of running late for school",
       "title": "Banana has a breakdown over morning school run 🍌🎒",
       "date": "2026-11-14 21:00"
+    },
+    {
+      "id": "short_20261115-134950",
+      "format": "short",
+      "template": "pov",
+      "topic": "Types of students in class",
+      "title": "Chili Pepper exposes Orange during a group project panic 🌶️🍊",
+      "date": "2026-11-15 13:57"
     }
   ],
   "bank_used": []
