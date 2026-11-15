@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261006-174808",
-      "format": "short",
-      "template": "anlatiyor",
-      "topic": "ilk buluşma",
-      "title": "İlk buluşmada hesap gelince meyveler panikte! 💸🥑",
-      "date": "2026-10-06 17:51"
-    },
-    {
       "id": "short_20261007-102513",
       "format": "short",
       "template": "kavga",
@@ -959,6 +951,14 @@
       "topic": "doğum günü pastası",
       "title": "Domates meyve çıkınca ortalık karıştı! 🎂🍅",
       "date": "2026-11-14 16:54"
+    },
+    {
+      "id": "short_20261115-094817",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "egzotik meyve kıskançlığı",
+      "title": "Egzotik Meyveler Mutfakta Tarif Paniğinde! 🥑🍍",
+      "date": "2026-11-15 09:56"
     }
   ],
   "bank_used": [
