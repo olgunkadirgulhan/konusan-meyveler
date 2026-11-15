@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261007-153428",
-      "format": "short",
-      "template": "buzdolabi",
-      "topic": "kira zammı",
-      "title": "Buzdolabında kira krizi! 🏠🍌",
-      "date": "2026-10-07 15:42"
-    },
-    {
       "id": "short_20261007-174814",
       "format": "short",
       "template": "ters_kose",
@@ -959,6 +951,14 @@
       "topic": "ilk buluşma",
       "title": "İlk buluşması felaketle biten Avokado mahkemelik oldu! 🥑⚖️",
       "date": "2026-11-15 14:54"
+    },
+    {
+      "id": "short_20261115-175747",
+      "format": "short",
+      "template": "kimlik_krizi",
+      "topic": "sağlıklı beslenme",
+      "title": "Diyet smoothie yaparken blendere giren meyvelerin dramı 🥑🍊",
+      "date": "2026-11-15 18:05"
     }
   ],
   "bank_used": [
