@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261007-102513",
-      "format": "short",
-      "template": "kavga",
-      "topic": "spor salonu",
-      "title": "Spor salonunda portakal terörü! 🍊🔥",
-      "date": "2026-10-07 10:29"
-    },
-    {
       "id": "short_20261007-153428",
       "format": "short",
       "template": "buzdolabi",
@@ -959,6 +951,14 @@
       "topic": "egzotik meyve kıskançlığı",
       "title": "Egzotik Meyveler Mutfakta Tarif Paniğinde! 🥑🍍",
       "date": "2026-11-15 09:56"
+    },
+    {
+      "id": "short_20261115-144823",
+      "format": "short",
+      "template": "meyve_mahkemesi",
+      "topic": "ilk buluşma",
+      "title": "İlk buluşması felaketle biten Avokado mahkemelik oldu! 🥑⚖️",
+      "date": "2026-11-15 14:54"
     }
   ],
   "bank_used": [
