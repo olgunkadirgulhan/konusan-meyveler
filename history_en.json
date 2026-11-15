@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261008-214815",
-      "format": "short",
-      "template": "fridge_after_dark",
-      "topic": "the fruit bowl seating chart",
-      "title": "The midnight fridge seating chart went horribly wrong 🥑🍋",
-      "date": "2026-10-08 21:50"
-    },
-    {
       "id": "short_20261008-234806",
       "format": "short",
       "template": "confessional",
@@ -959,6 +951,14 @@
       "topic": "Types of students in class",
       "title": "Chili Pepper exposes Orange during a group project panic 🌶️🍊",
       "date": "2026-11-15 13:57"
+    },
+    {
+      "id": "short_20261115-174842",
+      "format": "short",
+      "template": "fridge_after_dark",
+      "topic": "airport security",
+      "title": "Chili Pepper runs fridge security until human intervenes 🌶️🍉",
+      "date": "2026-11-15 17:56"
     }
   ],
   "bank_used": []
