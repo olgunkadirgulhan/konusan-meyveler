@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261009-231650",
-      "format": "short",
-      "template": "fridge_after_dark",
-      "topic": "Halloween costume party",
-      "title": "Strawberry's VIP costume party got exposed 🍓🎃",
-      "date": "2026-10-09 23:25"
-    },
-    {
       "id": "short_20261010-134813",
       "format": "short",
       "template": "roast",
@@ -959,6 +951,14 @@
       "topic": "the HOA meeting",
       "title": "Avocado tries to run the Fridge HOA and gets picked 🥑🏠",
       "date": "2026-11-16 18:10"
+    },
+    {
+      "id": "short_20261116-205129",
+      "format": "short",
+      "template": "recipe_crisis",
+      "topic": "When your regional accent slips out",
+      "title": "Avocado's accent slips when the recipe comes out 🥑😱",
+      "date": "2026-11-16 20:55"
     }
   ],
   "bank_used": []
