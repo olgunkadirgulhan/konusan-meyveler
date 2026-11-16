@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261009-194817",
-      "format": "short",
-      "template": "plot_twist",
-      "topic": "pumpkin spice season",
-      "title": "Strawberries are trying to cancel pumpkin spice season 🍓🎃",
-      "date": "2026-10-09 19:50"
-    },
-    {
       "id": "short_20261009-231650",
       "format": "short",
       "template": "fridge_after_dark",
@@ -959,6 +951,14 @@
       "topic": "Halloween costume party",
       "title": "Strawberry threw a costume party and exposed everyone 🍓🎃",
       "date": "2026-11-16 13:49"
+    },
+    {
+      "id": "short_20261116-180127",
+      "format": "short",
+      "template": "fridge_after_dark",
+      "topic": "the HOA meeting",
+      "title": "Avocado tries to run the Fridge HOA and gets picked 🥑🏠",
+      "date": "2026-11-16 18:10"
     }
   ],
   "bank_used": []
