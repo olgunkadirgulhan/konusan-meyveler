@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261009-135538",
-      "format": "short",
-      "template": "roast",
-      "topic": "brunch with the girls",
-      "title": "Brunch drama got personal real quick 🥑🍓",
-      "date": "2026-10-09 13:58"
-    },
-    {
       "id": "short_20261009-194817",
       "format": "short",
       "template": "plot_twist",
@@ -959,6 +951,14 @@
       "topic": "Types of fruits at the gym",
       "title": "Watermelon sues Banana for gym etiquette in fruit court 🍉⚖️",
       "date": "2026-11-15 20:52"
+    },
+    {
+      "id": "short_20261116-134833",
+      "format": "short",
+      "template": "pov",
+      "topic": "Halloween costume party",
+      "title": "Strawberry threw a costume party and exposed everyone 🍓🎃",
+      "date": "2026-11-16 13:49"
     }
   ],
   "bank_used": []
