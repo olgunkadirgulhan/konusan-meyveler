@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261008-144815",
-      "format": "short",
-      "template": "buzdolabi",
-      "topic": "turşu tehlikesi",
-      "title": "Turşu Sezonu Açıldı: Kavanozda Kira Bedava! 🥒😱",
-      "date": "2026-10-08 14:52"
-    },
-    {
       "id": "short_20261008-174835",
       "format": "short",
       "template": "tipler",
@@ -959,6 +951,14 @@
       "topic": "pazartesi sendromu",
       "title": "Pazartesi Sendromlu Şefin Mutfak Krizi! 🥑🍅",
       "date": "2026-11-16 15:11"
+    },
+    {
+      "id": "short_20261116-174816",
+      "format": "short",
+      "template": "buzdolabi",
+      "topic": "smoothie",
+      "title": "Avokado ve Muzun Potasyum Kavgası! 🥑🍌",
+      "date": "2026-11-16 17:59"
     }
   ],
   "bank_used": [
