@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261010-134813",
-      "format": "short",
-      "template": "roast",
-      "topic": "airport security",
-      "title": "TSA vs. an Expensive Avocado 🥑✈️",
-      "date": "2026-10-10 13:52"
-    },
-    {
       "id": "long_20261010-175307",
       "format": "long",
       "template": "fruit_court",
@@ -959,6 +951,14 @@
       "topic": "When your regional accent slips out",
       "title": "Avocado's accent slips when the recipe comes out 🥑😱",
       "date": "2026-11-16 20:55"
+    },
+    {
+      "id": "short_20261117-134914",
+      "format": "short",
+      "template": "identity_crisis",
+      "topic": "performance review",
+      "title": "Strawberry failed her annual fruit review 🍓💼",
+      "date": "2026-11-17 13:54"
     }
   ],
   "bank_used": []
