@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261008-174835",
-      "format": "short",
-      "template": "tipler",
-      "topic": "tatil (plaj)",
-      "title": "Meyvelerin plajla imtihanı! 🏖️🔥",
-      "date": "2026-10-08 17:50"
-    },
-    {
       "id": "short_20261009-094816",
       "format": "short",
       "template": "normal_psikopat",
@@ -959,6 +951,14 @@
       "topic": "smoothie",
       "title": "Avokado ve Muzun Potasyum Kavgası! 🥑🍌",
       "date": "2026-11-16 17:59"
+    },
+    {
+      "id": "short_20261117-094822",
+      "format": "short",
+      "template": "kimlik_krizi",
+      "topic": "kış meyvesi olmak",
+      "title": "Portakal Aslında Kış Meyvesi Değil mi? 🍊🥶",
+      "date": "2026-11-17 09:50"
     }
   ],
   "bank_used": [
