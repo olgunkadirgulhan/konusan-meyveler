@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261010-194759",
-      "format": "short",
-      "template": "plot_twist",
-      "topic": "the big game party",
-      "title": "When you realize you're the big game snack 🥑🍅",
-      "date": "2026-10-10 19:50"
-    },
-    {
       "id": "short_20261010-234820",
       "format": "short",
       "template": "types_of",
@@ -959,6 +951,14 @@
       "topic": "the neighbor who borrows things",
       "title": "Lemon's neighbor drama is getting personal 🍋🏠",
       "date": "2026-11-17 18:03"
+    },
+    {
+      "id": "short_20261117-205130",
+      "format": "short",
+      "template": "recipe_crisis",
+      "topic": "Types of fruits at a sleepover",
+      "title": "Fruits try to survive a dramatic sleepover 🍌🍉",
+      "date": "2026-11-17 21:00"
     }
   ],
   "bank_used": []
