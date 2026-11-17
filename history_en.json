@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "long_20261010-175307",
-      "format": "long",
-      "template": "fruit_court",
-      "topic": "the office potluck",
-      "title": "The Office Potluck Lawsuit Went Too Far 🍅🥑",
-      "date": "2026-10-10 18:01"
-    },
-    {
       "id": "short_20261010-194759",
       "format": "short",
       "template": "plot_twist",
@@ -959,6 +951,14 @@
       "topic": "performance review",
       "title": "Strawberry failed her annual fruit review 🍓💼",
       "date": "2026-11-17 13:54"
+    },
+    {
+      "id": "short_20261117-175516",
+      "format": "short",
+      "template": "grocery_aisle",
+      "topic": "the neighbor who borrows things",
+      "title": "Lemon's neighbor drama is getting personal 🍋🏠",
+      "date": "2026-11-17 18:03"
     }
   ],
   "bank_used": []
