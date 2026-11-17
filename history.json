@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261009-094816",
-      "format": "short",
-      "template": "normal_psikopat",
-      "topic": "reçel olmak",
-      "title": "Reçel olmak hiç bu kadar havalı olmamıştı! 🍓🍋",
-      "date": "2026-10-09 09:50"
-    },
-    {
       "id": "short_20261009-144811",
       "format": "short",
       "template": "buzdolabi",
@@ -959,6 +951,14 @@
       "topic": "kış meyvesi olmak",
       "title": "Portakal Aslında Kış Meyvesi Değil mi? 🍊🥶",
       "date": "2026-11-17 09:50"
+    },
+    {
+      "id": "short_20261117-144844",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "çekirdek / tohum",
+      "title": "Karpuzun evlat nöbeti! Limon fena bozuldu 🍉🍋",
+      "date": "2026-11-17 14:54"
     }
   ],
   "bank_used": [
