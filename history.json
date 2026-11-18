@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261009-174823",
-      "format": "short",
-      "template": "tipler",
-      "topic": "yeni yıl kararları",
-      "title": "Meyvelerin yeni yıl kararları yalan oldu! 💸🍊",
-      "date": "2026-10-09 18:00"
-    },
-    {
       "id": "short_20261010-094806",
       "format": "short",
       "template": "ters_kose",
@@ -959,6 +951,14 @@
       "topic": "yaz geldi",
       "title": "Pazarda Karpuzu Tokatlayanlara Sert Tepki! 🍉😂",
       "date": "2026-11-17 17:53"
+    },
+    {
+      "id": "short_20261118-100344",
+      "format": "short",
+      "template": "meyve_mahkemesi",
+      "topic": "kargo iadesi",
+      "title": "Avokado kargo iadesinde mahkemelik oldu! 🥑📦",
+      "date": "2026-11-18 10:14"
     }
   ],
   "bank_used": [
