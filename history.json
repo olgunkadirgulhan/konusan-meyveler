@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261010-142911",
-      "format": "short",
-      "template": "kimlik_krizi",
-      "topic": "manavda indirim",
-      "title": "Avokadonun indirim şoku! \"Ben aslında üzümüm!\" 🥑😭🍅",
-      "date": "2026-10-10 14:49"
-    },
-    {
       "id": "long_20261010-164802",
       "format": "long",
       "template": "mutfak_mahkemesi",
@@ -959,6 +951,14 @@
       "topic": "Meyve sepetinde ani kavga çıkması",
       "title": "Görümce Çatlatan Maske Tarifi! 🍋🔥",
       "date": "2026-11-18 14:59"
+    },
+    {
+      "id": "short_20261118-181455",
+      "format": "short",
+      "template": "kimlik_krizi",
+      "topic": "pahalı olmak",
+      "title": "Avokadonun piyasa değeri şok etti! 🥑💸",
+      "date": "2026-11-18 18:18"
     }
   ],
   "bank_used": [
