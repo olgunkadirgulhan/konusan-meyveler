@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261010-094806",
-      "format": "short",
-      "template": "ters_kose",
-      "topic": "diyet yapan insan",
-      "title": "Pazartesi diyeti 2 saat sürünce mutfakta kriz çıktı 🥑😭",
-      "date": "2026-10-10 09:52"
-    },
-    {
       "id": "short_20261010-142911",
       "format": "short",
       "template": "kimlik_krizi",
@@ -959,6 +951,14 @@
       "topic": "kargo iadesi",
       "title": "Avokado kargo iadesinde mahkemelik oldu! 🥑📦",
       "date": "2026-11-18 10:14"
+    },
+    {
+      "id": "short_20261118-145233",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "Meyve sepetinde ani kavga çıkması",
+      "title": "Görümce Çatlatan Maske Tarifi! 🍋🔥",
+      "date": "2026-11-18 14:59"
     }
   ],
   "bank_used": [
