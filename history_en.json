@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261011-134830",
-      "format": "short",
-      "template": "confessional",
-      "topic": "tax season",
-      "title": "The Fruit Bowl Filed Their Taxes Completely Wrong 😭🧾",
-      "date": "2026-10-11 13:50"
-    },
-    {
       "id": "short_20261011-194808",
       "format": "short",
       "template": "pov",
@@ -959,6 +951,14 @@
       "topic": "the self-checkout machine",
       "title": "Lemon and Banana fight at the self checkout machine 🍋🍌",
       "date": "2026-11-18 13:50"
+    },
+    {
+      "id": "short_20261118-174857",
+      "format": "short",
+      "template": "grocery_aisle",
+      "topic": "Trying to act normal around your crush",
+      "title": "Fruits fail to act normal around their supermarket crush 🍓🍌🥑",
+      "date": "2026-11-18 18:00"
     }
   ],
   "bank_used": []
