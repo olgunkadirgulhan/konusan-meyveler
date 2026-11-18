@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261011-194808",
-      "format": "short",
-      "template": "pov",
-      "topic": "the dentist appointment",
-      "title": "When you lie about flossing at the dentist 😭🪥",
-      "date": "2026-10-11 19:49"
-    },
-    {
       "id": "short_20261011-234823",
       "format": "short",
       "template": "fridge_after_dark",
@@ -959,6 +951,14 @@
       "topic": "Trying to act normal around your crush",
       "title": "Fruits fail to act normal around their supermarket crush 🍓🍌🥑",
       "date": "2026-11-18 18:00"
+    },
+    {
+      "id": "short_20261118-205532",
+      "format": "short",
+      "template": "identity_crisis",
+      "topic": "Life after high school",
+      "title": "Banana finds out he's a berry and loses it 🍌😭",
+      "date": "2026-11-18 20:57"
     }
   ],
   "bank_used": []
