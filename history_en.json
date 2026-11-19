@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261012-191724",
-      "format": "short",
-      "template": "types_of",
-      "topic": "running late for first period",
-      "title": "Types of Fruits Running Late for First Period ⏰🍌",
-      "date": "2026-10-12 19:19"
-    },
-    {
       "id": "short_20261012-234803",
       "format": "short",
       "template": "pov",
@@ -959,6 +951,14 @@
       "topic": "Fruits in a zombie apocalypse",
       "title": "Fruits think they're being eaten but it's actually worse 🥑🥒",
       "date": "2026-11-19 18:12"
+    },
+    {
+      "id": "short_20261119-205356",
+      "format": "short",
+      "template": "confessional",
+      "topic": "smoothie bowl influencers",
+      "title": "Strawberry got blended for an aesthetic smoothie bowl 🍓🌪️",
+      "date": "2026-11-19 21:01"
     }
   ],
   "bank_used": []
