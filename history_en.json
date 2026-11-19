@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261012-134830",
-      "format": "short",
-      "template": "roast",
-      "topic": "road trip",
-      "title": "Watermelon and Lemon roast each other on a road trip 🍉",
-      "date": "2026-10-12 13:54"
-    },
-    {
       "id": "short_20261012-191724",
       "format": "short",
       "template": "types_of",
@@ -959,6 +951,14 @@
       "topic": "gym bros",
       "title": "Watermelon gets drafted for midnight gym gains 🍉💪",
       "date": "2026-11-19 13:52"
+    },
+    {
+      "id": "short_20261119-175235",
+      "format": "short",
+      "template": "recipe_crisis",
+      "topic": "Fruits in a zombie apocalypse",
+      "title": "Fruits think they're being eaten but it's actually worse 🥑🥒",
+      "date": "2026-11-19 18:12"
     }
   ],
   "bank_used": []
