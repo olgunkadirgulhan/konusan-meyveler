@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "long_20261010-164802",
-      "format": "long",
-      "template": "mutfak_mahkemesi",
-      "topic": "kış meyvesi olmak",
-      "title": "Kış Mesaisi Başladı: Meyveler Mahkemelik Oldu! 🍊⚖️",
-      "date": "2026-10-10 16:59"
-    },
-    {
       "id": "short_20261010-174815",
       "format": "short",
       "template": "buzdolabi",
@@ -959,6 +951,14 @@
       "topic": "pahalı olmak",
       "title": "Avokadonun piyasa değeri şok etti! 🥑💸",
       "date": "2026-11-18 18:18"
+    },
+    {
+      "id": "short_20261119-094827",
+      "format": "short",
+      "template": "meyve_mahkemesi",
+      "topic": "spor salonu",
+      "title": "Spor Salonunda Uyuyan Muz Mahkemelik Oldu! 🍌⚖️",
+      "date": "2026-11-19 09:58"
     }
   ],
   "bank_used": [
