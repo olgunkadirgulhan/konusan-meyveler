@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261011-094804",
-      "format": "short",
-      "template": "tipler",
-      "topic": "meyve mi sebze mi",
-      "title": "Mutfakta 'Meyve misin Sebze misin' Kavgası Çıktı! 🍅🥑",
-      "date": "2026-10-11 09:49"
-    },
-    {
       "id": "short_20261011-144820",
       "format": "short",
       "template": "normal_psikopat",
@@ -959,6 +951,14 @@
       "topic": "Akşam yemeğini son anda kurtarma çabası",
       "title": "Akşam Yemeği Krizinde Avokadonun Şok Sonu! 🥑😱",
       "date": "2026-11-19 15:25"
+    },
+    {
+      "id": "short_20261119-182235",
+      "format": "short",
+      "template": "anlatiyor",
+      "topic": "Meyve salatasına girmemek için saklanan meyveler",
+      "title": "Avokado meyve salatasından kaçtı ama sonu fena oldu! 🥑😱",
+      "date": "2026-11-19 18:31"
     }
   ],
   "bank_used": [
