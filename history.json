@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261012-095009",
-      "format": "short",
-      "template": "ters_kose",
-      "topic": "meyveli pastaya süs olma telaşı",
-      "title": "Meyveli pastanın yıldızı kim olacak? Kapışma çıktı! 🍓🍰",
-      "date": "2026-10-12 10:03"
-    },
-    {
       "id": "short_20261012-192242",
       "format": "short",
       "template": "buzdolabi",
@@ -959,6 +951,14 @@
       "topic": "turşu tehlikesi",
       "title": "Ev arkadaşını turşu yapmaya çalışan Biber'in sonu! ⚖️🌶️",
       "date": "2026-11-20 14:52"
+    },
+    {
+      "id": "short_20261120-175553",
+      "format": "short",
+      "template": "anlatiyor",
+      "topic": "Meyveli pasta tarifine seçilme mücadelesi",
+      "title": "Pastanın Kraliçesi Kim? Meyveler Birbirine Girdi! 🍓🎂",
+      "date": "2026-11-20 17:58"
     }
   ],
   "bank_used": [
