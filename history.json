@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261011-144820",
-      "format": "short",
-      "template": "normal_psikopat",
-      "topic": "bayram ziyareti",
-      "title": "Akrabalar Kapıya Dayanınca Meyvelerin Bayram Krizi! 🍋🚪",
-      "date": "2026-10-11 14:52"
-    },
-    {
       "id": "short_20261011-174825",
       "format": "short",
       "template": "kavga",
@@ -959,6 +951,14 @@
       "topic": "Meyve salatasına girmemek için saklanan meyveler",
       "title": "Avokado meyve salatasından kaçtı ama sonu fena oldu! 🥑😱",
       "date": "2026-11-19 18:31"
+    },
+    {
+      "id": "short_20261120-095259",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "Dondurma makinesinden kaçmaya çalışan meyveler",
+      "title": "Dondurma makinesinden kaçan meyvelerin sonu 🍦😭",
+      "date": "2026-11-20 10:12"
     }
   ],
   "bank_used": [
