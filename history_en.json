@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261013-134832",
-      "format": "short",
-      "template": "confessional",
-      "topic": "performance review",
-      "title": "The fruit bowl's performance review is a disaster 😭🥗",
-      "date": "2026-10-13 14:08"
-    },
-    {
       "id": "short_20261013-174818",
       "format": "short",
       "template": "normal_vs_psycho",
@@ -959,6 +951,14 @@
       "topic": "Running late for school in the morning",
       "title": "Avocado and Banana roast each other while running late 🥑🍌",
       "date": "2026-11-20 13:56"
+    },
+    {
+      "id": "short_20261120-174956",
+      "format": "short",
+      "template": "identity_crisis",
+      "topic": "Fruits pulling pranks on their roommates",
+      "title": "Pineapple reveals a terrifying secret during a roommate prank 🍍😱",
+      "date": "2026-11-20 17:53"
     }
   ],
   "bank_used": []
