@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261011-174825",
-      "format": "short",
-      "template": "kavga",
-      "topic": "kargo iadesi",
-      "title": "Kargo İadesi Çıktı: Sepetin Suçlusu Kim? 🥑📦",
-      "date": "2026-10-11 17:51"
-    },
-    {
       "id": "short_20261012-095009",
       "format": "short",
       "template": "ters_kose",
@@ -959,6 +951,14 @@
       "topic": "Dondurma makinesinden kaçmaya çalışan meyveler",
       "title": "Dondurma makinesinden kaçan meyvelerin sonu 🍦😭",
       "date": "2026-11-20 10:12"
+    },
+    {
+      "id": "short_20261120-144909",
+      "format": "short",
+      "template": "meyve_mahkemesi",
+      "topic": "turşu tehlikesi",
+      "title": "Ev arkadaşını turşu yapmaya çalışan Biber'in sonu! ⚖️🌶️",
+      "date": "2026-11-20 14:52"
     }
   ],
   "bank_used": [
