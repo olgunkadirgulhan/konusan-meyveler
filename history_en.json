@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261014-134828",
-      "format": "short",
-      "template": "pov",
-      "topic": "rent is due",
-      "title": "Fruits panic about rent when the landlord knocks 🍋🍌💸",
-      "date": "2026-10-14 13:53"
-    },
-    {
       "id": "short_20261014-175226",
       "format": "short",
       "template": "roast",
@@ -959,6 +951,14 @@
       "topic": "When your crush actually likes you back",
       "title": "When your crush texts back and the whole fridge panics 🍓❤️",
       "date": "2026-11-21 14:10"
+    },
+    {
+      "id": "long_20261121-174834",
+      "format": "long",
+      "template": "fruit_villa",
+      "topic": "airport security",
+      "title": "Fruits Get Stuck in Airport Security at Fruit Villa TSA ✈️ 🍓",
+      "date": "2026-11-21 18:01"
     }
   ],
   "bank_used": []
