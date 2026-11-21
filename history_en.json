@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261013-204806",
-      "format": "short",
-      "template": "fridge_after_dark",
-      "topic": "the HOA meeting",
-      "title": "Fruits try to handle HOA fines in the fridge 🍋🏡",
-      "date": "2026-10-13 20:50"
-    },
-    {
       "id": "short_20261014-134828",
       "format": "short",
       "template": "pov",
@@ -959,6 +951,14 @@
       "topic": "tax season",
       "title": "Onion uses tax season to win the shelf war 🧅📊",
       "date": "2026-11-20 20:52"
+    },
+    {
+      "id": "short_20261121-134827",
+      "format": "short",
+      "template": "fridge_after_dark",
+      "topic": "When your crush actually likes you back",
+      "title": "When your crush texts back and the whole fridge panics 🍓❤️",
+      "date": "2026-11-21 14:10"
     }
   ],
   "bank_used": []
