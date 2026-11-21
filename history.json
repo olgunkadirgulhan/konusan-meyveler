@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261012-204816",
-      "format": "short",
-      "template": "kavga",
-      "topic": "su oranı yarışması",
-      "title": "Salatalık ile Karpuzun Su Oranı Kavgası 🍉💦",
-      "date": "2026-10-12 20:49"
-    },
-    {
       "id": "short_20261013-094810",
       "format": "short",
       "template": "ters_kose",
@@ -959,6 +951,14 @@
       "topic": "yaşlanmak / kararmak",
       "title": "Buzdolabında Yaşlanma Krizi! Kararan Meyveler Ne Yapacak? 😱🍌",
       "date": "2026-11-21 09:54"
+    },
+    {
+      "id": "short_20261121-141502",
+      "format": "short",
+      "template": "kimlik_krizi",
+      "topic": "Trafikte sıkışıp kalan meyvelerin komik dramı",
+      "title": "Trafikte Salçaya Dönüşen Domatesin Dramı! 🍅🚗",
+      "date": "2026-11-21 14:22"
     }
   ],
   "bank_used": [
