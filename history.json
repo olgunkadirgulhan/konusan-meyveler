@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261012-192242",
-      "format": "short",
-      "template": "buzdolabi",
-      "topic": "Meyveli pastanın üstüne çıkma kavgası",
-      "title": "Meyveli pastanın yıldızı kim? Kavga çıktı 🍰🍓",
-      "date": "2026-10-12 19:23"
-    },
-    {
       "id": "short_20261012-204816",
       "format": "short",
       "template": "kavga",
@@ -959,6 +951,14 @@
       "topic": "Meyveli pasta tarifine seçilme mücadelesi",
       "title": "Pastanın Kraliçesi Kim? Meyveler Birbirine Girdi! 🍓🎂",
       "date": "2026-11-20 17:58"
+    },
+    {
+      "id": "short_20261121-094819",
+      "format": "short",
+      "template": "buzdolabi",
+      "topic": "yaşlanmak / kararmak",
+      "title": "Buzdolabında Yaşlanma Krizi! Kararan Meyveler Ne Yapacak? 😱🍌",
+      "date": "2026-11-21 09:54"
     }
   ],
   "bank_used": [
