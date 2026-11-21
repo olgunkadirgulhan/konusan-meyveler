@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261013-094810",
-      "format": "short",
-      "template": "ters_kose",
-      "topic": "ofiste öğle yemeği",
-      "title": "Ofiste öğle yemeği krizi ve acı gerçekler 🥑🔥",
-      "date": "2026-10-13 09:57"
-    },
-    {
       "id": "short_20261013-144825",
       "format": "short",
       "template": "buzdolabi",
@@ -959,6 +951,14 @@
       "topic": "Trafikte sıkışıp kalan meyvelerin komik dramı",
       "title": "Trafikte Salçaya Dönüşen Domatesin Dramı! 🍅🚗",
       "date": "2026-11-21 14:22"
+    },
+    {
+      "id": "short_20261121-161016",
+      "format": "short",
+      "template": "anlatiyor",
+      "topic": "egzotik meyve kıskançlığı",
+      "title": "Ananasın Aristokrat Havası Limona Çarptı! 🍍🍋",
+      "date": "2026-11-21 16:20"
     }
   ],
   "bank_used": [
