@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261014-175226",
-      "format": "short",
-      "template": "roast",
-      "topic": "job interview",
-      "title": "Banana and Tomato fight over a job interview 🍌🍅",
-      "date": "2026-10-14 17:53"
-    },
-    {
       "id": "short_20261014-204836",
       "format": "short",
       "template": "fridge_after_dark",
@@ -959,6 +951,14 @@
       "topic": "airport security",
       "title": "Fruits Get Stuck in Airport Security at Fruit Villa TSA ✈️ 🍓",
       "date": "2026-11-21 18:01"
+    },
+    {
+      "id": "short_20261121-185050",
+      "format": "short",
+      "template": "roast",
+      "topic": "When your real accent accidentally slips out",
+      "title": "Avocado's fake accent gets exposed by Pineapple 🥑🇬🇧",
+      "date": "2026-11-21 18:55"
     }
   ],
   "bank_used": []
