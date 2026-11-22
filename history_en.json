@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261015-134824",
-      "format": "short",
-      "template": "pov",
-      "topic": "Halloween costume party",
-      "title": "Banana Discovers His First Brown Spot at a Halloween Party 🍌👻",
-      "date": "2026-10-15 13:51"
-    },
-    {
       "id": "short_20261015-174925",
       "format": "short",
       "template": "roast",
@@ -959,6 +951,14 @@
       "topic": "Opening spicy snacks in class",
       "title": "Chili Pepper Tries to Get Picked for Class 🌶️",
       "date": "2026-11-21 20:54"
+    },
+    {
+      "id": "short_20261122-134915",
+      "format": "short",
+      "template": "pov",
+      "topic": "Fruits reacting to sudden freezing weather",
+      "title": "Fruits survive a kitchen ice age ❄️🍌",
+      "date": "2026-11-22 14:14"
     }
   ],
   "bank_used": []
