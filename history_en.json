@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261015-174925",
-      "format": "short",
-      "template": "roast",
-      "topic": "opening a bag of spicy chips in class",
-      "title": "Biber and Limon roast the spicy chips in class 😭🌶️🍋",
-      "date": "2026-10-15 17:56"
-    },
-    {
       "id": "short_20261015-204822",
       "format": "short",
       "template": "fridge_after_dark",
@@ -959,6 +951,14 @@
       "topic": "Fruits reacting to sudden freezing weather",
       "title": "Fruits survive a kitchen ice age ❄️🍌",
       "date": "2026-11-22 14:14"
+    },
+    {
+      "id": "short_20261122-174822",
+      "format": "short",
+      "template": "recipe_crisis",
+      "topic": "Types of friends at a sleepover",
+      "title": "Fruits panic over a 2 AM sleepover recipe 🥑🥒",
+      "date": "2026-11-22 17:57"
     }
   ],
   "bank_used": []
