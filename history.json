@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261013-175747",
-      "format": "short",
-      "template": "normal_psikopat",
-      "topic": "trafikte sıkışmak",
-      "title": "Trafikte sıkışan meyvelerin psikopat halleri! 🚗🌶️",
-      "date": "2026-10-13 18:03"
-    },
-    {
       "id": "short_20261014-094822",
       "format": "short",
       "template": "kimlik_krizi",
@@ -959,6 +951,14 @@
       "topic": "ofiste öğle yemeği",
       "title": "Ofiste Öğle Yemeği Mahkemesi! Meyveler Birbirine Girdi ⚖️🥑",
       "date": "2026-11-22 09:55"
+    },
+    {
+      "id": "short_20261122-141646",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "pazarda seçilmemek",
+      "title": "Maaş Günü Manavda Avokado Dramı! 🥑🍋",
+      "date": "2026-11-22 14:21"
     }
   ],
   "bank_used": [
