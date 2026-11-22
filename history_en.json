@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261015-204822",
-      "format": "short",
-      "template": "fridge_after_dark",
-      "topic": "pumpkin spice season",
-      "title": "Strawberry thinks she is a Pumpkin Spice influencer 🍓🎃",
-      "date": "2026-10-15 20:53"
-    },
-    {
       "id": "short_20261016-135149",
       "format": "short",
       "template": "confessional",
@@ -959,6 +951,14 @@
       "topic": "Types of friends at a sleepover",
       "title": "Fruits panic over a 2 AM sleepover recipe 🥑🥒",
       "date": "2026-11-22 17:57"
+    },
+    {
+      "id": "short_20261122-204810",
+      "format": "short",
+      "template": "fruit_court_short",
+      "topic": "the self-checkout machine",
+      "title": "Avocado sues Banana at Fruit Court for self-checkout fraud 🥑⚖️",
+      "date": "2026-11-22 20:49"
     }
   ],
   "bank_used": []
