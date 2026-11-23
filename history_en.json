@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261016-175200",
-      "format": "short",
-      "template": "pov",
-      "topic": "picnic in the park",
-      "title": "Avocado and Strawberry Meltdown at a Park Picnic 🍓🥑",
-      "date": "2026-10-16 17:54"
-    },
-    {
       "id": "short_20261016-204811",
       "format": "short",
       "template": "grocery_aisle",
@@ -959,6 +951,14 @@
       "topic": "the office potluck",
       "title": "Avocado loses it over store-bought guacamole at work 🥑",
       "date": "2026-11-23 14:03"
+    },
+    {
+      "id": "short_20261123-174851",
+      "format": "short",
+      "template": "roast",
+      "topic": "types of people at the gym",
+      "title": "Watermelon and Orange Roast Each Other at the Gym 🍉🍊",
+      "date": "2026-11-23 17:56"
     }
   ],
   "bank_used": []
