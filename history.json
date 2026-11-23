@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261014-174853",
-      "format": "short",
-      "template": "kavga",
-      "topic": "Meyveli pastanın üstüne konulma kavgası",
-      "title": "Pastanın yıldızı kim olacak? Sonu hiç beklenmedik! 🍰🍋",
-      "date": "2026-10-14 17:51"
-    },
-    {
       "id": "short_20261015-094813",
       "format": "short",
       "template": "kimlik_krizi",
@@ -959,6 +951,14 @@
       "topic": "meyve salatası seçmeleri",
       "title": "Meyve Salatası Seçmelerinde Avokadonun Şok Sonu! 🥑🍓",
       "date": "2026-11-23 09:57"
+    },
+    {
+      "id": "short_20261123-140735",
+      "format": "short",
+      "template": "anlatiyor",
+      "topic": "maaş günü",
+      "title": "Maaş Günü Avokado Alanların Acı Gerçekle Yüzleşmesi 🥑💸",
+      "date": "2026-11-23 14:10"
     }
   ],
   "bank_used": [
