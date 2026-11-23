@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261015-094813",
-      "format": "short",
-      "template": "kimlik_krizi",
-      "topic": "çekirdek / tohum",
-      "title": "Muzun Büyük Tohum Şoku: 'Ben Klon muyum?!' 🍌😱",
-      "date": "2026-10-15 09:51"
-    },
-    {
       "id": "short_20261015-144819",
       "format": "short",
       "template": "tarif_krizi",
@@ -959,6 +951,14 @@
       "topic": "maaş günü",
       "title": "Maaş Günü Avokado Alanların Acı Gerçekle Yüzleşmesi 🥑💸",
       "date": "2026-11-23 14:10"
+    },
+    {
+      "id": "short_20261123-180824",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "ev arkadaşı",
+      "title": "Ev Arkadaşının Mutfaktaki Tarif Krizi! 🥑🍋",
+      "date": "2026-11-23 18:11"
     }
   ],
   "bank_used": [
