@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261016-204811",
-      "format": "short",
-      "template": "grocery_aisle",
-      "topic": "a haunted house",
-      "title": "Fruits Audition for a Haunted House in the Aisle 👻🧅",
-      "date": "2026-10-16 20:54"
-    },
-    {
       "id": "short_20261017-134829",
       "format": "short",
       "template": "fridge_after_dark",
@@ -959,6 +951,14 @@
       "topic": "types of people at the gym",
       "title": "Watermelon and Orange Roast Each Other at the Gym 🍉🍊",
       "date": "2026-11-23 17:56"
+    },
+    {
+      "id": "short_20261123-204858",
+      "format": "short",
+      "template": "fridge_after_dark",
+      "topic": "Types of fruits after high school",
+      "title": "Fruits argument after high school gets interrupted by 2 AM human 🥑🍌",
+      "date": "2026-11-23 20:50"
     }
   ],
   "bank_used": []
