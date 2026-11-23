@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261014-144830",
-      "format": "short",
-      "template": "tarif_krizi",
-      "topic": "Mutfakta araba sürüyormuş gibi davranmak",
-      "title": "Mutfakta ralli yapan meyveler tencereye yakalandı! 🍊🍌🏎️",
-      "date": "2026-10-14 14:53"
-    },
-    {
       "id": "short_20261014-174853",
       "format": "short",
       "template": "kavga",
@@ -959,6 +951,14 @@
       "topic": "kayınvalide geliyor",
       "title": "Kayınvalide baskınına karşı hangi meyve korur? 🍋🌶️",
       "date": "2026-11-22 18:03"
+    },
+    {
+      "id": "short_20261123-095151",
+      "format": "short",
+      "template": "buzdolabi",
+      "topic": "meyve salatası seçmeleri",
+      "title": "Meyve Salatası Seçmelerinde Avokadonun Şok Sonu! 🥑🍓",
+      "date": "2026-11-23 09:57"
     }
   ],
   "bank_used": [
