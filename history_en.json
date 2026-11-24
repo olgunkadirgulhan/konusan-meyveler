@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "long_20261017-174807",
-      "format": "long",
-      "template": "fridge_office",
-      "topic": "college dorm life",
-      "title": "The Fruits Try to Survive a College Dorm Mini Fridge 😭🥑",
-      "date": "2026-10-17 17:58"
-    },
-    {
       "id": "short_20261017-185029",
       "format": "short",
       "template": "pov",
@@ -959,6 +951,14 @@
       "topic": "keto diet",
       "title": "Avocado thought he was safe on keto until this happened 🥑😭",
       "date": "2026-11-24 13:50"
+    },
+    {
+      "id": "short_20261124-174900",
+      "format": "short",
+      "template": "fruit_court_short",
+      "topic": "Black Friday shopping",
+      "title": "Strawberry Sues Avocado Over Black Friday Shopping 🍓⚖️",
+      "date": "2026-11-24 17:50"
     }
   ],
   "bank_used": []
