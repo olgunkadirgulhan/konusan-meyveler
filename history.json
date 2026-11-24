@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261016-094818",
-      "format": "short",
-      "template": "meyve_mahkemesi",
-      "topic": "Meyve salatası kasesine seçilme telaşı",
-      "title": "Lüks meyve kasesinde yer kavgası! 🥑🍓⚖️",
-      "date": "2026-10-16 09:52"
-    },
-    {
       "id": "short_20261016-144845",
       "format": "short",
       "template": "buzdolabi",
@@ -959,6 +951,14 @@
       "topic": "tatil (plaj)",
       "title": "Karpuzun Plaj Kibri Limon'a Çarptı! 🍉🍋",
       "date": "2026-11-24 14:56"
+    },
+    {
+      "id": "short_20261124-175234",
+      "format": "short",
+      "template": "tarif_krizi",
+      "topic": "çekirdek / tohum",
+      "title": "Mutfakta Çekirdek Krizi! Meyveler Yanlış Tarifi Okuyunca 🍉🥑",
+      "date": "2026-11-24 18:17"
     }
   ],
   "bank_used": [
