@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261017-185029",
-      "format": "short",
-      "template": "pov",
-      "topic": "meeting her parents for dinner",
-      "title": "Her Fruit Parents Interrogate The Wrong Guy at Dinner 🍋🥑",
-      "date": "2026-10-17 18:53"
-    },
-    {
       "id": "short_20261017-204818",
       "format": "short",
       "template": "confessional",
@@ -959,6 +951,14 @@
       "topic": "Black Friday shopping",
       "title": "Strawberry Sues Avocado Over Black Friday Shopping 🍓⚖️",
       "date": "2026-11-24 17:50"
+    },
+    {
+      "id": "short_20261124-204909",
+      "format": "short",
+      "template": "roast",
+      "topic": "Fruits acting awkward around their crush",
+      "title": "Lemon and Banana roast each other about dating 🍋🍌",
+      "date": "2026-11-24 20:50"
     }
   ],
   "bank_used": []
