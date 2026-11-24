@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261017-134829",
-      "format": "short",
-      "template": "fridge_after_dark",
-      "topic": "carving a pumpkin",
-      "title": "The Fruits Panic Over Pumpkin Carving Night 🎃🥑",
-      "date": "2026-10-17 13:51"
-    },
-    {
       "id": "long_20261017-174807",
       "format": "long",
       "template": "fridge_office",
@@ -959,6 +951,14 @@
       "topic": "Types of fruits after high school",
       "title": "Fruits argument after high school gets interrupted by 2 AM human 🥑🍌",
       "date": "2026-11-23 20:50"
+    },
+    {
+      "id": "short_20261124-134844",
+      "format": "short",
+      "template": "recipe_crisis",
+      "topic": "keto diet",
+      "title": "Avocado thought he was safe on keto until this happened 🥑😭",
+      "date": "2026-11-24 13:50"
     }
   ],
   "bank_used": []
