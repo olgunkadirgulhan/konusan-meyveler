@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261015-144819",
-      "format": "short",
-      "template": "tarif_krizi",
-      "topic": "maaş günü",
-      "title": "Maaş Günü Gelen Gurme Tarif Meyveleri Birbirine Kattı! 🥑🧅",
-      "date": "2026-10-15 14:50"
-    },
-    {
       "id": "short_20261015-181934",
       "format": "short",
       "template": "kimlik_krizi",
@@ -959,6 +951,14 @@
       "topic": "ev arkadaşı",
       "title": "Ev Arkadaşının Mutfaktaki Tarif Krizi! 🥑🍋",
       "date": "2026-11-23 18:11"
+    },
+    {
+      "id": "short_20261124-095055",
+      "format": "short",
+      "template": "pazar_tezgahi",
+      "topic": "POV: Meyve tabağında üste çıkma mücadelesi",
+      "title": "Meyve tabağının zirve kavgası! 🍓🍋",
+      "date": "2026-11-24 10:07"
     }
   ],
   "bank_used": [
