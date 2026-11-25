@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261017-094807",
-      "format": "short",
-      "template": "tarif_krizi",
-      "topic": "yeni yıl kararları",
-      "title": "Yeni Yıl Detoks Tarifini Gören Meyveler Çıldırdı! 🥑🥒",
-      "date": "2026-10-17 09:50"
-    },
-    {
       "id": "short_20261017-144826",
       "format": "short",
       "template": "kimlik_krizi",
@@ -959,6 +951,14 @@
       "topic": "doğum günü pastası",
       "title": "Pasta üstünde influencer kavgası! 🍓🎂",
       "date": "2026-11-25 14:56"
+    },
+    {
+      "id": "short_20261125-175006",
+      "format": "short",
+      "template": "pazar_tezgahi",
+      "topic": "Alışveriş sepetini hız treni sanan meyveler",
+      "title": "Alışveriş sepeti değil, hız treni sanki! 🎢🛒",
+      "date": "2026-11-25 17:52"
     }
   ],
   "bank_used": [
