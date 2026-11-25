@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261017-204818",
-      "format": "short",
-      "template": "confessional",
-      "topic": "Monday morning meeting",
-      "title": "Who Called a Fruit Bowl Monday Meeting at 8 AM? 🥑😭",
-      "date": "2026-10-17 20:50"
-    },
-    {
       "id": "short_20261018-134816",
       "format": "short",
       "template": "roast",
@@ -959,6 +951,14 @@
       "topic": "Fruits acting awkward around their crush",
       "title": "Lemon and Banana roast each other about dating 🍋🍌",
       "date": "2026-11-24 20:50"
+    },
+    {
+      "id": "short_20261125-134859",
+      "format": "short",
+      "template": "confessional",
+      "topic": "Running late for school in the morning",
+      "title": "Avocado panicked about school on a Saturday 🥑😭",
+      "date": "2026-11-25 14:04"
     }
   ],
   "bank_used": []
