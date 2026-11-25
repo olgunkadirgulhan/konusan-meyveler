@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261018-175204",
-      "format": "short",
-      "template": "pov",
-      "topic": "Halloween candy stash",
-      "title": "Lemon and Banana Caught in the Halloween Candy Stash 🍋🍌",
-      "date": "2026-10-18 17:54"
-    },
-    {
       "id": "short_20261018-204823",
       "format": "short",
       "template": "confessional",
@@ -959,6 +951,14 @@
       "topic": "Fourth of July barbecue",
       "title": "Cilek thinks the BBQ is mid until she's the snack 🍓🍉",
       "date": "2026-11-25 18:02"
+    },
+    {
+      "id": "short_20261125-204936",
+      "format": "short",
+      "template": "recipe_crisis",
+      "topic": "New Year resolutions",
+      "title": "Fruits panic over a weird New Year's resolution recipe 🥑🍋",
+      "date": "2026-11-25 20:54"
     }
   ],
   "bank_used": []
