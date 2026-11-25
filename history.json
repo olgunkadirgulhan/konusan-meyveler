@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261016-174813",
-      "format": "short",
-      "template": "pazar_tezgahi",
-      "topic": "kargo iadesi",
-      "title": "Lüks meyvenin kargo iadesi dramı! 🥑📦",
-      "date": "2026-10-16 17:50"
-    },
-    {
       "id": "short_20261017-094807",
       "format": "short",
       "template": "tarif_krizi",
@@ -959,6 +951,14 @@
       "topic": "Mutfakta dondurma yapılma paniği",
       "title": "Dondurma Yapacağız Sanan Domatesin Komik Yanılgısı 🍦🍅",
       "date": "2026-11-25 09:53"
+    },
+    {
+      "id": "short_20261125-144902",
+      "format": "short",
+      "template": "anlatiyor",
+      "topic": "doğum günü pastası",
+      "title": "Pasta üstünde influencer kavgası! 🍓🎂",
+      "date": "2026-11-25 14:56"
     }
   ],
   "bank_used": [
