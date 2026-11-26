@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261018-204823",
-      "format": "short",
-      "template": "confessional",
-      "topic": "the neighbor's Halloween decorations",
-      "title": "The Fruits Confess About Neighbor's Halloween Lawn 🎃💀",
-      "date": "2026-10-18 20:49"
-    },
-    {
       "id": "short_20261019-134811",
       "format": "short",
       "template": "grocery_aisle",
@@ -959,6 +951,14 @@
       "topic": "New Year resolutions",
       "title": "Fruits panic over a weird New Year's resolution recipe 🥑🍋",
       "date": "2026-11-25 20:54"
+    },
+    {
+      "id": "short_20261126-134912",
+      "format": "short",
+      "template": "identity_crisis",
+      "topic": "Types of fruits at Thanksgiving dinner",
+      "title": "Strawberry finds out she's not a berry at Thanksgiving 🍓😱",
+      "date": "2026-11-26 13:51"
     }
   ],
   "bank_used": []
