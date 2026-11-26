@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "long_20261017-164821",
-      "format": "long",
-      "template": "tezgah_ofisi",
-      "topic": "turşu tehlikesi",
-      "title": "Tezgâhta Turşu Paniği: Kimler Kavanoza Gidiyor? 🥒😱",
-      "date": "2026-10-17 16:56"
-    },
-    {
       "id": "short_20261017-175922",
       "format": "short",
       "template": "buzdolabi",
@@ -959,6 +951,14 @@
       "topic": "pahalı olmak",
       "title": "Avokado Olmak Zenginlik Mi Yoksa Bela mı? 🥑💸",
       "date": "2026-11-26 09:56"
+    },
+    {
+      "id": "short_20261126-144859",
+      "format": "short",
+      "template": "meyve_mahkemesi",
+      "topic": "Mutfak tezgahından düşmemek için verilen mücadele",
+      "title": "Mutfak Tezgahında Suikast Girişimi! Karpuzun Dramı ⚖️🍉",
+      "date": "2026-11-26 15:00"
     }
   ],
   "bank_used": [
