@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261017-144826",
-      "format": "short",
-      "template": "kimlik_krizi",
-      "topic": "reçel olmak",
-      "title": "Domatesin Büyük Reçel Krizi: Menemen Bitti mi? 🍅😱",
-      "date": "2026-10-17 14:50"
-    },
-    {
       "id": "long_20261017-164821",
       "format": "long",
       "template": "tezgah_ofisi",
@@ -959,6 +951,14 @@
       "topic": "Alışveriş sepetini hız treni sanan meyveler",
       "title": "Alışveriş sepeti değil, hız treni sanki! 🎢🛒",
       "date": "2026-11-25 17:52"
+    },
+    {
+      "id": "short_20261126-094819",
+      "format": "short",
+      "template": "buzdolabi",
+      "topic": "pahalı olmak",
+      "title": "Avokado Olmak Zenginlik Mi Yoksa Bela mı? 🥑💸",
+      "date": "2026-11-26 09:56"
     }
   ],
   "bank_used": [
