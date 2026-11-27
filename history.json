@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261018-144812",
-      "format": "short",
-      "template": "pazar_tezgahi",
-      "topic": "kış meyvesi olmak",
-      "title": "Kış Pazarında C Vitamini Savaşı: Müşteri Kimi Seçti? 🍊🍉",
-      "date": "2026-10-18 14:51"
-    },
-    {
       "id": "short_20261018-174823",
       "format": "short",
       "template": "kavga",
@@ -959,6 +951,14 @@
       "topic": "Buzdolabında soğuktan şikayet eden tropikal meyveler",
       "title": "Buzdolabında donan Ananas ile Biber'in komik panik anı! 🍍🌶️",
       "date": "2026-11-27 10:08"
+    },
+    {
+      "id": "short_20261127-144824",
+      "format": "short",
+      "template": "buzdolabi",
+      "topic": "smoothie seçmeleri",
+      "title": "Avokado ve Limon'un Smoothie Kavgası! 🥑🍋",
+      "date": "2026-11-27 14:54"
     }
   ],
   "bank_used": [
