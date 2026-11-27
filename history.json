@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261018-174823",
-      "format": "short",
-      "template": "kavga",
-      "topic": "Meyve kurutma makinesini solaryum sanmak",
-      "title": "Meyve Kurutma Makinesini Solaryum Sananlar! 🍓🍌",
-      "date": "2026-10-18 17:51"
-    },
-    {
       "id": "short_20261019-094817",
       "format": "short",
       "template": "meyve_mahkemesi",
@@ -959,6 +951,14 @@
       "topic": "smoothie seçmeleri",
       "title": "Avokado ve Limon'un Smoothie Kavgası! 🥑🍋",
       "date": "2026-11-27 14:54"
+    },
+    {
+      "id": "short_20261127-180250",
+      "format": "short",
+      "template": "pazar_tezgahi",
+      "topic": "Kek harcına düşen meyvelerin fırın korkusu",
+      "title": "Kek Harcına Düşen Meyvelerin Fırın Paniği! 🍰🔥",
+      "date": "2026-11-27 18:16"
     }
   ],
   "bank_used": [
