@@ -1,14 +1,6 @@
 {
   "recent": [
     {
-      "id": "short_20261019-175301",
-      "format": "short",
-      "template": "kimlik_krizi",
-      "topic": "kira zammı",
-      "title": "Salatalığın Büyük Kira Şoku: 'Ben Meyve miyim?!' 🥒💸",
-      "date": "2026-10-19 17:56"
-    },
-    {
       "id": "short_20261020-094837",
       "format": "short",
       "template": "tarif_krizi",
@@ -959,6 +951,14 @@
       "topic": "Meyve salatasına sos dökülünce yaşanan panik",
       "title": "Meyve salatası sandılar, meze çıktılar! 🍋🍺",
       "date": "2026-11-28 15:02"
+    },
+    {
+      "id": "short_20261128-164828",
+      "format": "short",
+      "template": "anlatiyor",
+      "topic": "dedikodu",
+      "title": "WhatsApp grubunda büyük kavga! 🍋📱",
+      "date": "2026-11-28 17:09"
     }
   ],
   "bank_used": [
